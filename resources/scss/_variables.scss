@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');//font
+
+
+
+// минимальная и максимальная ширина области просмотра
+$min-w: 375px;
+$max-w:1920px;
+
+// отступы
+$spacer-base: 0 90px;// container base padding
+$spacer-ftr:150px 90px;
+
+// шрифты
+
+$default-font:'Montserrat', 'sans-serif';
+$fs-base: 20px;
+
+$fs-xxs: 11px;
+$fs-xs: 12px;
+$fs-s: 14px;
+$fs-m: $fs-base;
+$fs-l: 20px;
+
+$fs-xl: 24px;
+$fs-xxl: 26px;
+$fs-3xl:32px;
+
+
+$fs-xls:64px;
+$fs-large-main:84px;
+
+// цвета
+//
+
+$accent: #ffffff;
+$light-grey:#D9D9D9;// two accent
+
+// bootstrap
+$primary: #0275d8;
+$success: #5cb85c;
+$info: #5bc0de;
+$warning: #f0ad4e;
+$danger: #d9534f;
+$light: #f7f7f7;
+$dark: #292b2c;
+// дополнительно
+$gray100: #fefefe;
+$gray200: #fbfbfb;
+$gray300: #fafafa;
+$gray400: #f3f3f3;
+$gray500: #eeeeee;
+$gray600: #a3a3a3;
+$gray700: #8c8c8c;
+$gray800: #555555;
+$gray900: #333333;
+$white: #fff;
+$black: #000;
+
+// контрольные точки
+// bootstrap
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
