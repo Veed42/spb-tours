@@ -1,9 +1,9 @@
 // run project instructions 
-1.composer install
+1. composer install
 
-2.npm install
+2. npm install
 
-3.cp .env.example .env and
+3. cp .env.example .env and
 
 4. php artisan key:generate
 
