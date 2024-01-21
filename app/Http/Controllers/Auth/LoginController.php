@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -42,22 +42,18 @@ class LoginController extends Controller
 
 
 
-    public  function authenticated(Request $request, $user): \Illuminate\Http\RedirectResponse
-    {
-        $route = 'user.index';
-        $message = 'Вы успешно вошли на сайт';
-        if ($user->admin){
-            $route = 'admin.index';
-            $message = 'Вы вошли в панель управления';
+//    public  function authenticated(Request $request, $user): \Illuminate\Http\RedirectResponse
+//    {
+//        $route = '/home';
+//        $message = 'Вы успешно вошли на сайт';
+//        if ($user->admin){
+//            $route = 'admin.index';
+//            $message = 'Вы вошли в панель управления';
+//
+//        }
+//        return redirect()->route($route)
+//            ->with('success',$message);
+//    }
 
-        }
-        return redirect()->route($route)
-            ->with('success',$message);
-    }
 
-protected function loggedOut(Request $request)
-{
-    auth()->logout();
-    return redirect('/');
-}
 }

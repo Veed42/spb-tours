@@ -36,37 +36,36 @@
             <ol class="header__body--ol-list">
             @guest
                 <li class="header__item">
-                    <a href="{{route('user.login')}}" class="header__link">Войти</a>
+                    <a href="{{route('login')}}" class="header__link">Войти</a>
                 </li>
                 @if (Route::has('user.register'))
                 <li class="header__item">
-                    <a href="{{route('user.register')}}" class="header__link">Зарегистрироваться</a>
+                    <a href="{{route('user.register')}}" class="header__link">{{'Зарегистрироваться'}}</a>
                 </li>
                 @endif
                 @else
                 <li class="header__item">
                     <a class="header__link"
-                       href="{{route('user.index')}}"
-                    >Личный кабинет
+                       href="{{route('partials.index')}}"
+                    >
+                        {{'Личный кабинет'}}
                     </a>
                 </li>
                 <li class="header__item">
-                    <a href="{{route('user.logout')}}"
-                       class="header__link"
-                        onclick="
-                        document.getElementById('logout-form').submit();"
-                    >Выйти
-                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="header__link" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                            {{ __('Выйти') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
                 </li>
 
-                    <form
-                        id="logout-form"
-                        action="{{ route('user.logout') }}"
-                        method="post"
-                        style="display: none;"
-                    >
-                        @csrf
-                    </form>
+
                 @endif
             </ol>
         </div>

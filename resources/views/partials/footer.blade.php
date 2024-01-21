@@ -38,7 +38,7 @@
         <ol class="header__body--ol-list">
             @guest
                 <li class="header__item">
-                    <a href="{{route('user.login')}}" class="header__link">Войти</a>
+                    <a href="{{route('login')}}" class="header__link">Войти</a>
                 </li>
                 @if (Route::has('user.register'))
                     <li class="header__item">
@@ -48,12 +48,12 @@
             @else
                 <li class="header__item">
                     <a class="header__link"
-                       href="{{route('user.index')}}"
+                       href="{{route('partials.index')}}"
                     >Личный кабинет
                     </a>
                 </li>
                 <li class="header__item">
-                    <a href="{{route('user.logout')}}"
+                    <a href="{{route('logout')}}"
                        class="header__link"
                        onclick="
                         document.getElementById('logout-form').submit();"
@@ -64,7 +64,7 @@
 
                 <form
                     id="logout-form"
-                    action="{{ route('user.logout') }}"
+                    action="{{ route('logout') }}"
                     method="post"
                     style="display: none;"
                 >
