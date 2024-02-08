@@ -63,5 +63,6 @@
         }
     },
     "minimum-stability": "stable",
+    "platform-check": "false",
     "prefer-stable": true
 }

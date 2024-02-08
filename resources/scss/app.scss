@@ -1,12 +1,14 @@
 @import "_reset";
 @import "variables";
-@import '/node_modules/swiper/swiper';
 
 html, body {
     font: 100% $default-font;
     color: $dark;
     max-width: 100%;
     width: 1920px;
+    h1{
+        color: $accent;
+    }
 }
 .container{
     max-width: 1920px;
@@ -35,39 +37,62 @@ html, body {
 
 //header
 
+
+
+// fixed with scrolled
+header.fixed {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+
+
 .header {
-    padding: 36px 0;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
  .container-default{
      display: flex;
-     align-items: center;
-     justify-content: space-around;
      font-size: $fs-l;
  }
-    .header__logo  h1{
-        font-size:$fs-3xl;
+    .header__logo  .header__logo--letter{
         font-style: normal;
-        font-weight: 700;
+        font-weight: 800;
         margin-right: 30px;
+    }
+    .header__logo--letter:first-letter{
+        color: #F38D68;
     }
 
     .header__list .header__item{
         padding: 15px 15px;
 
     }
-    .header__nav .header__list .header__item{
+    .header__nav .header__list .header__item {
         display: inline-block;
         margin-left: auto;
+
     }
-    .header__list .header__item a:hover{
-        color: white;
-        background-color: black;
+    .header__nav .header__list .header__item .header__link{
+        color: $accent-two;
+        font-weight: 500;
     }
+    .header__list .header__item .header__link:hover{
+        color: #222;
+        background: #f58462;
+    }
+    //nav links hover
 
     .header__nav{
         margin-right: auto;
     }
 
-    .header__list .header__item a{
+    .header__list .header__item .header__link{
         padding: 20px 15px 20px 15px;
     }
 
@@ -97,16 +122,20 @@ html, body {
         //    color: white;
         //}
        .header__item .header__link{
-           display: inline-block;border: 1px solid $black; text-align: center;
+           display: inline-block;
+           border: 1px solid $accent;
+           text-align: center;
            padding: 10px 15px 10px 15px;
            margin-right: 30px;
+           color: $black;
+           font-weight: 500;
+
        }
         .header__item .header-link{
             padding: 10px 15px 10px 15px;
         }
          .header__item .header__link:hover{
-            background-color: black;
-            color: white;
+            background-color: rgba(91, 192, 222, 0.40);
         }
         .btn-logout{
             padding: 20px 15px 20px 15px;
@@ -122,30 +151,102 @@ html, body {
 
 .intro{
     height: 100vh;
+    background-image:url('/public/storage/img/m_main-intro.jpg');
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 197px 0;
+    position: relative;
+
+    .front-intro{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        opacity: 0.7;
+
+    }
     .description-intro{
+        z-index: 1;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
         text-align: center;
+        align-items: center;
+        justify-content: center;
             .description__into{
                 font-size:$fs-3xl;
-                font-weight: 300;
+                font-weight: 300;color: $white;
             }
         .tittle__intro{
+            color: $white;
             font-size: $fs-large-main;
             text-transform: uppercase;
             font-weight: 700;
+            margin-bottom: 76px;
         }
     }
+    .search-intro{
+        .form-search{
+            .container-search{
+               display: flex;
+            }
+            .search-button{
+                border: none;
+                outline: 0;
+                background: $accent-two;
+                font-size: $fs-xl;
+                cursor: pointer;
+                border-radius: 2px;
+                width: 100%;
+                height: 76px;
+                padding:25px 50px;
+                margin:0;
+                color: white;
+            }
+            .search-button:focus{
+                border: thin #c7d3d6 solid;
+            }
+            .search-input{
+                background-image: url("/public/storage/img/icons/search-icon.jpeg");
+                background-repeat:no-repeat ;
+                background-size: 40px 40px;
+                background-position: 5% 40%;
+                font: $default-font;
+                height: 100%;padding: 25px 110px;text-align: center;
+                margin-right: 30px;
+            }
+            input[type="search"]::placeholder{
+                font: $default-font;
+                font-size: 18px;
+                color: #fff;
+            }
+            input[type="text"]{
+                font-size: 18px;
+
+            }
+    }
+
+
+    }
+
+
+
+
 }
 
 
 //of_company
+
 .inner__company{
-padding: 150px 0;
+    padding: 150px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
     .tittle__company{
         text-align: center;
         font-weight: 700;
@@ -155,33 +256,24 @@ padding: 150px 0;
     .subtitle__company--info{
         font-size: $fs-3xl;
         font-weight: 600;
+        margin-bottom: 21px;
     }
     .description__company{
         font-size: $fs-xl;
     }
-    .img__company--info{
-        text-align: center;
-        padding-top: 60px;
-        border-radius: 10px;
-        background: #D9D9D9;
-        color: #000;
-        font-size: 68.19px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
+
 
     .cols__company--info{
         display: grid;
-        grid-template-columns:1fr 1fr;
-        grid-row-gap: 111px;
-        grid-template-rows: 250px 250px;
-        grid-column-gap: 50px;
+        grid-template-columns:repeat(auto-fill, minmax(500px,1fr));
+        grid-row-gap:80px ;
+        grid-column-gap: 187px;
+
     }
     .col{
         display: grid;
-        grid-template-columns: 0.6fr 0.8fr;
-        grid-column-gap: 70px;
+        grid-template-columns: 25% 1fr;
+        grid-column-gap: 70px;align-items: center;
     }
 }
 
@@ -220,21 +312,19 @@ padding: 150px 0;
             font-size: $fs-xls;
             margin-bottom: 80px;
         }.content__contacts{
-             display: flex;width: 100%;
+             display: grid;width: 100%;
+        grid-template-columns:  repeat(auto-fill, minmax(600px, 1fr));;
                      .map__company{
                          background: #D9D9D9;
-                        width: 792px;
-                        height: 435px;
                         text-align: center;
                         padding:200px 0;
                      }
         .description__contacts{
             margin-right: 160px;
             .contacts__address{
-                border-left: 3px solid $black ;
+                border-left: 3px solid $accent-two ;
                 padding-left: 40px;
                 margin-bottom: 50px;
-                width: 748px;
                 font-size: $fs-3xl;
             }
             .contacts__phone{
@@ -251,8 +341,10 @@ padding: 150px 0;
             }
             .contacts__social{
                 display: flex;
-                margin-top: 53px;
+                margin-top: 25px;
+                margin-bottom: 25px;
                 margin-left: 40px;
+
                 .img__social{
 
                     width: 25px;
@@ -283,14 +375,55 @@ padding: 150px 0;
         font-size: $fs-xls;
         margin-bottom: 80px;
     }
+    .slider{
+
+    }
+    .slick-prev:before {
+        content: "<";
+        color: red;
+        font-size: 30px;
+        margin-left: -50px;
+        font-weight: bolder;
+    }
+
+    .slick-next:before {
+        content: ">";
+        color: red;
+        font-size: 30px;
+        margin-left: 30px;
+        font-weight: bolder;
+
+    }
+    .slick-slider{
+        min-width: 0;
+    }
+    .slick-track{
+        display: flex;
+        align-items: flex-start;
+    }
+    .slick-slide {
+        margin: 0 20px; /* Измените отступы между слайдами на 20 пикселей */
+    }
+
+    .progress {
+        display: block;
+        height: 10px;
+        margin-top: 20px;
+        border-radius: 10px;
+
+        background-color: #f5f5f5;
+        background-image: linear-gradient(to right, black, black);
+        background-repeat: no-repeat;
+    }
+
     .cols-reviews{
-        display: grid;
-        grid-template-columns: 0.8fr 0.8fr;
-        grid-column-gap: 10px;
-        grid-template-rows: 430px;
+    display: grid!important;
+
         .col{
             padding: 44px 46px 90px 46px;
-            border:1px solid $black;
+            display: grid;
+
+            border:2px solid $black;
         .info-reviews{
             .up-reviews{
                 display: flex;
