@@ -40,24 +40,30 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-
-
-    public  function authenticated(Request $request, $user): \Illuminate\Http\RedirectResponse
+    public function username()
     {
-        $route = 'user.index';
-        $message = 'Вы успешно вошли на сайт';
-        if ($user->admin){
-            $route = 'admin.index';
-            $message = 'Вы вошли в панель управления';
-
-        }
-        return redirect()->route($route)
-            ->with('success',$message);
+        return 'phone';
     }
 
-protected function loggedOut(Request $request)
-{
-    auth()->logout();
-    return redirect('/');
+    public function index(Request $request)
+    {
+        $request->validate([
+            'phone' => 'required|max:11',
+            'password' => 'required|min:5|string'
+        ]);
+        $credentials = $request->only(['phone', 'password']);
+        if (Auth::attempt($credentials)) {
+            $user = auth()->user();
+
+            if ($user->role === 'admin') {
+                return redirect(route('admin.index'));
+            } else {
+                return redirect(route('home'));
+            }
+
+        }
+        return redirect()->back()->with('error', 'Пользователя не существует');
+    }
 }
-}
+
+

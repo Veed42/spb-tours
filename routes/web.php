@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController as LoginController;
 use App\Http\Controllers\Auth\RegisterController ;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -11,8 +12,37 @@ Route::get('/', function () {
 });
 
 Route::redirect('/home', '/');
+Route::get('/',function (){
+    return view('home');
+})->name('home');
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
+Route::post('login',[LoginController::class,'index'])->name('login');
 
 
+// Clear application cache:
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return 'Application cache has been cleared';
+});
+
+Route::get('/route-cache', function() {
+Artisan::call('route:cache');
+    return 'Routes cache has been cleared';
+});
+//Clear config cache:
+
+Route::get('/config-cache', function() {
+    Artisan::call('config:cache');
+    return 'Config cache has been cleared';
+});
+// Clear view cache:
+
+Route::get('/view-clear', function() {
+    Artisan::call('view:clear');
+    return 'View cache has been cleared';
+});
 
 //Route::post('/login',function (){
 //   return view('');
@@ -21,28 +51,19 @@ Route::redirect('/home', '/');
 //Route::post('/register',function (){
 //    return view('');
 //});
-Route::name('user.')
-    ->middleware('disable_back')
-    ->prefix('user')
-    ->group(
-    function () {
-    Auth::routes();
-});
+
 
 Route::group([
     'as' => 'user.', // имя маршрута, например user.index
-    'prefix' => 'user', // префикс маршрута, например user/index
     'middleware' => ['auth', 'disable_back'] // один или несколько посредников
 ], function () {
     // главная страница личного кабинета пользователя
     Route::get('index', 'UserController@index')->name('index');
     // CRUD-операции над профилями пользователя
-    Route::get('/logout', 'AuthController@loggedOut')->name('logout');
-    Route::resource('profile', 'ProfileController');
     // просмотр списка заказов в личном кабинете
-    Route::get('order', 'OrderController@index')->name('order.index');
+//    Route::get('order', 'OrderController@index')->name('order.index');
     // просмотр отдельного заказа в личном кабинете
-    Route::get('order/{order}', 'OrderController@show')->name('order.show');
+//    Route::get('order/{order}', 'OrderController@show')->name('order.show');
 // do middleware
 
 });

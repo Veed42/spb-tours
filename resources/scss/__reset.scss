@@ -49,6 +49,10 @@ select {
     background-color: white;
 }
 
+input:focus{
+    outline: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
