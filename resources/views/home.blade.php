@@ -29,6 +29,12 @@
                                        </button>
                                    </div>
 
+                                    <label>
+                                        <input type="text" class="search-input" placeholder="Найти экскурсии">
+                                    </label>
+                                    <button type="submit" class="search-button">
+                                        Актуальные
+                                    </button>
                             </div>
 
                         </form>
@@ -53,6 +59,7 @@
                         <div class="col">
                             <div class="img__company--info">
                                 <img src="{{asset('/public/storage/img/company-info/map-review-icon.png')}}" alt="icons" class="img__info">
+                                <img src="{{asset('/public/storage/img/reviews-icons/map-review-icon.p')}}ng" alt="icons" class="img__info">
                             </div>
                             <div class="info__company">
                                 <h4 class="subtitle__company--info">
@@ -68,6 +75,7 @@
                         <div class="col">
                             <div class="img__company--info">
                                 <img src="{{asset('/public/storage/img/company-info/competitive-prices-icon.png')}}" alt="icons" class="img__info">
+                                <img src="{{asset('/public/storage/img/reviews-icons/competitive-prices-icon.png')}}" alt="icons" class="img__info">
                             </div>
                             <div class="info__company">
                                 <h4 class="subtitle__company--info">
@@ -82,6 +90,7 @@
                         <div class="col">
                             <div class="img__company--info">
                                 <img src="{{asset('/public/storage/img/company-info/reservation-icon.png')}}" alt="icons" class="img__info">
+                                <img src="{{asset('/public/storage/img/reviews-icons/reservation-icon.png')}}" alt="icons" class="img__info">
                             </div>
                             <div class="info__company">
                                 <h4 class="subtitle__company--info">
@@ -96,6 +105,7 @@
                         <div class="col">
                             <div class="img__company--info">
                                 <img src="{{asset('/public/storage/img/company-info/review-icon.png')}}" alt="icons" class="img__info">
+                                <img src="{{asset('/public/storage/img/reviews-icons/review-icon.png')}}" alt="icons" class="img__info">
                             </div>
                             <div class="info__company">
                                 <h4 class="subtitle__company--info">
@@ -161,7 +171,6 @@
             <div class="container-default">
                 <h1 class="title__reviews uppercase">Отзывы</h1>
                 <div class="inner__reviews">
-
                     <div class="cols-reviews swiper">
                         <div class="swiper-wrapper">
 
@@ -291,8 +300,90 @@
                                             <div class="description-reviews">
                                                 Санкт-Петербург - король исскуства и культуры, собранное в одном городе. Но при этом, ночью тут тоже не соскучиться ) Здесь есть все и для молодежи, и для семьи с детьми. Была тут с семьей - мамой, папой и сестрой.
                                             </div>
+                    <h1 class="title__reviews uppercase">Отзывы</h1>
+                    <div class="cols-reviews slider">
+                            <div class="col">
+                                <div class="info-reviews">
+                                    <div class="up-reviews">
+                                        <div class="user__reviews__img"><img src="" alt=""></div>
+                                        <div class="date-user__reviews"><span>20 СЕНТЯБРЯ 2023</span></div>
+                                        <div class="sub-title__reviews">Алена Трофимова</div>
+                                        <div class="rating-review">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#d9d9d9"/>
+
+                                            </svg>
                                         </div>
                                     </div>
+                                    <div class="down-reviews">
+                                        <div class="description-reviews">
+                                            Рыбатекст используется дизайнерами, проектировщиками и
+                                            фронтендерами, когда нужно быстро заполнить макеты или
+                                            прототипы содержимым. Рыбатекст используется
+                                            дизайнерами, проектировщиками и фронтендерами, когда
+                                            нужно быстро заполнить макеты или прототипы содержимым.
+                                            Фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым.
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="info-reviews">
+                                    <div class="up-reviews">
+                                        <div class="user__reviews__img"><img src="" alt=""></div>
+                                        <div class="date-user__reviews"><span>20 СЕНТЯБРЯ 2023</span></div>
+                                        <div class="sub-title__reviews">Алена Трофимова</div>
+                                        <div class="rating-review">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#d9d9d9"/>
+
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="down-reviews">
+                                        <div class="description-reviews">
+                                            Рыбатекст используется дизайнерами, проектировщиками и
+                                            фронтендерами, когда нужно быстро заполнить макеты или
+                                            прототипы содержимым. Рыбатекст используется
+                                            дизайнерами, проектировщиками и фронтендерами, когда
+                                            нужно быстро заполнить макеты или прототипы содержимым.
+                                            Фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым.
+                                        </div>
+                                    </div>
+
                                 </div>
 
 
@@ -337,7 +428,47 @@
                                             </div>
                                         </div>
 
+                            </div>
+                            <div class="col">
+                                <div class="info-reviews">
+                                    <div class="up-reviews">
+                                        <div class="user__reviews__img"><img src="" alt=""></div>
+                                        <div class="date-user__reviews"><span>20 СЕНТЯБРЯ 2023</span></div>
+                                        <div class="sub-title__reviews">Алена Трофимова</div>
+                                        <div class="rating-review">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#d9d9d9"/>
+
+                                            </svg>
+                                        </div>
                                     </div>
+                                    <div class="down-reviews">
+                                        <div class="description-reviews">
+                                            Рыбатекст используется дизайнерами, проектировщиками и
+                                            фронтендерами, когда нужно быстро заполнить макеты или
+                                            прототипы содержимым. Рыбатекст используется
+                                            дизайнерами, проектировщиками и фронтендерами, когда
+                                            нужно быстро заполнить макеты или прототипы содержимым.
+                                            Фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым.
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -355,6 +486,54 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 
+                            </div>
+                            <div class="col">
+                                <div class="info-reviews">
+                                    <div class="up-reviews">
+                                        <div class="user__reviews__img"><img src="" alt=""></div>
+                                        <div class="date-user__reviews"><span>20 СЕНТЯБРЯ 2023</span></div>
+                                        <div class="sub-title__reviews">Алена Трофимова</div>
+                                        <div class="rating-review">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#ffd700"/>
+
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                                <path d="M12 0L14.6803 8.31088L23.4127 8.2918L16.3368 13.4091L19.0534 21.7082L12 16.56L4.94658 21.7082L7.66318 13.4091L0.587322 8.2918L9.3197 8.31088L12 0Z" fill="#d9d9d9"/>
+
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="down-reviews">
+                                        <div class="description-reviews">
+                                            Рыбатекст используется дизайнерами, проектировщиками и
+                                            фронтендерами, когда нужно быстро заполнить макеты или
+                                            прототипы содержимым. Рыбатекст используется
+                                            дизайнерами, проектировщиками и фронтендерами, когда
+                                            нужно быстро заполнить макеты или прототипы содержимым.
+                                            Фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым.
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+            </div>
 
                 </div>
             </div>
