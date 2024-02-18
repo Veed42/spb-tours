@@ -2,8 +2,7 @@
     <div class="container-default">
         <div class="header__logo">
             <a href="/" class="header__logo-link">
-                <!-- <img src="" alt="logo" class="header__logo-pic">  -->
-                <h1 class="header__logo--letter">SPeterburg</h1>
+                <img src="{{asset('/public/storage/img/logo-site.svg')}}" alt="logo" class="header__logo header__logo-pic">
             </a>
         </div>
         <nav class="header__nav">
@@ -35,6 +34,20 @@
         <ol class="header__body--ol-list">
             @guest
                 <li class="header__item">
+                    <a href="{{route('login')}}" class="header__link">Войти</a>
+                </li>
+                @if (Route::has('register'))
+                    <li class="header__item">
+                        <a href="{{route('register')}}" class="header__link">Зарегистрироваться</a>
+                    </li>
+                @endif
+            @else
+{{--                <li class="header__item">--}}
+{{--                    <a class="header__link"--}}
+{{--                       href="{{route('index')}}"--}}
+{{--                    >Личный кабинет--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                     <a href="{{route('user.login')}}" class="header__link">Войти</a>
                 </li>
                 @if (Route::has('user.register'))
@@ -44,13 +57,7 @@
                 @endif
             @else
                 <li class="header__item">
-                    <a class="header__link"
-                       href="{{route('user.index')}}"
-                    >Личный кабинет
-                    </a>
-                </li>
-                <li class="header__item">
-                    <a href="{{route('user.logout')}}"
+                    <a href="{{route('logout')}}"
                        class="header__link"
                        onclick="
                         document.getElementById('logout-form').submit();"
@@ -60,6 +67,7 @@
 
                 <form
                     id="logout-form"
+                    action="{{ route('logout') }}"
                     action="{{ route('user.logout') }}"
                     method="post"
                     style="display: none;"

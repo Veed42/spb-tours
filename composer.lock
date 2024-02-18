@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0916371ad6944219d713280facc6746",
+    "content-hash": "813e58a2aa30f6ea553fcb05d2845151",
     "packages": [
         {
             "name": "brick/math",
@@ -1043,8 +1043,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-03T19:50:20+00:00"
-        },
+            
         {
             "name": "laravel/framework",
             "version": "v10.43.0",
