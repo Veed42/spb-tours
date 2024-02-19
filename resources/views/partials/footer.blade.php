@@ -46,12 +46,6 @@
                 @endif
             @else
                 <li class="footer__item">
-                    <a class="footer__link"
-                       href="{{route('user.index')}}"
-                    >Личный кабинет
-                    </a>
-                </li>
-                <li class="footer__item">
                     <a href="{{route('logout')}}"
                        class="footer__link"
                        onclick="

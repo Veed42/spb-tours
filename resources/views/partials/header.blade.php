@@ -1,4 +1,4 @@
-    <header class="header">
+<header class="header">
     <div class="container-default">
         <div class="header__logo">
             <a href="/" class="header__logo-link">
@@ -42,20 +42,6 @@
                     </li>
                 @endif
             @else
-{{--                <li class="header__item">--}}
-{{--                    <a class="header__link"--}}
-{{--                       href="{{route('index')}}"--}}
-{{--                    >Личный кабинет--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-                    <a href="{{route('user.login')}}" class="header__link">Войти</a>
-                </li>
-                @if (Route::has('user.register'))
-                    <li class="header__item">
-                        <a href="{{route('user.register')}}" class="header__link">Зарегистрироваться</a>
-                    </li>
-                @endif
-            @else
                 <li class="header__item">
                     <a href="{{route('logout')}}"
                        class="header__link"
@@ -68,7 +54,6 @@
                 <form
                     id="logout-form"
                     action="{{ route('logout') }}"
-                    action="{{ route('user.logout') }}"
                     method="post"
                     style="display: none;"
                 >
@@ -79,5 +64,4 @@
     </div>
 
 
-    </header>
-
+</header>
