@@ -4,6 +4,11 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import {init} from "debug";
 
+import.meta.glob([
+    '../images/**',
+    '../fonts/**',
+])
+
 
 
 $(window).scroll(function() {
