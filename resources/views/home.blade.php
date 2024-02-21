@@ -53,7 +53,7 @@
                     <div class="cols__company--info">
                         <div class="col">
                             <div class="img__company--info">
-                                <img src="{{asset('/storage/app/public/img/company-info/map-review-icon.png')}}" alt="icons" class="img__info">
+                                <img src="{{Vite::asset('resources/img/company-info/map-review-icon.png')}}" alt="icons" class="img__info">
                             </div>
                             <div class="info__company">
                                 <h4 class="subtitle__company--info">
@@ -68,7 +68,7 @@
 
                         <div class="col">
                             <div class="img__company--info">
-                                <img src="{{asset('/storage/app/public/img/company-info/competitive-prices-icon.png')}}" alt="icons" class="img__info">
+                                <img src="{{Vite::asset('resources/img/company-info/competitive-prices-icon.png')}}" alt="icons" class="img__info">
                             </div>
                             <div class="info__company">
                                 <h4 class="subtitle__company--info">
@@ -82,7 +82,7 @@
 
                         <div class="col">
                             <div class="img__company--info">
-                                <img src="{{asset('/storage/app/public/img/company-info/reservation-icon.png')}}" alt="icons" class="img__info">
+                                <img src="{{Vite::asset('resources/img/company-info/reservation-icon.png')}}" alt="icons" class="img__info">
                             </div>
                             <div class="info__company">
                                 <h4 class="subtitle__company--info">
@@ -96,7 +96,7 @@
 
                         <div class="col">
                             <div class="img__company--info">
-                                <img src="{{asset('/storage/app/public/img/company-info/review-icon.png')}}" alt="icons" class="img__info">
+                                <img src="{{Vite::asset('resources/img/company-info/review-icon.png')}}" alt="icons" class="img__info">
                             </div>
                             <div class="info__company">
                                 <h4 class="subtitle__company--info">
@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-
+{{--excursions block--}}
             <div class="excursions">
                     <div class="container-default">
                         <div class="inner__excursions">
@@ -139,13 +139,13 @@
                                 <div class="contacts__phone"><p>+ 7(987) 345 92 61</p> <p>+ 7(987) 768 98 45</p></div>
                                 <div class="contacts__social">
                                     <a href="" class="vk__icon">
-                                        <img src="{{asset('/storage/app/public/img/icons/icon-vk.jpeg')}}" class="img__social"  alt="">
+                                        <img src="{{Vite::asset('resources/img/icons/icon-vk.jpeg')}}" class="img__social"  alt="">
                                     </a>
                                     <a href="" class="whatsapp__icon">
-                                        <img src="{{asset('/storage/app/public/img/icons/icon-whatsapp.jpeg')}}" class="img__social"  alt="">
+                                        <img src="{{Vite::asset('resources/img/icons/icon-whatsapp.jpeg')}}" class="img__social"  alt="">
                                     </a>
                                     <a href="" class="mail__icon">
-                                        <img src="{{asset('/storage/app/public/img/icons/icon-mail.jpeg')}}" class="img__social"  alt="">
+                                        <img src="{{Vite::asset('resources/img/icons/icon-mail.jpeg')}}" class="img__social"  alt="">
                                     </a>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                                 <div class="info-reviews">
                                     <div class="up-reviews">
                                         <div class="left-reviews">
-                                            <div class="user__reviews__img"><img class="round" crossorigin="" src="{{asset('/storage/app/public/img/reviews-img/img-reviews.png')}}" alt="" ></div>
+                                            <div class="user__reviews__img"><img  crossorigin="" src="{{Vite::asset('resources/img/reviews-img/img-reviews.png')}}" alt="" ></div>
                                             <div class="info-user__reviews">
                                                 <div class="date-user__reviews"><span>20 СЕНТЯБРЯ 2023</span></div>
                                                 <div class="sub-title__reviews">Алена Трофимова</div>
@@ -213,7 +213,7 @@
                                 <div class="info-reviews">
                                     <div class="up-reviews">
                                         <div class="left-reviews">
-                                            <div class="user__reviews__img"><img src="{{asset('/storage/app/public/img/reviews-img/img-reviews-2.png')}}" alt=""></div>
+                                            <div class="user__reviews__img"><img src="{{Vite::asset('resources/img/reviews-img/img-reviews-2.png')}}" alt=""></div>
                                             <div>
                                                 <div class="date-user__reviews"><span>1 НОЯБРЯ 2023</span></div>
                                                 <div class="sub-title__reviews">Алексей Филин</div>
@@ -258,7 +258,7 @@
                                 <div class="info-reviews">
                                     <div class="up-reviews">
                                         <div class="left-reviews">
-                                            <div class="user__reviews__img"><img class="round" crossorigin="" src="{{asset('/storage/app/public/img/reviews-img/img-reviews.png')}}" alt="" ></div>
+                                            <div class="user__reviews__img"><img class="round" crossorigin="" src="{{Vite::asset('resources/img/reviews-img/img-reviews.png')}}" alt="" ></div>
                                             <div class="info-user__reviews">
                                                 <div class="date-user__reviews"><span>20 СЕНТЯБРЯ 2023</span></div>
                                                 <div class="sub-title__reviews">Алена Трофимова</div>
@@ -301,7 +301,7 @@
                                 <div class="info-reviews">
                                     <div class="up-reviews">
                                         <div class="left-reviews">
-                                            <div class="user__reviews__img"><img src="{{asset('/storage/app/public/img/reviews-img/img-reviews-2.png')}}" alt=""></div>
+                                            <div class="user__reviews__img"><img src="{{Vite::asset('resources/img/reviews-img/img-reviews-2.png')}}" alt=""></div>
                                             <div>
                                                 <div class="date-user__reviews"><span>1 НОЯБРЯ 2023</span></div>
                                                 <div class="sub-title__reviews">Алексей Филин</div>
