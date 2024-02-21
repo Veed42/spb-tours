@@ -12,7 +12,7 @@
                 <div class="card-header-up">
                     <div class="item-header-up container-logo">
                         <a class="link-logo" href="">
-                            <img src="{{asset('storage/app/public/img/logo-site.svg')}}">
+                            <img src="{{Vite::asset('resources/img/logo-site.svg')}}">
                         </a>
                     </div>
                     <div class="item-header-up">

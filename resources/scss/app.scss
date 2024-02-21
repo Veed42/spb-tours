@@ -16,9 +16,12 @@ html, body {
     margin: 0 auto;
 }
 
+img{
+    object-fit: contain;
+}
+
 .container-v100{
     height: 100vh;
-
     padding: 80px 150px;
 }
 
@@ -37,6 +40,7 @@ html, body {
 }
 
 //header
+
 
 
 
@@ -154,7 +158,7 @@ header.fixed {
 
 .intro{
     height: 100vh;
-    background-image:url('/public/storage/img/m_main-intro.jpg');
+    background-image:url('../img/m_main-intro.jpg');
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -218,7 +222,7 @@ header.fixed {
             }
 
             .search-input{
-                background-image: url('/public/storage/img/icons/search-icon.jpeg');
+                background-image: url('../img/icons/search-icon.jpeg');
                 background-repeat:no-repeat ;
                 background-size: 40px 40px;
                 background-position: 5% 40%;
@@ -448,11 +452,11 @@ header.fixed {
                     .user__reviews__img{
                         width: 100px;
                        img{
-                           width: 100px;
-                           height: 100px;
+                           width: 100%;
+                           height: 100%;
                            border-radius: 50%;
-                            text-align: center;
-                           object-fit: cover;
+                           text-align: center;
+
                        }
 
 
@@ -556,6 +560,21 @@ header.fixed {
 
 
     }
+
+.container-ath{
+    background: url('../img/m_main-intro.jpg');
+    .front-intro{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        opacity: 0.7;
+    }
+}
 
 //auth
 .card-container{

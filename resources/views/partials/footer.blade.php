@@ -2,7 +2,7 @@
     <div class="footer__col">
         <div class="footer-logo">
             <a href="/" class="footer__logo-link">
-                <img src="/public/storage/img/logo-site.svg" alt="">
+                <img src="{{Vite::asset('resources/img/logo-site.svg')}}" alt="">
             </a>
         </div>
         <p class="footer__sub-title">
