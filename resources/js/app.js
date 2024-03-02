@@ -5,9 +5,11 @@ import 'swiper/css/bundle';
 import {init} from "debug";
 
 
+
+//подгрузка статики с помощью Vite:: ищет в папке img все статические фотки , если не статическеи то будут идти в storage
 import.meta.glob([
-    '../images/**',
-    '../fonts/**',
+    '../img/**',
+    // '../fonts/**',
 ])
 
 
@@ -92,40 +94,7 @@ const swiper = new Swiper('.swiper', {
 
 });
 
-$('.slider').slick({
-    dots: true,
-    speed: 200,
-    slidesToShow: 2,
-    arrows:true,
-    slidesToScroll: 2,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        },
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-    ]});
+
 
 
 

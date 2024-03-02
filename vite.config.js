@@ -6,13 +6,17 @@ export default defineConfig({
 build:{
     minify:false,
     outDir:'public/build',
+    assetsInlineLimit:0,
     },
 plugins:[
     laravel({
         input:['resources/css/app.css',
                 'resources/js/app.js',
-                'resources/scss/app.scss'
+                'resources/js/map.js',
+                'resources/scss/app.scss',
+
         ],
+
         refresh:true,
 
     })

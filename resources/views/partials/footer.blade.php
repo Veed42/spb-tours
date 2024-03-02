@@ -12,7 +12,7 @@
     <div class="footer__col footer-col__2">
         <ul class="footer__list">
             <li class="footer__item">
-                <a href="" class="footer__link">О компании</a>
+                <a href="" class="footer__link">Преимущества</a>
             </li>
 
             <li class="footer__item">

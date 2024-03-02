@@ -8,7 +8,7 @@
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__item">
-                    <a href="" class="header__link">О компании</a>
+                    <a href="" class="header__link">Преимущества</a>
                 </li>
 
                 <li class="header__item">
