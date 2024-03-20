@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tour;
 
-use App\Models\Tour;
+use App\Http\Controllers\Controller;
+use App\Models\Tour\Tour;
 use Illuminate\Http\Request;
 
 class TourController extends Controller

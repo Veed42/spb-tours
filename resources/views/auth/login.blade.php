@@ -1,6 +1,6 @@
 @extends('layout.auth-layout')
 
-@section('tittle', 'Login page')
+@section('title', 'Login page')
 
 @section('content')
 <div class="container-v100">

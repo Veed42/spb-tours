@@ -190,7 +190,7 @@ header.fixed {
                 font-size:$fs-3xl;
                 font-weight: 300;color: $white;
             }
-        .tittle__intro{
+        .title__intro{
             color: $white;
             font-size: $fs-large-main;
             text-transform: uppercase;
@@ -257,7 +257,7 @@ header.fixed {
     padding: 150px 0;
     background-size: cover;
     background-repeat: no-repeat;
-    .tittle__company{
+    .title__company{
         text-align: center;
         font-weight: 700;
         font-size: $fs-xls;
@@ -287,6 +287,69 @@ header.fixed {
     }
 }
 
+.guides{
+    .inner__guides{
+        padding: 150px 0 0 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .title__guides{
+            text-align: center;
+            font-weight: 700;
+            font-size: $fs-xls;
+            margin-bottom: 80px;
+        }
+
+        .cols__guides{
+
+            .col-guids{
+                display: flex;
+                margin-bottom: 60px;
+
+
+                .img_guid-container{
+                    width: 358px;
+                    height: 230px;
+                    margin-right: 89px;
+                    background: #D9D9D9;
+                }
+                .guid-title-container{
+                    margin-bottom: 36px;
+                    margin-top: 37px;
+                    .guid-title{
+                        font-size: 28px;
+                        font-weight: 600;
+                    }
+
+                }
+                .description-guid{
+                    font-size: 22px;
+                    margin-bottom: 39px;
+                    .quality-guid{
+                        width: 100%;
+                        padding-bottom: 37px;
+                        span{
+                           margin-right: 60px;
+                            color:$accent-two
+                        }
+
+                        .list-guid-quality{
+                            display: flex;
+                            flex-wrap: wrap;
+
+
+                        }
+                    }
+                    .bold-guid{
+                        font-weight: bold;
+                        margin-right: 40px;
+                    }
+                    .list-guid-quality{
+                    }
+                }
+            }
+        }
+    }
+}
 
 //excursions block
 .excursions{
@@ -504,7 +567,6 @@ header.fixed {
 .footer{
     color: black;
     background: #F3F3F3;
-    margin-bottom:98px ;
     padding: $spacer-ftr;
     display: flex;
     align-items: center;

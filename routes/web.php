@@ -17,7 +17,7 @@ Route::get('/',function (){
 })->name('home');
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::post('login',[LoginController::class,'index'])->name('login');
+Route::post('/login','Auth\LoginController@login');
 
 
 // Clear application cache:
@@ -58,7 +58,6 @@ Route::group([
     'middleware' => ['auth', 'disable_back'] // один или несколько посредников
 ], function () {
     // главная страница личного кабинета пользователя
-    Route::get('index', 'UserController@index')->name('index');
     // CRUD-операции над профилями пользователя
     // просмотр списка заказов в личном кабинете
 //    Route::get('order', 'OrderController@index')->name('order.index');

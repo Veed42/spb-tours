@@ -14,6 +14,9 @@
             <li class="footer__item">
                 <a href="" class="footer__link">Преимущества</a>
             </li>
+            <li class="header__item">
+                <a href="" class="header__link">Наши гиды</a>
+            </li>
 
             <li class="footer__item">
                 <a href="" class="footer__link">Экскурсии</a>

@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('tittle', 'Home page')
+@section('title', 'Home page')
 
 
 @section('content')
@@ -11,7 +11,7 @@
                     <p class="description__into">
                         Окунись в мир архитектуры и истории города
                     </p>
-                    <h1 class="tittle__intro">
+                    <h1 class="title__intro">
                         культурный туризм <br>по Санкт-Петербургу
 
                     </h1>
@@ -34,20 +34,15 @@
 
                         </form>
                     </div>
-
                 </div>
         </div>
-
-
-
-
-        </div>
+    </div>
 
         <div class="company">
             <div class="container-default">
 
                 <div class="inner__company">
-                    <h1 class="tittle__company uppercase">
+                    <h1 class="title__company uppercase">
                         Преимущества
                     </h1>
                     <div class="cols__company--info">
@@ -111,6 +106,204 @@
                 </div>
             </div>
         </div>
+
+{{--    --}}
+    <div class="guides">
+        <div class="container-default">
+
+            <div class="inner__guides">
+                <h1 class="title__guides uppercase">
+                    Гиды
+                </h1>
+                <div class="cols__guides">
+                    <div class="col-guids">
+                        <div class="img_guid-container">
+                            img
+                        </div>
+                        <div class="description-guid">
+                            <div class="guid-title-container">
+                                <h3 class="guid-title">Шульгина Кира</h3>
+                            </div>
+
+                            <div class="experience-guid">
+                                <div class="img-icon">
+
+                                </div>
+                                Опыт работы: <strong> 3 года</strong>
+                            </div>
+                            <div class="quality-guid">
+                                <strong class="bold-guid">Качества гида:      </strong>
+
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <br>
+                                <span>
+                                    Харизматичность
+                                </span>
+
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <span>
+                                    Харизматичность
+                                </span>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-guids">
+                        <div class="img_guid-container">
+                            img
+                        </div>
+                        <div class="description-guid">
+                            <div class="guid-title-container">
+                                <h3 class="guid-title">Шульгина Кира</h3>
+                            </div>
+
+                            <div class="experience-guid">
+                                <div class="img-icon">
+
+                                </div>
+                                Опыт работы: <strong> 3 года</strong>
+                            </div>
+                            <div class="quality-guid">
+                                <strong class="bold-guid">Качества гида:      </strong>
+
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <br>
+                                <span>
+                                    Харизматичность
+                                </span>
+
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <span>
+                                    Харизматичность
+                                </span>
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+                            </div>
+
+
+                    <div class="col-guids">
+                        <div class="img_guid-container">
+                            img
+                        </div>
+                        <div class="description-guid">
+                            <div class="guid-title-container">
+                                <h3 class="guid-title">Шульгина Кира</h3>
+                            </div>
+
+                            <div class="experience-guid">
+                                <div class="img-icon">
+
+                                </div>
+                                Опыт работы: <strong> 3 года</strong>
+                            </div>
+                            <div class="quality-guid">
+                                <strong class="bold-guid">Качества гида:      </strong>
+
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <br>
+                                <span>
+                                    Харизматичность
+                                </span>
+
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <span>
+                                    Харизматичность
+                                </span>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-guids">
+                        <div class="img_guid-container">
+                            img
+                        </div>
+                        <div class="description-guid">
+                            <div class="guid-title-container">
+                                <h3 class="guid-title">Шульгина Кира</h3>
+                            </div>
+
+                            <div class="experience-guid">
+                                <div class="img-icon">
+
+                                </div>
+                                Опыт работы: <strong> 3 года</strong>
+                            </div>
+                            <div class="quality-guid">
+                                <strong class="bold-guid">Качества гида:      </strong>
+
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <br>
+                                <span>
+                                    Харизматичность
+                                </span>
+
+                                <span>
+                                    Харизматичность
+                                </span>
+                                <span>
+                                    Харизматичность
+                                </span>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 {{--excursions block--}}
             <div class="excursions">
                     <div class="container-default">
@@ -119,10 +312,12 @@
                                 Экскурсии
                             </h1>
                             <div class="panel-body">
-                                <ul class="category-list">
-                                    <li><a href="">Актуальные</a></li>
-                                    <li><a href="">Неактуальные</a></li>
-                                </ul>
+                                <form action="">
+                                    <input type="checkbox" value="Все">
+                                </form>
+                            </div>
+                            <div class="tours-container">
+
                             </div>
                         </div>
                     </div>
@@ -134,8 +329,7 @@
                         <h1 class="title__contacts uppercase">Контакты</h1>
                         <div class="content__contacts">
                             <div class="description__contacts">
-                                <div class="contacts__address"> <p>Российская Федерация, г. Москва,дом <br>54Б, 2 этаж, корпус 6, туристическое
-                                        <br> агентство “TravelRussia”</p></div>
+                                <div class="contacts__address"> <p>Российская Федерация, г. Москва, ул Лужники, дом 54Б, 2 этаж, корпус 6, туристическое агентство “TravelRussia</p></div>
                                 <div class="contacts__phone"><p>+ 7(987) 345 92 61</p> <p>+ 7(987) 768 98 45</p></div>
                                 <div class="contacts__social">
                                     <a href="" class="vk__icon">
@@ -246,7 +440,7 @@
                                     <div class="down-reviews">
                                         <div class="description-reviews">
                                             Не ожидал, что этот город западет мне в душу. Явно больше 4 дней надо брать для путешествий! Не все успеешь
-                                            <br> посмотреть!
+                                            посмотреть!
                                         </div>
                                     </div>
 
@@ -334,7 +528,7 @@
                                     <div class="down-reviews">
                                         <div class="description-reviews">
                                             Не ожидал, что этот город западет мне в душу. Явно больше 4 дней надо брать для путешествий! Не все успеешь
-                                            <br> посмотреть!
+                                            посмотреть!
                                         </div>
                                     </div>
 
