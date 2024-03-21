@@ -127,7 +127,7 @@
 
                             <div class="experience-guid">
                                 <div class="img-icon">
-
+                                    <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
                                 </div>
                                 Опыт работы: <strong> 3 года</strong>
                             </div>
@@ -171,7 +171,7 @@
 
                             <div class="experience-guid">
                                 <div class="img-icon">
-
+                                    <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
                                 </div>
                                 Опыт работы: <strong> 3 года</strong>
                             </div>
@@ -195,21 +195,9 @@
                                 <span>
                                     Харизматичность
                                 </span>
-
-
-
-
                             </div>
-
-
-
                         </div>
-
-
-
-
-
-                            </div>
+                    </div>
 
 
                     <div class="col-guids">
@@ -223,7 +211,7 @@
 
                             <div class="experience-guid">
                                 <div class="img-icon">
-
+                                    <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
                                 </div>
                                 Опыт работы: <strong> 3 года</strong>
                             </div>
@@ -266,7 +254,7 @@
 
                             <div class="experience-guid">
                                 <div class="img-icon">
-
+                                    <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
                                 </div>
                                 Опыт работы: <strong> 3 года</strong>
                             </div>
