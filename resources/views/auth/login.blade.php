@@ -33,7 +33,7 @@
                                            placeholder="Номер телефона"
                                            required autocomplete="phone" autofocus>
 
-                                    @error('tel')
+                                    @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

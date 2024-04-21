@@ -54,11 +54,10 @@ class LoginController extends Controller
         $credentials = $request->only(['phone', 'password']);
         if (Auth::attempt($credentials)) {
             $user = auth()->user();
-
-            if ($user->role === 'admin') {
-                return redirect(route('admin.index'));
+            if ($user->role == 'admin') {
+                return redirect(route('admin'));
             } else {
-                return redirect(route('home'));
+                return redirect(route('/'));
             }
 
         }

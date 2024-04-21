@@ -1,4 +1,4 @@
-import './bootstrap';
+import './bootstrap.js';
 
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';

@@ -1,6 +1,5 @@
 @extends('layout.layout')
 
-@section('title', 'Home page')
 
 
 @section('content')
@@ -118,7 +117,7 @@
                 <div class="cols__guides">
                     <div class="col-guids">
                         <div class="img_guid-container">
-                            img
+                            <img src="{{Vite::asset('resources/img/guids/1.jfif')}}">
                         </div>
                         <div class="description-guid">
                             <div class="guid-title-container">
@@ -162,7 +161,7 @@
 
                     <div class="col-guids">
                         <div class="img_guid-container">
-                            img
+                            <img src="{{Vite::asset('resources/img/guids/2.jpg')}}" alt="">
                         </div>
                         <div class="description-guid">
                             <div class="guid-title-container">
@@ -202,7 +201,8 @@
 
                     <div class="col-guids">
                         <div class="img_guid-container">
-                            img
+                            <img src="{{Vite::asset('resources/img/guids/3.jpg')}}" alt="">
+
                         </div>
                         <div class="description-guid">
                             <div class="guid-title-container">
@@ -245,7 +245,8 @@
 
                     <div class="col-guids">
                         <div class="img_guid-container">
-                            img
+                            <img src="{{Vite::asset('resources/img/guids/4.jpeg')}}" alt="">
+
                         </div>
                         <div class="description-guid">
                             <div class="guid-title-container">

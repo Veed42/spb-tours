@@ -1,23 +1,63 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController as LoginController;
-use App\Http\Controllers\Auth\RegisterController ;
+use App\Http\Controllers\Admin\Category\CreateController;
+use App\Http\Controllers\Admin\Category\DeleteController;
+use App\Http\Controllers\Admin\Category\EditController;
+use App\Http\Controllers\Admin\Category\IndexController;
+use App\Http\Controllers\Admin\Category\ShowController;
+use App\Http\Controllers\Admin\Category\StoreController;
+use App\Http\Controllers\Admin\Category\UpdateController;
+
+use App\Http\Controllers\Admin\Tour;
+
+
+use App\Http\Controllers\Admin\Main\AdminController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Main\HomeController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('home');
+Route::group(['namespace' => 'Main'], function (){
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 });
 
-Route::redirect('/home', '/');
-Route::get('/',function (){
-    return view('home');
-})->name('home');
+Route::group(['namespace' => 'Admin','prefix' => 'admin', 'middleware' => 'auth'], function(){
+    Route::group(['namespace' => 'Main'], function (){
+        Route::get('/', [AdminController::class,'__invoke'])->name('admin');
+    });
+
+    Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function (){
+       Route::get('/', [IndexController::class, 'index'])->name('admin.category.index');
+       Route::get('/create', [CreateController::class, '__invoke'])->name('admin.category.create');
+       Route::post('/store', [StoreController::class, '__invoke'])->name('admin.category.store');
+       Route::get('/{category}', [ShowController::class, '__invoke'])->name('admin.category.show');
+       Route::get('/{category}/edit', [EditController::class, '__invoke'])->name('admin.category.edit');
+       Route::patch('/{category}', [UpdateController::class, '__invoke'])->name('admin.category.update');
+       Route::delete('/{category}', [DeleteController::class, '__invoke'])->name('admin.category.delete');
+
+//       Route::get('/', 'CreateController@index')->name('category.create');
+    });
+    Route::group(['namespace' => 'Tour', 'prefix' => 'tours'], function (){
+
+        Route::get('/', [Tour\IndexController::class,'index'])->name('admin.tour.index');
+        Route::get('/create', [Tour\CreateController::class,'__invoke'])->name('admin.tour.create');
+        Route::post('/store', [Tour\StoreController::class,'__invoke'])->name('admin.tour.store');
+        Route::get('/{tour}', [Tour\ShowController::class,'__invoke'])->name('admin.tour.show');
+        Route::get('/{tour}/edit', [Tour\EditController::class,'__invoke'])->name('admin.tour.edit');
+        Route::patch('/{tour}', [Tour\UpdateController::class,'__invoke'])->name('admin.tour.update');
+        Route::delete('/{tour}', [Tour\DeleteController::class,'__invoke'])->name('admin.tour.delete');
+
+
+//       Route::get('/', 'CreateController@index')->name('category.create');
+    });
+});
+
+
 Auth::routes();
-Route::get('/logout', 'Auth\LoginController@logout');
-Route::post('/login','Auth\LoginController@login');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('/login', [LoginController::class, 'index'])->name('login');
 
 
 // Clear application cache:
@@ -53,19 +93,6 @@ Route::get('/view-clear', function() {
 //});
 
 
-Route::group([
-    'as' => 'user.', // имя маршрута, например user.index
-    'middleware' => ['auth', 'disable_back'] // один или несколько посредников
-], function () {
-    // главная страница личного кабинета пользователя
-    // CRUD-операции над профилями пользователя
-    // просмотр списка заказов в личном кабинете
-//    Route::get('order', 'OrderController@index')->name('order.index');
-    // просмотр отдельного заказа в личном кабинете
-//    Route::get('order/{order}', 'OrderController@show')->name('order.show');
-// do middleware
-
-});
 
 
 
