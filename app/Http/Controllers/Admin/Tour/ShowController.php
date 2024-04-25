@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Tour;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Tour\Tour;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -23,9 +24,9 @@ class ShowController extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Tour $tour)
+    public function __invoke(Tour $tour, Category $category)
     {
-        $tours = Tour::all();
-        return view('admin.tour.show', compact('tour'));
+        $categories = Category::all();
+        return view('admin.tour.show', compact('tour','categories'));
     }
 }

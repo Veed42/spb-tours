@@ -16,8 +16,8 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        $data['preview_image'] = Storage::put('/images',$data['preview_image']);
-        $data['main_image'] = Storage::put('/images',$data['main_image']);
+        $data['preview_image'] = Storage::disk('public')->put('/images',$data['preview_image']);
+        $data['main_image'] = Storage::disk()->put('/images',$data['main_image']);
         Tour::firstOrcreate($data);
         return redirect()->route('admin.tour.index');
     }
