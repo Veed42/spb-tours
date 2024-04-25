@@ -7,7 +7,7 @@
 <div class="card-container">
     <div class="card-header-up">
         <div class="item-header-up container-logo">
-            <a class="link-logo" href="">
+            <a class="link-logo" href="{{route('/')}}">
                 <img src="{{Vite::asset('resources/img/logo-site.svg')}}">
             </a>
         </div>
