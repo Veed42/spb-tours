@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container-default">
         <div class="header__logo">
-            <a href="/" class="header__logo-link">
+            <a href="{{route('/')}}" class="header__logo-link">
                 <img src="{{Vite::asset('resources/img/logo-site.svg')}}" alt="logo" class="header__logo header__logo-pic">
             </a>
         </div>

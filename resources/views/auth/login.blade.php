@@ -16,7 +16,7 @@
                         </a>
                     </div>
                     <div class="item-header-up">
-                        <a href="{{route('home')}}">На главную</a>
+                        <a href="{{route('/')}}">На главную</a>
                     </div>
 
                 </div>

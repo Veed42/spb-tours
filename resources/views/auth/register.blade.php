@@ -1,7 +1,7 @@
 @extends('layout.auth-layout')
 @section('content')
 
-<div class="container-v100">
+<div class="container-v100 vh-100">
     <div class="row ">
         <div class="col-md-8">
 <div class="card-container">
@@ -12,7 +12,7 @@
             </a>
         </div>
         <div class="item-header-up">
-            <a href="{{route('home')}}">На главную</a>
+            <a href="{{route('/')}}">На главную</a>
         </div>
 
     </div>

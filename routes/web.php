@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['namespace' => 'Main'], function (){
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('/');
 });
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin', 'middleware' => 'auth'], function(){
