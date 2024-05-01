@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tours', function (Blueprint $table) {
-            $table->dropColumn('tour_program');
+            $table->bigInteger('guides_id')->unsigned();
+            $table->foreign('guides_id')->references('id')->on('guides');
         });
     }
 
@@ -22,7 +23,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('tours', function (Blueprint $table) {
-            $table->string('tour_program');
+            $table->dropForeign('tours_guides_id_foreign');
+            $table->dropIndex('tours_guides_id_foreign');
+            $table->dropColumn('guides_id');
+//вот так выполняется удаление FK
         });
     }
 };

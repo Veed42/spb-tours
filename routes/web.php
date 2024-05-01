@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Category\StoreController;
 use App\Http\Controllers\Admin\Category\UpdateController;
 
 use App\Http\Controllers\Admin\Tour;
+use App\Http\Controllers\Admin\Guid;
 
 
 use App\Http\Controllers\Admin\Main\AdminController;
@@ -48,6 +49,20 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin', 'middleware' => 'auth'
         Route::get('/{tour}/edit', [Tour\EditController::class,'__invoke'])->name('admin.tour.edit');
         Route::patch('/{tour}', [Tour\UpdateController::class,'__invoke'])->name('admin.tour.update');
         Route::delete('/{tour}', [Tour\DeleteController::class,'__invoke'])->name('admin.tour.delete');
+
+
+//       Route::get('/', 'CreateController@index')->name('category.create');
+    });
+
+    Route::group(['namespace' => 'Guid', 'prefix' => 'guides'], function (){
+
+        Route::get('/', [Guid\IndexController::class,'index'])->name('admin.guid.index');
+        Route::get('/create', [Guid\CreateController::class,'__invoke'])->name('admin.guid.create');
+        Route::post('/store', [Guid\StoreController::class,'__invoke'])->name('admin.guid.store');
+        Route::get('/{guid}', [Guid\ShowController::class,'__invoke'])->name('admin.guid.show');
+        Route::get('/{guid}/edit', [Guid\EditController::class,'__invoke'])->name('admin.guid.edit');
+        Route::patch('/{guid}', [Guid\UpdateController::class,'__invoke'])->name('admin.guid.update');
+        Route::delete('/{guid}', [Guid\DeleteController::class,'__invoke'])->name('admin.guid.delete');
 
 
 //       Route::get('/', 'CreateController@index')->name('category.create');

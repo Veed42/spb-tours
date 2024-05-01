@@ -23,6 +23,11 @@ class Tour extends Model
         return $this->hasMany('App\Models\Category','category_id', 'id');
     }
 
+    public function guid(){
+        return $this->belongsTo('App\Models\Guid','id', 'tour_id');
+    }
+
+
     protected $fillable = [
             'title',
             'price',
