@@ -14,9 +14,11 @@ class Guid extends Model
     protected $guarded = false;
 
 
+
+
     public function tour()
     {
-        return $this->hasOne('App\Models\Tour\Tour', 'guides_id', 'id');
+        return $this->belongsTo('App\Models\Tour\Tour', 'tour_id', 'id');
     }
 
     protected $fillable = [

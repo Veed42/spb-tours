@@ -300,14 +300,56 @@
                             <h1 class="title__excursions uppercase">
                                 Экскурсии
                             </h1>
-                            <div class="panel-body">
-                                <form action="">
-                                    <input type="checkbox" value="Все">
+                            <div class="panel-body ">
+                                <form action="" class="d-inline-flex">
+                                    <div class="container-category" style="display: flex; ">
+                                        <div class="form-group all">
+                                            <input name="all" type="checkbox" value="Все" class="checkbox">
+                                            <label for="all">Все</label>
+                                        </div>
+                                        <div class="form-group category2">
+                                            <input name="all" type="checkbox" value="Все" class="checkbox">
+                                            <label for="all">Индивидуальные</label>
+                                        </div>
+                                        <div class="form-group category3">
+                                            <input name="all" type="checkbox" value="Все" class="checkbox">
+                                            <label for="all">Групповые</label>
+                                        </div>
+                                    </div>
+
+
                                 </form>
                             </div>
-                            <div class="tours-container">
+                            <div class="d-grid tours-container" style="display: grid">
+                                <div class="tours-container" style="display: flex">
+                                    @foreach($tours as $tour)
 
+                                        <div class="card " >
+                                            <div class="img-card"
+                                                 style="background-image: url('{{ asset('storage/' . $tour->preview_image) }}');
+                                            background-repeat: no-repeat;
+                                            background-size: cover">
+{{--                                                <img src="{{asset( 'storage/' . $tour->preview_image)}}" class="card-img-top" alt="">--}}
+                                                <h3 >{{$tour->category->title}}</h3><h5 style="font-weight: bold" class="card-title">{{$tour->title}}</h5>
+                                            </div>
+
+
+                                            <div class="card-body">
+                                                <h3 class="mb-5 blue font-weight-bold" style="font-weight: bold">
+                                                    {{$tour->price}}/чел
+                                                </h3>
+                                               <p class="text-body">
+                                                   {!! html_entity_decode($tour->waiting_for_programs) !!}
+
+                                               </p>
+                                                <button type="submit" class="btn-tour">Перейти к туру</button>
+                                            </div>
+
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
+
                         </div>
                     </div>
             </div>

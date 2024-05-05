@@ -26,7 +26,7 @@ class IndexController extends Controller
      */
     public function index(Tour $tour)
     {
-        $tour = Tour::all()->where('id','title');
+        $tour = Tour::all();
         $guides = Guid::all();
         return view('admin.guid.index', compact('guides', 'tour'));
     }

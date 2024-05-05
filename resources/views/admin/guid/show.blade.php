@@ -7,7 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-md-center ">
-                        <h1 class="m-0 mr-4">{{$guid->name}}</h1>
+                        <h1 class="m-0 mr-4">{{$guid->name}}
+                        {{
+    $guid->surname
+}}
+                            {{$guid->patronymic}}
+                        </h1>
                         <a href="{{route('admin.guid.edit', $guid->id)}}" class="text-success">
                             <i class="fa fa-edit "></i>
                         </a>
@@ -41,7 +46,11 @@
 
                             </h1>
                             <div class="card-body">
-                                <h5 class="card-title">{{$guid->name}}</h5>
+                                <div class="align-items-md-center">
+                                    <h5>Имя:</h5>
+                                    <h5 class="card-title">{{$guid->name}}</h5>
+                                </div>
+
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>

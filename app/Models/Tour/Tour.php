@@ -18,6 +18,10 @@ class Tour extends Model
     {
         return $this->hasOne(TourProgram::class,'tours_tour_program_id_foreign');
     }
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo('App\Models\Category', 'category_id', 'id');
+    }
     public function categories(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('App\Models\Category','category_id', 'id');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tour\Tour;
 use Illuminate\Contracts\Support\Renderable;
 
 class HomeController extends Controller
@@ -24,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $tours = Tour::all();
+        return view('home', compact('tours'));
     }
 }

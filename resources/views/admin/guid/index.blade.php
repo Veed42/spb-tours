@@ -56,7 +56,7 @@
                                             <td>{{$guid->name}}</td>
                                             <td>{{$guid->surname}}</td>
                                             <td>{{$guid->patronymic}}</td>
-                                            <td>{{$guid->tour_id}}</td>
+                                            <td>{{$guid->tour->title}}</td>
 
 
                                             <td><a href="{{route('admin.guid.show', $guid->id)}}">

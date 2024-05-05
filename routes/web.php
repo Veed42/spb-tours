@@ -24,7 +24,12 @@ Route::group(['namespace' => 'Main'], function (){
     Route::get('/', [HomeController::class, 'index'])->name('/');
 });
 
-Route::group(['namespace' => 'Admin','prefix' => 'admin', 'middleware' => 'auth'], function(){
+Route::group([
+    'middleware' => 'admin',
+    'namespace' => 'Admin',
+    'prefix' => 'admin',
+    ],
+    function(){
     Route::group(['namespace' => 'Main'], function (){
         Route::get('/', [AdminController::class,'__invoke'])->name('admin');
     });
