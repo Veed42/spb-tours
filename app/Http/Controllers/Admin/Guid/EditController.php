@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Guid;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Guid;
 use App\Models\Tour\Tour;
 use Illuminate\Contracts\Support\Renderable;
@@ -26,6 +27,7 @@ class EditController extends Controller
      */
     public function __invoke(Guid $guid)
     {
-        return view('admin.guid.edit', compact('guid'));
+        $categories = Category::all();
+        return view('admin.guid.edit', compact('guid', 'categories' ));
     }
 }

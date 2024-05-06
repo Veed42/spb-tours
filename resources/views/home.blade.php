@@ -320,34 +320,60 @@
 
                                 </form>
                             </div>
-                            <div class="d-grid tours-container" style="display: grid">
-                                <div class="tours-container" style="display: flex">
+                            <div class="tours-container" >
                                     @foreach($tours as $tour)
 
-                                        <div class="card " >
+                                        <div class="card-tour " >
                                             <div class="img-card"
                                                  style="background-image: url('{{ asset('storage/' . $tour->preview_image) }}');
                                             background-repeat: no-repeat;
                                             background-size: cover">
 {{--                                                <img src="{{asset( 'storage/' . $tour->preview_image)}}" class="card-img-top" alt="">--}}
-                                                <h3 >{{$tour->category->title}}</h3><h5 style="font-weight: bold" class="card-title">{{$tour->title}}</h5>
+                                                <div class="content-image">
+                                                    <div class="div-category">
+                                                        <h5 >{{$tour->category->title}}</h5>
+                                                    </div>
+                                                    <div class="div-group_time">
+                                                        <div class="div-begin_tour">
+                                                            <p>Начало:</p> <p>
+                                                                {{date('H:m', strtotime($tour->begin_tour))}}
+                                                            </p>
+                                                        </div>
+                                                        <div class="div-duration_tour">
+                                                            <p>
+
+                                                                {{
+        $tour->duration_tour
+        }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="div-title-tour">
+                                                    <h5 style="font-weight: bold" class="card-title">{{$tour->title}}</h5>
+                                                </div>
+
                                             </div>
 
 
                                             <div class="card-body">
-                                                <h3 class="mb-5 blue font-weight-bold" style="font-weight: bold">
+                                                <h3 class="price-title mb-5 blue font-weight-bold" style="font-weight: bold">
                                                     {{$tour->price}}/чел
                                                 </h3>
                                                <p class="text-body">
                                                    {!! html_entity_decode($tour->waiting_for_programs) !!}
 
                                                </p>
-                                                <button type="submit" class="btn-tour">Перейти к туру</button>
+                                                <div class="form-group">
+                                                    <a href="" class="btn-tour">Перейти к туру</a>
+                                                </div>
+
                                             </div>
 
                                         </div>
                                     @endforeach
-                                </div>
                             </div>
 
                         </div>

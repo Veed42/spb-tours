@@ -28,7 +28,7 @@ class Tour extends Model
     }
 
     public function guid(){
-        return $this->belongsTo('App\Models\Guid','id', 'tour_id');
+        return $this->hasMany('App\Models\Guid','id', 'tour_id');
     }
 
 
