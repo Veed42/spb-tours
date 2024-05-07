@@ -114,180 +114,36 @@
                 <h1 class="title__guides uppercase">
                     Гиды
                 </h1>
-                <div class="cols__guides">
-                    <div class="col-guids">
-                        <div class="img_guid-container">
-                            <img src="{{Vite::asset('resources/img/guids/1.jfif')}}">
-                        </div>
-                        <div class="description-guid">
-                            <div class="guid-title-container">
-                                <h3 class="guid-title">Шульгина Кира</h3>
+                @foreach($guides as $guid)
+                    <div class="cols__guides">
+                        <div class="col-guids">
+                            <div class="img_guid-container">
+                                <img src="{{'storage/' . $guid->image_guid}}">
                             </div>
+                            <div class="description-guid">
+                                <div class="guid-title-container">
+                                    <h3 class="guid-title">{{$guid->name}}</h3>
 
-                            <div class="experience-guid">
-                                <div class="img-icon">
-                                    <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
+                                    <h3 class="guid-title" style="margin-left: 30px">{{$guid->surname}}</h3>
                                 </div>
-                                Опыт работы: <strong> 3 года</strong>
-                            </div>
-                            <div class="quality-guid">
-                                <strong class="bold-guid">Качества гида:      </strong>
 
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <br>
-                                <span>
-                                    Харизматичность
-                                </span>
-
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <span>
-                                    Харизматичность
-                                </span>
-
-
-
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-guids">
-                        <div class="img_guid-container">
-                            <img src="{{Vite::asset('resources/img/guids/2.jpg')}}" alt="">
-                        </div>
-                        <div class="description-guid">
-                            <div class="guid-title-container">
-                                <h3 class="guid-title">Шульгина Кира</h3>
-                            </div>
-
-                            <div class="experience-guid">
-                                <div class="img-icon">
-                                    <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
+                                <div class="experience-guid">
+                                    <div class="img-icon">
+                                        <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
+                                    </div>
+                                    Опыт работы: <strong>{{$guid->year_work}} года</strong>
                                 </div>
-                                Опыт работы: <strong> 3 года</strong>
-                            </div>
-                            <div class="quality-guid">
-                                <strong class="bold-guid">Качества гида:      </strong>
+                                <div class="quality-guid">
+                                    <strong class="bold-guid">Качества гида:      </strong>
+                                    <span>
+                                    {!! $guid->guides_quality !!}
+                                    </span>
 
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <br>
-                                <span>
-                                    Харизматичность
-                                </span>
-
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <span>
-                                    Харизматичность
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-guids">
-                        <div class="img_guid-container">
-                            <img src="{{Vite::asset('resources/img/guids/3.jpg')}}" alt="">
-
-                        </div>
-                        <div class="description-guid">
-                            <div class="guid-title-container">
-                                <h3 class="guid-title">Шульгина Кира</h3>
-                            </div>
-
-                            <div class="experience-guid">
-                                <div class="img-icon">
-                                    <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
                                 </div>
-                                Опыт работы: <strong> 3 года</strong>
-                            </div>
-                            <div class="quality-guid">
-                                <strong class="bold-guid">Качества гида:      </strong>
-
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <br>
-                                <span>
-                                    Харизматичность
-                                </span>
-
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <span>
-                                    Харизматичность
-                                </span>
-
-
-
 
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-guids">
-                        <div class="img_guid-container">
-                            <img src="{{Vite::asset('resources/img/guids/4.jpeg')}}" alt="">
-
-                        </div>
-                        <div class="description-guid">
-                            <div class="guid-title-container">
-                                <h3 class="guid-title">Шульгина Кира</h3>
-                            </div>
-
-                            <div class="experience-guid">
-                                <div class="img-icon">
-                                    <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
-                                </div>
-                                Опыт работы: <strong> 3 года</strong>
-                            </div>
-                            <div class="quality-guid">
-                                <strong class="bold-guid">Качества гида:      </strong>
-
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <br>
-                                <span>
-                                    Харизматичность
-                                </span>
-
-                                <span>
-                                    Харизматичность
-                                </span>
-                                <span>
-                                    Харизматичность
-                                </span>
-
-
-
-
-                            </div>
-
-                        </div>
-                    </div>
-
+                @endforeach
                 </div>
             </div>
         </div>
@@ -325,7 +181,7 @@
 
                                         <div class="card-tour " >
                                             <div class="img-card"
-                                                 style="background-image: url('{{ asset('storage/' . $tour->preview_image) }}');
+                                                 style="background-image: url('{{ 'storage/' . $tour->preview_image }}');
                                             background-repeat: no-repeat;
                                             background-size: cover">
 {{--                                                <img src="{{asset( 'storage/' . $tour->preview_image)}}" class="card-img-top" alt="">--}}
@@ -341,7 +197,6 @@
                                                         </div>
                                                         <div class="div-duration_tour">
                                                             <p>
-
                                                                 {{
         $tour->duration_tour
         }}
@@ -362,10 +217,12 @@
                                                 <h3 class="price-title mb-5 blue font-weight-bold" style="font-weight: bold">
                                                     {{$tour->price}}/чел
                                                 </h3>
-                                               <p class="text-body">
-                                                   {!! html_entity_decode($tour->waiting_for_programs) !!}
+                                               <ul class="text-body list-group">
+                                                   <li class="item-group-waiting_description">
+                                                       {!! $tour->waiting_for_programs !!}
+                                                   </li>
 
-                                               </p>
+                                               </ul>
                                                 <div class="form-group">
                                                     <a href="" class="btn-tour">Перейти к туру</a>
                                                 </div>

@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Туры</h1>
+                        <h1 class="m-0">Гиды</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin')}}">Home</a></li>
-                            <li class="breadcrumb-item active">Туры</li>
+                            <li class="breadcrumb-item active">Гиды</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -28,7 +28,7 @@
                     <div class="col-4 mb-3" >
                         <a href="{{route('admin.guid.create')}}"
                             class="btn btn-block btn-primary">
-                            Добавить тур
+                            Добавить гида
                         </a>
                     </div>
                 </div>

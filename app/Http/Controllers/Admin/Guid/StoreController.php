@@ -17,8 +17,8 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        $data['image_guid'] = Storage::disk('public')->put('/images',$data['image_guid']);
 //        dd($data);
+        $data['image_guid'] = Storage::disk('public')->put('/images',$data['image_guid']);
         Guid::firstOrcreate($data);
         return redirect()->route('admin.guid.index');
     }

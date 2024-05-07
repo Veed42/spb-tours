@@ -24,6 +24,7 @@ class StoreRequest extends FormRequest
             'surname' => 'string|required',
             'patronymic' => 'string|required',
             'year_work' => 'required',
+            'guides_quality' => 'required',
             'tour_id' => 'required'
         ];
     }

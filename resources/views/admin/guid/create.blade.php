@@ -34,6 +34,7 @@
                               enctype="multipart/form-data"
                         >
                             @csrf
+                            @csrf
                             <div class="form-group">
                                 <label for="exampleInputFile">Добавить превью</label>
                                 <div class="input-group">
@@ -92,6 +93,9 @@
                                     </span>
                                 @enderror
                             </div>
+                            <div class="form-group" >
+                                <textarea id="summernote" name="guides_quality" ></textarea>
+                            </div>
 
                             <div class="form-group">
                                 <label>Выберите Тур</label>
@@ -99,7 +103,7 @@
                                         class="form-control">
                                     @foreach($tours as $tour)
                                         <option value="{{$tour->id}}"
-                                        {{$tour->id == old('tour_id') ? 'selected' : ''}}
+                                            {{$tour->id == old('tour_id') ? 'selected' : ''}}
                                         >{{$tour->title}}</option>
                                     @endforeach
 
