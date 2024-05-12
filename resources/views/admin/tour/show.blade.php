@@ -22,7 +22,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin')}}">Home</a></li>
-                            <li class="breadcrumb-item active">Категории</li>
+                            <li class="breadcrumb-item active">Туры</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -37,14 +37,33 @@
                 <div class="row">
                     <div class="col-6 ">
                         <div class="card " >
-                            <img src="{{asset( 'storage/' . $tour->preview_image)}}" class="card-img-top" alt="">
-                            <h1 class="mb-5 blue">
-
-                            </h1>
                             <div class="card-body">
-                                <h5 class="card-title">{{$tour->title}}</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="form-group">
+                                <img src="{{asset( 'storage/' . $tour->preview_image)}}" class="card-img-top" alt="">
+                                <h5 class="mb-5 blue">Категория
+                                    {{$tour->category->title}}
+                                </h5>
+                                <div class="d-flex flex-column">
+                                    <h5 class="card-title">Название тура:{{$tour->title}}</h5>
+                                    <div class="div">
+                                    <span>
+                                        Продожительность тура: {{$tour->duration_tour}}
+                                    </span>
+                                        <div class="d-flex">
+                                            <p>Начало:</p> <p>
+                                                {{date('H:m', strtotime($tour->begin_tour))}}
+                                            </p>
+                                        </div>
+                                        <div class="waiting_for_programs">
+                                                    {!! $tour->waiting_for_programs !!}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
                             </div>
                         </div>
                  </div>

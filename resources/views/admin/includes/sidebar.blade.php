@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{route('admin.guid.index')}}" class="nav-link text-center">
-                    <h1 class="text-center">Т</h1>
+                    <h1 class="text-center">G</h1>
                     <p class="">
                         Гиды
                     </p>

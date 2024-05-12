@@ -28,6 +28,7 @@ class EditController extends Controller
     public function __invoke(Guid $guid)
     {
         $categories = Category::all();
-        return view('admin.guid.edit', compact('guid', 'categories' ));
+        $tours = Tour::all();
+        return view('admin.guid.edit', compact('guid', 'categories', 'tours' ));
     }
 }

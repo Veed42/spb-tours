@@ -19,7 +19,14 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string'
+            'title' => 'required|string',
+            'price' => 'required|numeric',
+            'waiting_for_programs' => 'required|string',
+            'preview_image' => 'file|nullable',
+            'main_image' => 'file|nullable',
+            'duration_tour' => 'required|string',
+            'begin_tour' => 'required',
+            'category_id' => 'required|exists:categories,id'
         ];
     }
 }

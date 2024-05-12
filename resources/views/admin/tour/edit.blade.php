@@ -30,12 +30,14 @@
 
                         <form action="{{route('admin.tour.update', $tour->id)}}"
                               method="POST"
-                              class="w-25">
+                              enctype="multipart/form-data"
+                              >
                             @csrf
                             @method('PATCH')
                             <div class="form-group w-25">
                                 <label for="title">Название</label>
-                                <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Название тура" >
+
+                                <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Название тура" value="{{$tour->title}}">
                                 @error('title')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -49,6 +51,7 @@
                                        min="0"
                                        type="number"
                                        step="any"
+                                       value="{{$tour->price}}"
                                        class="form-control @error('title') is-invalid @enderror" placeholder="Цена тура" >
                                 @error('title')
                                 <span class="invalid-feedback" role="alert">
@@ -57,16 +60,26 @@
                                 @enderror
                             </div>
                             <div class="form-group" >
-                                <textarea id="summernote" name="waiting_for_programs" ></textarea>
+                                <textarea id="summernote" name="waiting_for_programs" >{{$tour->waiting_for_programs}}</textarea>
+                                @error('waiting_for_programs')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
 
 
                             <div class="form-group">
                                 <label for="exampleInputFile">Добавить превью</label>
+                                <div class="w-25 mb-3">
+                                    <img src="{{asset( 'storage/' . $tour->preview_image)}}" class="card-img-top" alt="">
+                                </div>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="exampleInputFile" name="preview_image">
                                         <label class="custom-file-label" for="exampleInputFile">Выбрать изображение</label>
+
+
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">Загрузка</span>
@@ -75,10 +88,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile">Главное изобаражение</label>
+                                <div class="w-25 mb-3">
+                                    <img src="{{asset( 'storage/' . $tour->main_image)}}" class="card-img-top" alt="">
+                                </div>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="exampleInputFile" name="main_image">
                                         <label class="custom-file-label" for="exampleInputFile">Выбрать изображение</label>
+
+
+
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">Загрузка</span>
@@ -89,7 +108,7 @@
                                 <label for="title">Продолжительность тура</label>
                                 <input name="duration_tour"
                                        type="text"
-                                       class="form-control @error('duration_tour') is-invalid @enderror" placeholder="Продолжительность тура" >
+                                       class="form-control @error('duration_tour') is-invalid @enderror" placeholder="Продолжительность тура" value="{{$tour->duration_tour}}">
                                 @error('duration_tour')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -100,6 +119,7 @@
                                 <label for="begin_tour">Начало тура</label>
                                 <input name="begin_tour"
                                        type="time"
+                                       value="{{$tour->begin_tour}}"
                                        class="form-control @error('begin_tour') is-invalid @enderror" placeholder="Начало тура" >
                                 @error('begin_tour')
                                 <span class="invalid-feedback" role="alert">
@@ -113,7 +133,7 @@
                                         class="form-control">
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}"
-                                            {{$category->id == old('category_id') ? 'selected' : ''}}
+                                            {{$category->id == $tour->category_id ? 'selected' : ''}}
                                         >{{$category->title}}</option>
                                     @endforeach
 
