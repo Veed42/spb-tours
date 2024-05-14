@@ -22,11 +22,7 @@
                                 <div class="control-panel">
                                         <input type="text" class="search-input" placeholder="Найти экскурсии">
                                 </div>
-                                   <div class="control-panel" >
-                                       <button type="submit" class="search-button">
-                                           Актуальные
-                                       </button>
-                                   </div>
+
 
 
                             </div>
@@ -224,7 +220,7 @@
 
                                                </ul>
                                                 <div class="form-group">
-                                                    <a href="" class="btn-tour">Перейти к туру</a>
+                                                    <a href="{{route('tour.show', $tour->title)}}" class="btn-tour">Перейти к туру</a>
                                                 </div>
 
                                             </div>

@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\Guid;
 use App\Http\Controllers\Admin\Main\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Main\HomeController;
+use App\Http\Controllers\User\ShowControllerTour;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'Main'], function (){
     Route::get('/', [HomeController::class, 'index'])->name('/');
+//    Route::get('/{title}', [ShowControllerTour::class,'__invoke'])->name('tour.show');
+
 });
+
+
 
 Route::group([
     'middleware' => 'admin',
@@ -72,6 +77,16 @@ Route::group([
 
 //       Route::get('/', 'CreateController@index')->name('category.create');
     });
+});
+
+//User route
+
+Route::group(['namespace'=>'User'], function (){
+    Route::get('/', [HomeController::class, 'index'])->name('/');
+    Route::get('/{tour}', [ShowControllerTour::class, '__invoke'])->name('tour.show');
+    //    Route::get('tours/{tour}', function (App\Models\Tour\Tour $tour){
+//        return $tour->title;
+//    })->name('tour.show');
 });
 
 

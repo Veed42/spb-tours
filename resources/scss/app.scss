@@ -351,6 +351,70 @@ header.fixed {
     }
 }
 
+
+//show-tour
+
+.intro-tour{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .image-tour {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        .content-image{
+            padding-left: 126px;
+            .div-title-tour{
+                margin-top: 636px;
+                margin-bottom: 15px;
+                font-size: 60px;
+            h5{
+                color: white;
+            }
+
+
+
+            }
+            .div-group_time{
+                display: flex;
+                align-items: center;
+                margin-top: 150px;
+                .div-begin_tour{
+                    display: flex;
+                    background: #fff;
+                    padding: 5px 5px;
+                }
+                .div-duration_tour{
+                    margin-left: 22px;
+                    background: #fff;
+                    padding: 5px 5px;
+                }
+
+            }
+
+            h5{
+                margin-left: 5px;
+            }
+            width: 100%;
+
+        }
+        .description-tour{
+        display: flex;
+            flex-direction: unset;
+    }
+    }
+    .image-filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        opacity: 0.6;
+    }
+}
+
 //excursions block
 .excursions{
     .inner__excursions{

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Tour\Tour;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -29,6 +30,10 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+//
+//        Route::bind('tour', function ($title){
+//            return Tour::where('title', $title)->firstOrfail();
+//        });
 
         $this->routes(function () {
             Route::middleware('api')
