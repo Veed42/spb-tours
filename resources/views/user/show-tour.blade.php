@@ -8,7 +8,7 @@
 <div class="intro-tour" >
     <div class="image-tour" style="display:grid;">
 
-    <img src="{{ 'storage/' . $tour->main_image }}">
+    <img src="{{ '../storage/' . $tour->main_image }}">
         <div class="content-image" style="position: absolute; display: grid">
 
             <div class="div-group_time">

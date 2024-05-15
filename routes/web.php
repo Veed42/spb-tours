@@ -80,20 +80,24 @@ Route::group([
 });
 
 //User route
+//юзерский интерфйс должен идти после auth
 
-Route::group(['namespace'=>'User'], function (){
-    Route::get('/', [HomeController::class, 'index'])->name('/');
-    Route::get('/{tour}', [ShowControllerTour::class, '__invoke'])->name('tour.show');
-    //    Route::get('tours/{tour}', function (App\Models\Tour\Tour $tour){
-//        return $tour->title;
-//    })->name('tour.show');
+Route::group(['prefix' => 'user'], function(){
+    Auth::routes();
+    Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+    Route::post('/login', [LoginController::class, 'index'])->name('login');
+
 });
 
 
-Auth::routes();
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-Route::post('/login', [LoginController::class, 'index'])->name('login');
-
+Route::group(['prefix' => 'tour'],function (){
+    Route::group(['namespace'=>'User'], function (){
+        Route::get('/{route}', [ShowControllerTour::class, '__invoke'])->name('tour.show');
+        //    Route::get('tours/{tour}', function (App\Models\Tour\Tour $tour){
+//        return $tour->title;
+//    })->name('tour.show');
+    });
+});
 
 // Clear application cache:
 

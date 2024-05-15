@@ -358,6 +358,7 @@ header.fixed {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
 
     .image-tour {
         display: flex;
@@ -366,7 +367,7 @@ header.fixed {
         .content-image{
             padding-left: 126px;
             .div-title-tour{
-                margin-top: 636px;
+                margin-top: 136px;
                 margin-bottom: 15px;
                 font-size: 60px;
             h5{

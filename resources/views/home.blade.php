@@ -220,7 +220,7 @@
 
                                                </ul>
                                                 <div class="form-group">
-                                                    <a href="{{route('tour.show', $tour->title)}}" class="btn-tour">Перейти к туру</a>
+                                                    <a href="{{route('tour.show', str_slug($tour->title))}}" class="btn-tour">Перейти к туру</a>
                                                 </div>
 
                                             </div>
