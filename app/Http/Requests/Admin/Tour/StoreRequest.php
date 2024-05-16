@@ -26,7 +26,8 @@ class StoreRequest extends FormRequest
             'main_image' => 'required|file',
             'duration_tour' => 'required|string',
             'begin_tour' => 'required',
-            'category_id' => 'required|exists:categories,id'
+            'category_id' => 'required|exists:categories,id',
+            'guid_id' => 'required|exists:guides,id'
         ];
     }
 }

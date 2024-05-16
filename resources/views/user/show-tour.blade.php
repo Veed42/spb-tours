@@ -53,25 +53,25 @@ $tour->duration_tour
                         <div class="cols__guides">
                             <div class="col-guids">
                                 <div class="img_guid-container">
-                                    <img src="{{'storage/' . $guid->image_guid}}">
+                                    <img src="{{'storage/' . $tour->guid->image_guid}}">
                                 </div>
                                 <div class="description-guid">
                                     <div class="guid-title-container">
-                                        <h3 class="guid-title">{{$guid->name}}</h3>
+                                        <h3 class="guid-title">{{$tour->guid->name}}</h3>
 
-                                        <h3 class="guid-title" style="margin-left: 30px">{{$guid->surname}}</h3>
+                                        <h3 class="guid-title" style="margin-left: 30px">{{$tour->guid->surname}}</h3>
                                     </div>
 
                                     <div class="experience-guid">
                                         <div class="img-icon">
                                             <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
                                         </div>
-                                        Опыт работы: <strong>{{$guid->year_work}} года</strong>
+                                        Опыт работы: <strong>{{$tour->guid->year_work}} года</strong>
                                     </div>
                                     <div class="quality-guid">
                                         <strong class="bold-guid">Качества гида:      </strong>
                                         <span>
-                                    {!! $guid->guides_quality !!}
+                                    {!! $tour->guid->guides_quality !!}
                                     </span>
 
                                     </div>

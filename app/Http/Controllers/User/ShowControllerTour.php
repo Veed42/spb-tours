@@ -26,18 +26,15 @@ class ShowControllerTour extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Tour $tour , Category $category)
+    public function __invoke(Tour $tour, Category $category)
     {
-//        $tour = Tour::where('title', %tour->id);
-
         $guides = $tour->guides;
         $tours = Tour::all();
         //Url id instead title
         //заменяет айди в юрл на название тура
-        foreach ($tours as $tour){
-            $tour->slug = Str::slug($tour->title);
-        }
-
+//        foreach ($tours as $tour){
+//            $tour->slug = Str::slug($tour->title);
+//        }
         return view('user.show-tour', compact('tour', 'guides', 'tours'));
     }
 }

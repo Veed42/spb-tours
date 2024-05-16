@@ -125,6 +125,25 @@
                                     </span>
                                 @enderror
                             </div>
+                            <div class="form-group guid_container">
+                                <label>Выберите Гида</label>
+                                <select name="guid_id"
+                                        class="form-control guid_select">
+                                    @foreach($guides as $guid)
+                                        <option value="{{$guid->id}}"
+                                            {{$guid->id == old('guid_id') ? 'selected' : ''}}
+                                        >{{$guid->name}} {{$guid->surname}}
+
+                                        </option>
+                                    @endforeach
+
+                                </select>
+                                @error('guid_id')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
 
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary">

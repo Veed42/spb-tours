@@ -42,7 +42,7 @@
                                         <th scope="col">Имя Гида</th>
                                         <th scope="col">Фамилия</th>
                                         <th scope="col">Отчество</th>
-                                        <th scope="col">Тур</th>
+{{--                                        <th scope="col">Тур</th>--}}
 
                                         <th scope="col">Посмотреть</th>
                                         <th scope="col">Отредактировать</th>
@@ -56,7 +56,7 @@
                                             <td>{{$guid->name}}</td>
                                             <td>{{$guid->surname}}</td>
                                             <td>{{$guid->patronymic}}</td>
-                                            <td>{{$guid->tour->title}}</td>
+{{--                                            <td>{{$guid->tour->title}}</td>--}}
 
 
                                             <td><a href="{{route('admin.guid.show', $guid->id)}}">
