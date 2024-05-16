@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('surname');
             $table->string('patronymic');
             $table->integer('year_work');
-            $table->bigInteger('tour_id')->unsigned();
-            $table->foreign('tour_id')->references('id')->on('tours');
             $table->softDeletes();
             $table->timestamps();
         });

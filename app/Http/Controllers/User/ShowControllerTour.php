@@ -28,7 +28,7 @@ class ShowControllerTour extends Controller
      */
     public function __invoke(Tour $tour, Category $category)
     {
-        $guides = $tour->guides;
+        $guides = $tour->guid;
         $tours = Tour::all();
         //Url id instead title
         //заменяет айди в юрл на название тура

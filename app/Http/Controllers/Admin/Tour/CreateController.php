@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Tour;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Guid;
 use Illuminate\Contracts\Support\Renderable;
 
 class CreateController extends Controller
@@ -23,9 +24,10 @@ class CreateController extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Category $categories)
+    public function __invoke(Category $categories, Guid $guides)
     {
+        $guides = Guid::all();
         $categories = Category::all();
-        return view('admin.tour.create', compact('categories'));
+        return view('admin.tour.create', compact('categories', 'guides'));
     }
 }

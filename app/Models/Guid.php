@@ -18,7 +18,7 @@ class Guid extends Model
 
     public function tour()
     {
-        return $this->belongsTo('App\Models\Tour\Tour', 'tour_id', 'id');
+        return $this->belongsTo('App\Models\Tour\Tour', 'id', 'guid_id');
     }
 
     protected $fillable = [

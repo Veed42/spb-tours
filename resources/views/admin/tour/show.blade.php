@@ -45,6 +45,16 @@
                                 </h5>
                                 <div class="d-flex flex-column">
                                     <h5 class="card-title">Название тура:{{$tour->title}}</h5>
+                                    <h3>Гид:
+                                        {{
+    $tour->guid->name    }}
+                                        {{
+    $tour->guid->surname
+        }}
+                                        {{
+    $tour->guid->patronymic
+        }}
+                                    </h3>
                                     <div class="div">
                                     <span>
                                         Продожительность тура: {{$tour->duration_tour}}
@@ -58,6 +68,11 @@
                                                     {!! $tour->waiting_for_programs !!}
 
                                         </div>
+
+                                    </div>
+                                    <div class="waiting_for_programs" style="">
+
+
                                     </div>
                                 </div>
 

@@ -97,23 +97,7 @@
                                 <textarea id="summernote" name="guides_quality" ></textarea>
                             </div>
 
-                            <div class="form-group">
-                                <label>Выберите Тур</label>
-                                <select name="tour_id"
-                                        class="form-control">
-                                    @foreach($tours as $tour)
-                                        <option value="{{$tour->id}}"
-                                            {{$tour->id == old('tour_id') ? 'selected' : ''}}
-                                        >{{$tour->title}}</option>
-                                    @endforeach
 
-                                </select>
-                                @error('tour_id')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
 
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary">
