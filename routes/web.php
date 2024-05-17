@@ -27,8 +27,6 @@ Route::group(['namespace' => 'Main'], function (){
 
 });
 
-
-
 Route::group([
     'middleware' => 'admin',
     'namespace' => 'Admin',
@@ -86,12 +84,13 @@ Route::post('/login', [LoginController::class, 'index'])->name('login');
 
 
 
-Route::group(['namespace'=>'User'], function (){
-    Route::get('/', [HomeController::class, 'index'])->name('/');
-    Route::get('/{tour}', [ShowControllerTour::class, '__invoke'])->name('tour.show');
-    //    Route::get('tours/{tour}', function (App\Models\Tour\Tour $tour){
+Route::group(['prefix' => 'tour'],function (){
+    Route::group(['namespace'=>'User'], function (){
+        Route::get('/{tour}', [ShowControllerTour::class, '__invoke'])->name('tour.show');
+        //    Route::get('tours/{tour}', function (App\Models\Tour\Tour $tour){
 //        return $tour->title;
 //    })->name('tour.show');
+    });
 });
 
 

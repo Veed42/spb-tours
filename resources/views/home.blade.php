@@ -220,13 +220,14 @@
 
                                                </ul>
                                                 <div class="form-group">
-                                                    <a href="{{route('tour.show', $tour->title)}}" class="btn-tour">Перейти к туру</a>
+                                                    <a href="{{route('tour.show', $tour)}}" class="btn-tour">Перейти к туру</a>
                                                 </div>
 
                                             </div>
 
                                         </div>
                                     @endforeach
+
                             </div>
 
                         </div>

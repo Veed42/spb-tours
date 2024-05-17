@@ -49,11 +49,11 @@ $tour->duration_tour
                     <h1 class="title__guides uppercase">
                         Гиды Экскурсии
                     </h1>
-                    @foreach($guides as $guid)
+                    @foreach($tours as $tour)
                         <div class="cols__guides">
                             <div class="col-guids">
                                 <div class="img_guid-container">
-                                    <img src="{{'storage/' . $tour->guid->image_guid}}">
+                                    <img src="{{'../storage/' . $tour->guid->image_guid}}">
                                 </div>
                                 <div class="description-guid">
                                     <div class="guid-title-container">
@@ -83,7 +83,7 @@ $tour->duration_tour
                 </div>
             </div>
         </div>
-    </div>
+
 @endsection
 
 

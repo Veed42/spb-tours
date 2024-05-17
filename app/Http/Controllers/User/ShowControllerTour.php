@@ -26,9 +26,10 @@ class ShowControllerTour extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Tour $tour, Category $category)
+    public function __invoke(Tour $tour,Guid $guides,   Category $category)
     {
-        $guides = $tour->guides;
+
+        $guides = $tour->guid;
         $tours = Tour::all();
         //Url id instead title
         //заменяет айди в юрл на название тура

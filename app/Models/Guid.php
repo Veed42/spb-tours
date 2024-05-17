@@ -27,7 +27,6 @@ class Guid extends Model
         'surname',
         'patronymic',
         'year_work',
-        'guides_quality',
-        'tour_id'
+        'guides_quality'
     ];
 }

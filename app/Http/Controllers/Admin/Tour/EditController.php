@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Tour;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Guid;
 use App\Models\Tour\Tour;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -27,6 +28,7 @@ class EditController extends Controller
     public function __invoke(Tour $tour)
     {
         $categories = Category::all();
-        return view('admin.tour.edit', compact('tour', 'categories'));
+        $guides = Guid::all();
+        return view('admin.tour.edit', compact('tour', 'categories', 'guides'));
     }
 }

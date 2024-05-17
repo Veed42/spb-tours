@@ -35,7 +35,6 @@ class UpdateController extends Controller
             $data['main_image'] = Storage::disk('public')->put('/images',$data['main_image']);
         }
         $tour->update($data);
-//        dd($data);
         return view('admin.tour.show', compact('tour'));
     }
 }

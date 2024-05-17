@@ -144,6 +144,23 @@
                                     </span>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label>Выберите гида</label>
+                                <select name="guid_id"
+                                        class="form-control">
+                                    @foreach($guides as $guid)
+                                        <option value="{{$guid->id}}"
+                                            {{$guid->id == $tour->guides_id ? 'selected' : ''}}
+                                        >{{$guid->name}} {{$guid->surname}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('guid_id')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
 
                             <input type="submit" class="btn btn-primary" value="Обновить">
                         </form>
