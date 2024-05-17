@@ -80,6 +80,11 @@ Route::group([
 });
 
 //User route
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('/login', [LoginController::class, 'index'])->name('login');
+
+
 
 Route::group(['namespace'=>'User'], function (){
     Route::get('/', [HomeController::class, 'index'])->name('/');
@@ -90,9 +95,6 @@ Route::group(['namespace'=>'User'], function (){
 });
 
 
-Auth::routes();
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-Route::post('/login', [LoginController::class, 'index'])->name('login');
 
 
 // Clear application cache:
