@@ -47,7 +47,8 @@ class Tour extends Model
             'main_image',
             'duration_tour',
             'begin_tour',
-            'category_id'
+            'category_id',
+            'guid_id'
         ];
 
 

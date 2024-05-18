@@ -16,6 +16,7 @@ class Guid extends Model
 
 
 
+
     public function tour()
     {
         return $this->belongsTo('App\Models\Tour\Tour', 'id', 'guid_id');
