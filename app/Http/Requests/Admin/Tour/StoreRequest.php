@@ -19,9 +19,9 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string',
+            'title' => 'required|string|unique:tours',
             'price' => 'required|numeric',
-            'waiting_for_programs' => 'required|string',
+            'waiting_for_programs' => 'required|string|unique:tours',
             'preview_image' => 'required|file',
             'main_image' => 'required|file',
             'duration_tour' => 'required|string',

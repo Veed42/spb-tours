@@ -19,7 +19,7 @@ class StoreController extends Controller
 //        dd($request);
         $data['preview_image'] = Storage::disk('public')->put('/images',$data['preview_image']);
         $data['main_image'] = Storage::disk('public')->put('/images',$data['main_image']);
-        Tour::firstOrcreate($data);
+        Tour::firstOrCreate($data);
         return redirect()->route('admin.tour.index');
     }
 }

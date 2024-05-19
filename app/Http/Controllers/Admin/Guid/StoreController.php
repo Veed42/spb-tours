@@ -19,7 +19,7 @@ class StoreController extends Controller
         $data = $request->validated();
 //        dd($data);
         $data['image_guid'] = Storage::disk('public')->put('/images',$data['image_guid']);
-        Guid::firstOrcreate($data);
+        Guid::firstOrCreate($data);
         return redirect()->route('admin.guid.index');
     }
 }

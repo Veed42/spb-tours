@@ -19,10 +19,10 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image_guid' => 'required|file',
-            'name' => 'string|required',
-            'surname' => 'string|required',
-            'patronymic' => 'string|required',
+            'image_guid' => 'required|file|unique:guides,image_guid',
+            'name' => 'string|required|unique:guides',
+            'surname' => 'string|required|unique:guides',
+            'patronymic' => 'string|required|unique:guides',
             'year_work' => 'required',
             'guides_quality' => 'required'
         ];

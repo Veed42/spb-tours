@@ -151,7 +151,7 @@
                                     @foreach($guides as $guid)
                                         <option value="{{$guid->id}}"
                                             {{$guid->id == $tour->guides_id ? 'selected' : ''}}
-                                        >{{$guid->name}} {{$guid->surname}}
+                                        >{{$guid->name}} {{$guid->surname}} {{$guid->patronymic}}
                                         </option>
                                     @endforeach
                                 </select>
