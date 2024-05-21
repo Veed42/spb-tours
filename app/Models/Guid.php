@@ -28,6 +28,7 @@ class Guid extends Model
         'surname',
         'patronymic',
         'year_work',
-        'guides_quality'
+        'guides_quality',
+        'description'
     ];
 }

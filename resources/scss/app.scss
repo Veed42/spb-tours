@@ -328,7 +328,6 @@ header.fixed {
                     .quality-guid{
                         display: flex;
                         width: 100%;
-                        padding-bottom: 37px;
                         span{
                            margin-right: 60px;
                             margin-bottom: 50px;
@@ -412,6 +411,51 @@ header.fixed {
         bottom: 0;
         background: #000;
         opacity: 0.6;
+    }
+}
+
+.intro-guid{
+    padding: 150px 150px;
+    background: #ffca2c;
+    .card{
+        margin-top: 100px;
+        width: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        grid-column-gap: 50px;
+        .quality-guid{
+            display: flex;
+            width: 100%;font-size: 19px;
+            margin-top: 20px;
+            span{
+                margin-left: 20px;
+                margin-bottom: 20px;
+            }
+            .list-guid-quality{
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        .card-body{
+            .title-guid{
+                margin-bottom: 30px;
+                margin-top: 30px;
+                .title-guid-inner{
+                    font-weight: 600;
+                }
+            }
+            .description-container{
+                .description-guid{
+                    font-size: 19px;
+                    font-weight: 400;
+                }
+            }
+
+
+        }
+
+
     }
 }
 

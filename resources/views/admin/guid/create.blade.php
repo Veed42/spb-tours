@@ -71,7 +71,7 @@
                                 @enderror
                             </div>
                             <div class="form-group w-25">
-                                <label for="patronymic">Фамилия</label>
+                                <label for="patronymic">Отчество</label>
                                 <input name="patronymic" type="text" class="form-control @error('patronymic') is-invalid @enderror" placeholder="Отчество" >
                                 @error('patronymic')
                                 <span class="invalid-feedback" role="alert">
@@ -95,6 +95,10 @@
                             </div>
                             <div class="form-group" >
                                 <textarea id="summernote" name="guides_quality" ></textarea>
+                            </div>
+
+                            <div class="form-group" >
+                                <textarea class="summernote" name="description" placeholder="Описание гида"></textarea>
                             </div>
 
 

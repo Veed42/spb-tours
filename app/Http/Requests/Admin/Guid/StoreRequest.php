@@ -24,7 +24,8 @@ class StoreRequest extends FormRequest
             'surname' => 'string|required|unique:guides',
             'patronymic' => 'string|required|unique:guides',
             'year_work' => 'required',
-            'guides_quality' => 'required'
+            'guides_quality' => 'required',
+            'description' => 'required'
         ];
     }
 }

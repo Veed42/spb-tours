@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\Guid;
 use App\Http\Controllers\Admin\Main\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Main\HomeController;
+use App\Http\Controllers\User\ShowControllerGuid;
 use App\Http\Controllers\User\ShowControllerTour;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -83,14 +84,16 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/login', [LoginController::class, 'index'])->name('login');
 
 
-
+Route::group(['namespace'=>'User'], function (){
 Route::group(['prefix' => 'tour'],function (){
-    Route::group(['namespace'=>'User'], function (){
         Route::get('/{tour}', [ShowControllerTour::class, '__invoke'])->name('tour.show');
         //    Route::get('tours/{tour}', function (App\Models\Tour\Tour $tour){
 //        return $tour->title;
 //    })->name('tour.show');
     });
+Route::group(['prefix' => 'guid'], function (){
+   Route::get('/{guid}', [ShowControllerGuid::class, '__invoke'])->name('guid.show');
+});
 });
 
 
