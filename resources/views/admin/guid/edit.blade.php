@@ -110,6 +110,9 @@
                             <div class="form-group" >
                                 <textarea id="summernote" name="guides_quality" >{{$guid->guides_quality}}</textarea>
                             </div>
+                            <div class="form-group" >
+                                <textarea class="summernote" name="description" >{{$guid->description}}</textarea>
+                            </div>
 
                             <div class="form-group">
                                 <label>Выберите Тур</label>

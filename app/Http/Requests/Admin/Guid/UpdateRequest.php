@@ -24,7 +24,8 @@ class UpdateRequest extends FormRequest
             'surname' => 'string|required',
             'patronymic' => 'string|required',
             'year_work' => 'required',
-            'guides_quality' => 'required'
+            'guides_quality' => 'required',
+            'description' => 'required'
         ];
     }
 }

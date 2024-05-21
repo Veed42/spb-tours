@@ -74,6 +74,7 @@
 <script>
     $(document).ready(function() {
         $('#summernote').summernote({
+            placeholder:'Качества гида',
             tabsize: 2,
             height: 320,
             toolbar: [
@@ -83,6 +84,18 @@
                 ['para', ['ul', 'ol', 'paragraph']],
             ]
         });
+    });
+    $('.summernote').each(function(i, obj) { $(obj).summernote({
+        placeholder:'Описание гида',
+        tabsize: 2,
+        height: 320,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+        ]
+    });
     });
     $(function () {
         bsCustomFileInput.init();

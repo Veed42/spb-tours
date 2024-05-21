@@ -136,9 +136,16 @@
                                     </span>
 
                                 </div>
-
+                                <div class="form-group">
+                                    <a href="{{route('guid.show', $guid)}}"
+                                       style="padding: 10px 15px; background-color: #ffc61b;"
+                                       class="btn-tour">Перейти к Гиду</a>
+                                </div>
                             </div>
+
+
                         </div>
+
                 @endforeach
                 </div>
             </div>
