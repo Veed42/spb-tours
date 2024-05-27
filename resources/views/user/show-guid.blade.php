@@ -28,7 +28,7 @@
                 <div class="quality-guid">
                     <strong class="bold-guid">Качества гида:      </strong>
                     <span>
-                                    {!! $guid->guides_quality !!}
+                                    {!!  $guid->guides_quality!!}
                                     </span>
 
                 </div>
@@ -40,8 +40,8 @@
 
                 </div>
                 <p class="card-text description-guid"> <strong> Описание гида</strong> <br>
-
-                    {{$guid->description}}</p>
+                    {!!  $guid->description !!}
+                </p>
             </div>
 
 

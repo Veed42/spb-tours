@@ -16,7 +16,7 @@ class Tour extends Model
 
     public function program(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(TourProgram::class,'tours_tour_program_id_foreign');
+        return $this->hasOne('App\Models\Tour\TourProgram', 'tour_id', 'id');
     }
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
@@ -48,6 +48,7 @@ class Tour extends Model
             'duration_tour',
             'begin_tour',
             'category_id',
+            'tour_program_id',
             'guid_id'
         ];
 

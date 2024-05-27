@@ -93,11 +93,14 @@
                                     </span>
                                 @enderror
                             </div>
+
                             <div class="form-group" >
+                                <span class="font-weight-bolder">Качества гида</span>
                                 <textarea id="summernote" name="guides_quality" ></textarea>
                             </div>
 
                             <div class="form-group" >
+                                <span class="font-weight-bolder">Описание гида</span>
                                 <textarea class="summernote" name="description" placeholder="Описание гида"></textarea>
                             </div>
 

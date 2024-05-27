@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Category\StoreController;
 use App\Http\Controllers\Admin\Category\UpdateController;
 
 use App\Http\Controllers\Admin\Tour;
+use App\Http\Controllers\Admin\ProgramTour;
 use App\Http\Controllers\Admin\Guid;
 
 
@@ -58,10 +59,22 @@ Route::group([
         Route::get('/{tour}/edit', [Tour\EditController::class,'__invoke'])->name('admin.tour.edit');
         Route::patch('/{tour}', [Tour\UpdateController::class,'__invoke'])->name('admin.tour.update');
         Route::delete('/{tour}', [Tour\DeleteController::class,'__invoke'])->name('admin.tour.delete');
-
-
 //       Route::get('/', 'CreateController@index')->name('category.create');
     });
+
+
+        Route::group(['namespace' => 'ProgramTour', 'prefix' => 'program-tours'], function (){
+
+            Route::get('/', [ProgramTour\IndexController::class,'index'])->name('admin.program_tour.index');
+            Route::get('/create', [ProgramTour\CreateController::class,'__invoke'])->name('admin.program_tour.create');
+            Route::post('/store', [ProgramTour\StoreController::class,'__invoke'])->name('admin.program_tour.store');
+            Route::get('/{tour}', [ProgramTour\ShowController::class,'__invoke'])->name('admin.program_tour.show');
+            Route::get('/{tour}/edit', [ProgramTour\EditController::class,'__invoke'])->name('admin.program_tour.edit');
+            Route::patch('/{tour}', [ProgramTour\UpdateController::class,'__invoke'])->name('admin.program_tour.update');
+            Route::delete('/{tour}', [ProgramTour\DeleteController::class,'__invoke'])->name('admin.program_tour.delete');
+//       Route::get('/', 'CreateController@index')->name('category.create');
+        });
+
 
     Route::group(['namespace' => 'Guid', 'prefix' => 'guides'], function (){
 
@@ -72,8 +85,6 @@ Route::group([
         Route::get('/{guid}/edit', [Guid\EditController::class,'__invoke'])->name('admin.guid.edit');
         Route::patch('/{guid}', [Guid\UpdateController::class,'__invoke'])->name('admin.guid.update');
         Route::delete('/{guid}', [Guid\DeleteController::class,'__invoke'])->name('admin.guid.delete');
-
-
 //       Route::get('/', 'CreateController@index')->name('category.create');
     });
 });

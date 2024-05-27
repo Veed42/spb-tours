@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('tour_program');
             $table->decimal('price');
             $table->string('preview_image');
             $table->string('main_image');
@@ -30,7 +29,7 @@ return new class extends Migration
         });
     }
     //do сделать связь с моделями категорий и с моделью программа тура , у каждого тура идёт своя программа, у каждого тура своя категория(групповые инд.)
-//do сделать добавление туров и категории, также верстка туров в админке 
+//do сделать добавление туров и категории, также верстка туров в админке
 
     /**
      * Reverse the migrations.

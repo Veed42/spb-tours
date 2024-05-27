@@ -5,6 +5,7 @@
 @section('content')
     <div class="container">
 
+
 <div class="intro-tour" >
     <div class="image-tour" style="display:grid;">
 
@@ -35,15 +36,8 @@ $tour->duration_tour
     </div>
 
     </div>
-
-
-
-
-
-</div>
-
-        <div class="guides">
-            <div class="container-default">
+        <div class="container-default">
+            <div class="guides">
 
                 <div class="inner__guides">
                     <h1 class="title__guides uppercase">
@@ -75,14 +69,62 @@ $tour->duration_tour
                                     </span>
 
                                     </div>
+                                    <div class="description-container">
+                                        {!! $tour->guid->description !!}
+                                    </div>
 
                                 </div>
                             </div>
                             @endforeach
                         </div>
                 </div>
+
+
+            </div>
+
+
+        <div class="container-program_tour" style="margin-bottom: 150px">
+            <h1 class="title_program uppercase">
+                Программа тура
+            </h1>
+            <div class="inner-program">
+                @foreach($tours as $program)
+                    <h3 >
+                        {{$tour->program->title}}
+                        {{$tour->program->tour_id}}
+                    </h3>
+
+                    <div class="container-description_program">
+                        <p>
+                            {!! $tour->program->description !!}
+                        </p>
+                    </div>
+                    <br>
+
+                    <div class="container-begin_tour_banner">
+                        <p>
+                            {!! $tour->program->begin_tour_banner !!}
+                        </p>
+                    </div>
+                    <div class="img_program-container">
+                        <img src="{{'../storage/' . $tour->program->back_image}}">
+                    </div>
+                @endforeach
+                </div>
+            </div>
+            <div class="container-review">
+                <h1 class="">
+                    Отзывы
+                </h1>
+            </div>
+
             </div>
         </div>
+
+
+
+
+
 
 @endsection
 

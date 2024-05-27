@@ -74,7 +74,6 @@
 <script>
     $(document).ready(function() {
         $('#summernote').summernote({
-            placeholder:'Качества гида',
             tabsize: 2,
             height: 320,
             toolbar: [
@@ -86,7 +85,6 @@
         });
     });
     $('.summernote').each(function(i, obj) { $(obj).summernote({
-        placeholder:'Описание гида',
         tabsize: 2,
         height: 320,
         toolbar: [
@@ -99,6 +97,17 @@
     });
     $(function () {
         bsCustomFileInput.init();
+    });
+
+    //day logic
+    $('.btn-del-select').hide();
+    $(document).on('click', '.add-select', function (){
+        $(this).parent().parent().find(".day-fields").clone().insertBefore($(this).parent()).removeClass(".day-fields");
+        $('.btn-del-select').fadeIn();
+        $(this).parent().parent().find(".btn-del-select").click(function (e){
+            $(this).parent().parent().remove();
+        });
+
     });
 </script>
 

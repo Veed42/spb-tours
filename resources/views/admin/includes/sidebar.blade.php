@@ -35,7 +35,7 @@
 
 
             <li class="nav-item">
-                <a href="pages/gallery.html" class="nav-link text-center">
+                <a href="{{route('admin.program_tour.index')}}" class="nav-link text-center">
                     <h1 class="text-center">P</h1>
                     <p class="">
                         Программа тура

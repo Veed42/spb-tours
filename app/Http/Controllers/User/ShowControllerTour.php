@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Guid;
 use App\Models\Tour\Tour;
+use App\Models\Tour\TourProgram;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Str;
 
@@ -26,7 +27,7 @@ class ShowControllerTour extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Tour $tour,Guid $guides,   Category $category)
+    public function __invoke(Tour $tour,Guid $guides, TourProgram $program,  Category $category)
     {
 
         $guides = $tour->guid;
