@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\ProgramTour;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tour\Tour;
+use App\Models\Tour\TourProgram;
 use Illuminate\Contracts\Support\Renderable;
 
 class IndexController extends Controller
@@ -25,7 +26,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $tours = Tour::all();
-        return view('admin.program_tour.index', compact('tours'));
+        $tour = Tour::all();
+        $programs = TourProgram::all();
+        return view('admin.program_tour.index', compact('tour', 'programs'));
     }
 }

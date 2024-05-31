@@ -21,9 +21,9 @@ class DeleteController extends Controller
      *
      * @return RedirectResponse
      */
-    public function __invoke(Tour $tour, Guid $guid)
+    public function __invoke(Tour $program)
     {
-        $tour->delete();
+        $program->delete();
 //        dd($tour);
         return redirect()->route('admin.program_tour.index');
     }

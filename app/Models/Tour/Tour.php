@@ -14,10 +14,13 @@ class Tour extends Model
     protected $table = 'tours';
     protected $guarded = false;
 
-    public function program(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function program()
     {
-        return $this->hasOne('App\Models\Tour\TourProgram', 'tour_id', 'id');
+        return $this->hasOne(TourProgram::class);
     }
+
+
+
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo('App\Models\Category', 'category_id', 'id');
@@ -30,9 +33,9 @@ class Tour extends Model
     public function guides(){
         return $this->hasMany('App\Models\Guid','id', 'guid_id');
     }
-    public function guid(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function guid()
     {
-        return $this->belongsTo('App\Models\Guid', 'guid_id', 'id');
+        return $this->hasMany('App\Models\Guid', 'id', 'guid_id');
     }
 
 

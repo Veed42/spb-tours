@@ -68,10 +68,10 @@ Route::group([
             Route::get('/', [ProgramTour\IndexController::class,'index'])->name('admin.program_tour.index');
             Route::get('/create', [ProgramTour\CreateController::class,'__invoke'])->name('admin.program_tour.create');
             Route::post('/store', [ProgramTour\StoreController::class,'__invoke'])->name('admin.program_tour.store');
-            Route::get('/{tour}', [ProgramTour\ShowController::class,'__invoke'])->name('admin.program_tour.show');
-            Route::get('/{tour}/edit', [ProgramTour\EditController::class,'__invoke'])->name('admin.program_tour.edit');
-            Route::patch('/{tour}', [ProgramTour\UpdateController::class,'__invoke'])->name('admin.program_tour.update');
-            Route::delete('/{tour}', [ProgramTour\DeleteController::class,'__invoke'])->name('admin.program_tour.delete');
+            Route::get('/{program}', [ProgramTour\ShowController::class,'__invoke'])->name('admin.program_tour.show');
+            Route::get('/{program}/edit', [ProgramTour\EditController::class,'__invoke'])->name('admin.program_tour.edit');
+            Route::patch('/{program}', [ProgramTour\UpdateController::class,'__invoke'])->name('admin.program_tour.update');
+            Route::delete('/{program}', [ProgramTour\DeleteController::class,'__invoke'])->name('admin.program_tour.delete');
 //       Route::get('/', 'CreateController@index')->name('category.create');
         });
 

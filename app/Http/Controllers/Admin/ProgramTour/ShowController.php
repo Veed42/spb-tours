@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Guid;
 use App\Models\Tour\Tour;
+use App\Models\Tour\TourProgram;
 use Illuminate\Contracts\Support\Renderable;
 
 class ShowController extends Controller
@@ -25,11 +26,11 @@ class ShowController extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Tour $tour, Category $category, Guid $guid)
+    public function __invoke(Tour $tour,TourProgram $program, Category $category, Guid $guid)
     {
         $categories = Category::all();
 //        $tour->guid();
 //        dd($tour);
-        return view('admin.program_tour.show', compact('tour','categories', 'guid'));
+        return view('admin.program_tour.show', compact('tour','categories', 'guid', 'program'));
     }
 }

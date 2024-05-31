@@ -7,11 +7,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-md-center ">
-                        <h1 class="m-0 mr-4">{{$tour->title}}</h1>
-                        <a href="{{route('admin.program_tour.edit', $tour->id)}}" class="text-success">
+                        <h1 class="m-0 mr-4">{{$program->title}}</h1>
+                        <a href="{{route('admin.program_tour.edit', $program->id)}}" class="text-success">
                             <i class="fa fa-edit "></i>
                         </a>
-                        <form action="{{route('admin.program_tour.delete', $tour->id)}}"
+                        <form action="{{route('admin.program_tour.delete', $program->id)}}"
                               method="POST"
                         >
                             @csrf
@@ -39,38 +39,29 @@
                         <div class="card " >
                             <div class="card-body">
                             <div class="form-group">
-                                <img src="{{asset( 'storage/' . $tour->preview_image)}}" class="card-img-top" alt="">
-                                <h5 class="mb-5 blue">Категория
-                                    {{$tour->category->title}}
+                                <img src="{{asset( 'storage/' . $program->back_image)}}" class="card-img-top" alt="">
+                                <h5 class="mb-5 blue">Название программы
+                                    {{$program->title}}<br>
+                                    id - tour
+                                    {{$program->tour_id}}
+
                                 </h5>
                                 <div class="d-flex flex-column">
-                                    <h5 class="card-title">Название тура:{{$tour->title}}</h5>
-                                    <h3>Гид:
-                                        {{
-    $tour->guid->name    }}
-                                        {{
-    $tour->guid->surname
-        }}
-                                        {{
-    $tour->guid->patronymic
-        }}
-                                    </h3>
+
                                     <div class="div">
-                                    <span>
-                                        Продожительность тура: {{$tour->duration_tour}}
-                                    </span>
-                                        <div class="d-flex">
-                                            <p>Начало:</p> <p>
-                                                {{date('H:m', strtotime($tour->begin_tour))}}
-                                            </p>
-                                        </div>
                                         <div class="waiting_for_programs">
-                                                    {!! $tour->waiting_for_programs !!}
+                                            <strong style="font-size: 18px">Описание</strong>
+                                                    {!! $program->description !!}
 
                                         </div>
-
                                     </div>
-                                    <div class="waiting_for_programs" style="">
+                                    <div class="waiting_for_programs " style="margin-top:20px">
+                                        <strong>
+                                            Баннер
+                                        </strong>
+                                        <div class="bg-blue">
+                                            {!! $program->begin_tour_banner !!}
+                                        </div>
 
 
                                     </div>

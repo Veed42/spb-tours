@@ -43,34 +43,34 @@ $tour->duration_tour
                     <h1 class="title__guides uppercase">
                         Гиды Экскурсии
                     </h1>
-                    @foreach($tours as $tour)
+                    @foreach($guides as $guid)
                         <div class="cols__guides">
                             <div class="col-guids">
                                 <div class="img_guid-container">
-                                    <img src="{{'../storage/' . $tour->guid->image_guid}}">
+                                    <img src="{{'../storage/' . $guid->image_guid}}">
                                 </div>
                                 <div class="description-guid">
                                     <div class="guid-title-container">
-                                        <h3 class="guid-title">{{$tour->guid->name}}</h3>
+                                        <h3 class="guid-title">{{$guid->name}}</h3>
 
-                                        <h3 class="guid-title" style="margin-left: 30px">{{$tour->guid->surname}}</h3>
+                                        <h3 class="guid-title" style="margin-left: 30px">{{$guid->surname}}</h3>
                                     </div>
 
                                     <div class="experience-guid">
                                         <div class="img-icon">
                                             <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
                                         </div>
-                                        Опыт работы: <strong>{{$tour->guid->year_work}} года</strong>
+                                        Опыт работы: <strong>{{$guid->year_work}} года</strong>
                                     </div>
                                     <div class="quality-guid">
                                         <strong class="bold-guid">Качества гида:      </strong>
                                         <span>
-                                    {!! $tour->guid->guides_quality !!}
+                                    {!! $guid->guides_quality !!}
                                     </span>
 
                                     </div>
                                     <div class="description-container">
-                                        {!! $tour->guid->description !!}
+                                        {!! $guid->description !!}
                                     </div>
 
                                 </div>
@@ -88,7 +88,6 @@ $tour->duration_tour
                 Программа тура
             </h1>
             <div class="inner-program">
-                @foreach($tours as $program)
                     <h3 >
                         {{$tour->program->title}}
                         {{$tour->program->tour_id}}
@@ -109,13 +108,30 @@ $tour->duration_tour
                     <div class="img_program-container">
                         <img src="{{'../storage/' . $tour->program->back_image}}">
                     </div>
-                @endforeach
                 </div>
             </div>
             <div class="container-review">
-                <h1 class="">
+                <h1 class="title-reviews-users">
                     Отзывы
                 </h1>
+                <p style="font-size: 32px; margin-bottom: 50px">
+                    Напишите свои впечатления обо всем: начиная от гида, который вас сопровождал, заканчивая эмоциями о посещённой экскурсии
+                </p>
+            <form>
+                <div class="wrapper-review-form">
+                    <div class="form-group" style="margin-bottom: 30px">
+                        <input class="text-field__input" type="text" name="name" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                    <textarea placeholder="Описание" >
+
+                    </textarea>
+                    </div>
+                </div>
+
+
+
+            </form>
             </div>
 
             </div>

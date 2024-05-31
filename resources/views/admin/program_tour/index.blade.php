@@ -39,17 +39,19 @@
                                     <thead class="">
                                     <tr >
                                         <th scope="col">#</th>
-                                        <th scope="col">Название тура</th>
+                                        <th scope="col">Название Программы</th>
+{{--                                        <th scope="col">Название тура</th>--}}
                                         <th scope="col">Посмотреть</th>
                                         <th scope="col">Отредактировать</th>
                                         <th scope="col">Удалить</th>
                                     </tr>
                                     </thead>
                                     <tbody class="">
-                                    @foreach($tours as $tour)
+                                    @foreach($programs as $tour)
                                         <tr>
                                             <td>{{$tour->id}}</td>
                                             <td>{{$tour->title}}</td>
+{{--                                            <td>{{$tour->tour->id}}</td>--}}
                                             <td><a href="{{route('admin.program_tour.show', $tour->id)}}">
                                                     <i class="fa fa-eye"></i>
                                                 </a></td>

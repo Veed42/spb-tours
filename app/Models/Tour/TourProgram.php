@@ -15,12 +15,10 @@ class TourProgram extends Model
 
     public function tour()
     {
-        return $this->belongsTo('App\Models\Tour\Tour', 'tour_id', 'id');
+        return $this->hasMany(TourProgram::class);
     }
 
-    public function tours(){
-        return $this->hasOne('App\Models\Tour\Tour', 'tour_program_id', 'tour_id');
-    }
+
 
     protected $fillable = [
         'title',

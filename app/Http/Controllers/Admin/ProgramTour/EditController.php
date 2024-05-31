@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Guid;
 use App\Models\Tour\Tour;
+use App\Models\Tour\TourProgram;
 use Illuminate\Contracts\Support\Renderable;
 
 class EditController extends Controller
@@ -25,10 +26,9 @@ class EditController extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Tour $tour)
+    public function __invoke(Tour $tour, TourProgram $program)
     {
-        $categories = Category::all();
-        $guides = Guid::all();
-        return view('admin.program_tour.edit', compact('tour', 'categories', 'guides'));
+        $tours = Tour::all();
+        return view('admin.program_tour.edit', compact('tour','program', 'tours'));
     }
 }

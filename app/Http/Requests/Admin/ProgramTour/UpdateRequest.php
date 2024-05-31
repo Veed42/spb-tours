@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Tour;
+namespace App\Http\Requests\Admin\ProgramTour;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -20,14 +20,10 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'price' => 'required|numeric',
-            'waiting_for_programs' => 'required|string',
-            'preview_image' => 'file|nullable',
-            'main_image' => 'file|nullable',
-            'duration_tour' => 'required|string',
-            'begin_tour' => 'required',
-            'category_id' => 'required|exists:categories,id',
-            'guid_id' => 'required|exists:guides,id'
+            'description' => 'required|string',
+            'begin_tour_banner' => 'required|string',
+            'back_image' => 'file|nullable',
+            'tour_id' => 'required|exists:tours,id'
         ];
     }
 }
