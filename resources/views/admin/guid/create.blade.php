@@ -34,7 +34,6 @@
                               enctype="multipart/form-data"
                         >
                             @csrf
-                            @csrf
                             <div class="form-group">
                                 <label for="exampleInputFile">Добавить превью</label>
                                 <div class="input-group">

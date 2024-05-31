@@ -365,7 +365,7 @@ header.fixed {
         .content-image{
             padding-left: 126px;
             .div-title-tour{
-                margin-top: 636px;
+                margin-top: 436px;
                 margin-bottom: 15px;
                 font-size: 60px;
             h5{
@@ -419,6 +419,34 @@ header.fixed {
         margin-bottom: 80px;
     }
 }
+.order-block{
+    margin-bottom: 100px;
+    .btn-tour{
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+        color: #fff;
+        background: #F38D68;
+        margin-top: 50px;
+    }
+}
+.intro-order{
+    height: 100vh;
+    padding: 150px 0 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .title-order-container{
+        margin-bottom: 80px;
+        .title-order{
+            text-align: center;
+            font-weight: 700;
+            font-size: $fs-xls;
+            margin-bottom: 80px;
+        }
+    }
+
+}
+
 .container-review{
     margin-top: 150px;
     margin-bottom: 150px;
