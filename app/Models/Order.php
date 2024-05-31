@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Order extends Model
 {
     use HasFactory;
+    protected $table = 'orders';
+
+    protected $guarded = false;
 
 
     public function orders():HasMany
@@ -21,13 +24,13 @@ class Order extends Model
         'phone',
         'email',
         'country',
-        'time',
+        'time_tour',
         'count_grown',
         'count_children',
         'age_children',
-        'title_tour',
-        'price_tour',
-        'status'
+        'status',
+        'user_id',
+        'tour_id'
     ];
 
 }

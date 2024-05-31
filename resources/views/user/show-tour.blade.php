@@ -27,7 +27,7 @@ $tour->duration_tour
                 </div>
             </div>
 
-            <div class="div-title-tour">
+            <div class="div-title-tour" style="margin-bottom: 150px">
                 <h5 style="font-weight: bold" class="card-title">{{$tour->title}}</h5>
             </div>
         </div>
@@ -88,10 +88,10 @@ $tour->duration_tour
                 Программа тура
             </h1>
             <div class="inner-program">
-                    <h3 >
-                        {{$tour->program->title}}
-                        {{$tour->program->tour_id}}
-                    </h3>
+{{--                    <h3 >--}}
+{{--                        {{$tour->program->title}}--}}
+{{--                        {{$tour->program->tour_id}}--}}
+{{--                    </h3>--}}
 
                     <div class="container-description_program">
                         <p>
@@ -100,14 +100,16 @@ $tour->duration_tour
                     </div>
                     <br>
 
-                    <div class="container-begin_tour_banner">
-                        <p>
-                            {!! $tour->program->begin_tour_banner !!}
-                        </p>
-                    </div>
+
                     <div class="img_program-container">
                         <img src="{{'../storage/' . $tour->program->back_image}}">
                     </div>
+
+                <div class="container-begin_tour_banner" style="margin-top: 50px">
+                    <p>
+                        {!! $tour->program->begin_tour_banner !!}
+                    </p>
+                </div>
                 </div>
             </div>
             <div class="container-review">
@@ -123,7 +125,7 @@ $tour->duration_tour
                         <input class="text-field__input" type="text" name="name" placeholder="Ваше имя">
                     </div>
                     <div class="form-group">
-                    <textarea placeholder="Описание" >
+                    <textarea placeholder="Enter your message..." >
 
                     </textarea>
                     </div>
@@ -132,6 +134,9 @@ $tour->duration_tour
 
 
             </form>
+            </div>
+            <div class="order-block " style="display: flex; justify-content:center;align-items: center">
+                <a  class="btn-tour" href="{{route('create.order', $tour->id)}}">Забронировать тур</a>
             </div>
 
             </div>

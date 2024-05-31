@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\Guid;
 use App\Http\Controllers\Admin\Main\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Main\HomeController;
+use App\Http\Controllers\User\CreateControllerOrder;
 use App\Http\Controllers\User\ShowControllerGuid;
 use App\Http\Controllers\User\ShowControllerTour;
 use Illuminate\Support\Facades\Artisan;
@@ -101,6 +102,7 @@ Route::group(['prefix' => 'tour'],function (){
         //    Route::get('tours/{tour}', function (App\Models\Tour\Tour $tour){
 //        return $tour->title;
 //    })->name('tour.show');
+    Route::get('/{tour}/order',[CreateControllerOrder::class, '__invoke'])->name('create.order');
     });
 Route::group(['prefix' => 'guid'], function (){
    Route::get('/{guid}', [ShowControllerGuid::class, '__invoke'])->name('guid.show');
