@@ -58,6 +58,7 @@
                                 @enderror
                             </div>
                             <div class="form-group" >
+                                <span class="font-weight-bolder">Описание тура</span>
                                 <textarea id="summernote" name="waiting_for_programs" ></textarea>
                             </div>
 

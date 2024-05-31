@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tours', function (Blueprint $table) {
-            $table->dropColumn('tour_program');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->foreign('tour_id')->references('id')->on('tours');
         });
     }
 
@@ -21,8 +21,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tours', function (Blueprint $table) {
-            $table->string('tour_program');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropForeign('orders_tour_id_foreign');
+            $table->dropIndex('orders_tour_id_foreign');
+            $table->dropColumn('tour_id');
         });
     }
 };

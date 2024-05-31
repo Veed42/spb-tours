@@ -372,8 +372,6 @@ header.fixed {
                 color: white;
             }
 
-
-
             }
             .div-group_time{
                 display: flex;
@@ -413,7 +411,57 @@ header.fixed {
         opacity: 0.6;
     }
 }
+.container-program_tour{
+    .title_program{
+        text-align: center;
+        font-weight: 700;
+        font-size: $fs-xls;
+        margin-bottom: 80px;
+    }
+}
+.container-review{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    .wrapper-review-form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        textarea{
+            width: 550px;
+            height: 450px;
+        }
+        .text-field__label {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        /* стили для input */
+        .text-field__input {
+            display: block;
+            height: calc(2.25rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #bdbdbd;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+    }
+    .title-reviews-users{
+        text-align: center;
+        font-weight: 700;
+        font-size: $fs-xls;
+        margin-bottom: 80px;
+    }
 
+    /* стили для label */
+
+}
 .intro-guid{
     padding: 150px 150px;
     background: #ffca2c;

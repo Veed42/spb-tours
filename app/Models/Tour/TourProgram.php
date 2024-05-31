@@ -13,17 +13,18 @@ class TourProgram extends Model
     protected $table = 'tour_programs';
     protected $guarded = false;
 
-    public function tour():BelongsTo
+    public function tour()
     {
-        return $this->belongsTo('App\Models\Tour', 'id', 'category_id');
+        return $this->hasMany(TourProgram::class);
     }
+
+
 
     protected $fillable = [
         'title',
-        'description_program_tour',
+        'description',
+        'begin_tour_banner',
         'back_image',
-        'days',
         'tour_id'
     ];
-
 }
