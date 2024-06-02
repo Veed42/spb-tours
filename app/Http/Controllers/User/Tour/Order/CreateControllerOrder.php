@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\User\Tour\Order;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Guid;
 use App\Models\Tour\Tour;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Support\Str;
 
 class CreateControllerOrder extends Controller
 {

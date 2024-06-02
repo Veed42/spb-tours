@@ -15,20 +15,7 @@
 
                     </h1>
 
-                    <div class="search-intro">
-                        @csrf
-                        <form method="get" class="form-search">
-                            <div class="container-search">
-                                <div class="control-panel">
-                                        <input type="text" class="search-input" placeholder="Найти экскурсии">
-                                </div>
 
-
-
-                            </div>
-
-                        </form>
-                    </div>
                 </div>
         </div>
     </div>
@@ -159,26 +146,7 @@
                             <h1 class="title__excursions uppercase">
                                 Экскурсии
                             </h1>
-                            <div class="panel-body ">
-                                <form action="" class="d-inline-flex">
-                                    <div class="container-category" style="display: flex; ">
-                                        <div class="form-group all">
-                                            <input name="all" type="checkbox" value="Все" class="checkbox">
-                                            <label for="all">Все</label>
-                                        </div>
-                                        <div class="form-group category2">
-                                            <input name="all" type="checkbox" value="Все" class="checkbox">
-                                            <label for="all">Индивидуальные</label>
-                                        </div>
-                                        <div class="form-group category3">
-                                            <input name="all" type="checkbox" value="Все" class="checkbox">
-                                            <label for="all">Групповые</label>
-                                        </div>
-                                    </div>
 
-
-                                </form>
-                            </div>
                             <div class="tours-container" >
                                     @foreach($tours as $tour)
 
@@ -407,8 +375,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="col ">
                                 <div class="info-reviews">
                                     <div class="up-reviews">
@@ -453,21 +419,13 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
 
-
                     <div class="swiper-scrollbar"></div>
-
-
-
-
 
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-
 
             </div>
         </div>

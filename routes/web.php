@@ -7,18 +7,18 @@ use App\Http\Controllers\Admin\Category\IndexController;
 use App\Http\Controllers\Admin\Category\ShowController;
 use App\Http\Controllers\Admin\Category\StoreController;
 use App\Http\Controllers\Admin\Category\UpdateController;
-
-use App\Http\Controllers\Admin\Tour;
-use App\Http\Controllers\Admin\ProgramTour;
 use App\Http\Controllers\Admin\Guid;
-
-
 use App\Http\Controllers\Admin\Main\AdminController;
+use App\Http\Controllers\Admin\ProgramTour;
+use App\Http\Controllers\Admin\Tour;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Main\HomeController;
-use App\Http\Controllers\User\CreateControllerOrder;
-use App\Http\Controllers\User\ShowControllerGuid;
-use App\Http\Controllers\User\ShowControllerTour;
+use App\Http\Controllers\User\Guid\ShowControllerGuid;
+use App\Http\Controllers\User\Main\HomeController;
+use App\Http\Controllers\User\Tour\Order\CreateControllerOrder;
+use App\Http\Controllers\User\Tour\Order\IndexControllerSuccess;
+use App\Http\Controllers\User\Tour\Order\StoreControllerOrder;
+use App\Http\Controllers\User\Tour\ShowControllerTour;
+use App\Http\Controllers\User\Tour\TourReview\StoreControllerTourReview;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -96,17 +96,38 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/login', [LoginController::class, 'index'])->name('login');
 
 
-Route::group(['namespace'=>'User'], function (){
-Route::group(['prefix' => 'tour'],function (){
+Route::group(['namespace'=>'User'],
+    function (){
+    Route::group(['namespace' => 'Main'], function (){
+            Route::get('/', [HomeController::class,'index'])->name('/');
+        });
+    Route::group([
+        'namespace' => 'Tour',
+        'prefix' => 'tour'],
+        function (){
         Route::get('/{tour}', [ShowControllerTour::class, '__invoke'])->name('tour.show');
-        //    Route::get('tours/{tour}', function (App\Models\Tour\Tour $tour){
-//        return $tour->title;
-//    })->name('tour.show');
-    Route::get('/{tour}/order',[CreateControllerOrder::class, '__invoke'])->name('create.order');
+        Route::group(['namespace' => 'Order',
+            'prefix' => '{tour}/order'], function (){
+           Route::get('/',[CreateControllerOrder::class, '__invoke'])->name('create.order');
+           Route::get('/store',[StoreControllerOrder::class, '__invoke'])->name('store.order');
+            Route::get('/success' , [IndexControllerSuccess::class, 'index'])->name('success-order');
+        });
+        Route::group([
+                'namespace' => 'TourReview',
+                'prefix' => '{tour}/reviews' ], function (){
+                Route::post('/', [StoreControllerTourReview::class,'__invoke'])->name('tour.review.store');
+            });
     });
-Route::group(['prefix' => 'guid'], function (){
-   Route::get('/{guid}', [ShowControllerGuid::class, '__invoke'])->name('guid.show');
-});
+
+    Route::group([
+        'namespace'=> 'Guid' ,
+        'prefix' => 'guid'],
+        function (){
+        Route::get('/{guid}', [ShowControllerGuid::class, '__invoke'])->name('guid.show');
+    });
+
+
+
 });
 
 

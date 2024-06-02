@@ -43,39 +43,37 @@ $tour->duration_tour
                     <h1 class="title__guides uppercase">
                         Гиды Экскурсии
                     </h1>
-                    @foreach($guides as $guid)
                         <div class="cols__guides">
                             <div class="col-guids">
                                 <div class="img_guid-container">
-                                    <img src="{{'../storage/' . $guid->image_guid}}">
+                                    <img src="{{'../storage/' . $tour->guid->image_guid}}">
                                 </div>
                                 <div class="description-guid">
                                     <div class="guid-title-container">
-                                        <h3 class="guid-title">{{$guid->name}}</h3>
+                                        <h3 class="guid-title">{{$tour->guid->name}}</h3>
 
-                                        <h3 class="guid-title" style="margin-left: 30px">{{$guid->surname}}</h3>
+                                        <h3 class="guid-title" style="margin-left: 30px">{{$tour->guid->surname}}</h3>
                                     </div>
 
                                     <div class="experience-guid">
                                         <div class="img-icon">
                                             <img src="{{Vite::asset('resources/img/icons/experience-icon.jpeg')}}" alt="">
                                         </div>
-                                        Опыт работы: <strong>{{$guid->year_work}} года</strong>
+                                        Опыт работы: <strong>{{$tour->guid->year_work}} года</strong>
                                     </div>
                                     <div class="quality-guid">
                                         <strong class="bold-guid">Качества гида:      </strong>
                                         <span>
-                                    {!! $guid->guides_quality !!}
+                                    {!! $tour->guid->guides_quality !!}
                                     </span>
 
                                     </div>
                                     <div class="description-container">
-                                        {!! $guid->description !!}
+                                        {!! $tour->guid->description !!}
                                     </div>
 
                                 </div>
                             </div>
-                            @endforeach
                         </div>
                 </div>
 
@@ -95,6 +93,9 @@ $tour->duration_tour
 
                     <div class="container-description_program">
                         <p>
+                            @if(!$tour->program->description)
+                                Описания нет
+                            @endif
                             {!! $tour->program->description !!}
                         </p>
                     </div>
@@ -102,6 +103,9 @@ $tour->duration_tour
 
 
                     <div class="img_program-container">
+                        @if($tour->program->back_image)
+                            Фото нет
+                        @endif
                         <img src="{{'../storage/' . $tour->program->back_image}}">
                     </div>
 
@@ -112,32 +116,101 @@ $tour->duration_tour
                 </div>
                 </div>
             </div>
+{{--            @dd($tour->id)--}}
             <div class="container-review">
-                <h1 class="title-reviews-users">
-                    Отзывы
-                </h1>
-                <p style="font-size: 32px; margin-bottom: 50px">
-                    Напишите свои впечатления обо всем: начиная от гида, который вас сопровождал, заканчивая эмоциями о посещённой экскурсии
-                </p>
-            <form>
+                <div class="container-title-reviews">
+                    <h1 class="title-reviews-users">
+                        Отзывы
+                    </h1>
+                    <div class="sub-title-reviews">
+                        <p style="font-size: 32px; margin-bottom: 50px">
+                            Напишите свои впечатления обо всем: начиная от гида, который вас сопровождал, заканчивая эмоциями о посещённой экскурсии
+                        </p>
+                        <hr>
+                        <br>
+                    </div>
+                </div>
+            <div class="shows-reviews">
+                <h3>
+                    Отзывы тура: {{$tour->reviews->count()}}
+                </h3>
+                @foreach($tour->reviews as $review)
+                    <div class="div" style="display: flex; justify-content: space-between ">
+                        <div class="wrapper-content" style="display:grid; border-bottom: 2px solid #F38D68">
+                            <div class="container-title-user-name" >
+                                <h3 class="title-user">
+                                    {{$review->name}}
+                                </h3>
+
+                            </div>
+
+                            <div class="container-content-user">
+                                <p>
+                                    {{$review->content}}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div style="">
+                            <p>
+                                {{$review->created_at->diffForHumans()}}
+                            </p>
+                        </div>
+                    </div>
+
+
+                @endforeach
+            </div>
+                <hr>
+
+            <form action="{{route('tour.review.store', $tour->id)}}" method="post">
+
+                @csrf
                 <div class="wrapper-review-form">
                     <div class="form-group" style="margin-bottom: 30px">
-                        <input class="text-field__input" type="text" name="name" placeholder="Ваше имя">
+                        <input  class="text-field__input" type="text" name="name" placeholder="Ваше имя">
                     </div>
                     <div class="form-group">
-                    <textarea placeholder="Enter your message..." >
+                        <label>
 
-                    </textarea>
+                            <textarea name="content" placeholder="Enter your message..." >
+
+                            </textarea>
+                        </label>
+                        <input type="hidden"
+                               name="tour_id"
+                               value="{{$tour->id}}"
+
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Отправить">
                     </div>
                 </div>
 
-
-
             </form>
             </div>
-            <div class="order-block " style="display: flex; justify-content:center;align-items: center">
-                <a  class="btn-tour" href="{{route('create.order', $tour->id)}}">Забронировать тур</a>
+            <div  class="order-block" style="">
+                @auth()
+                    <div >
+                        <a  class="btn-tour" href="{{route('create.order', $tour->id)}}">Забронировать тур</a>
+                    </div>
+                @endauth
+                @guest()
+                    <div class="div">
+                        <p class="non-auth-tour">
+                            Чтобы забронировать тур необходимо <a href="{{route('register')}}">Зарегестрироваться</a> или <a href="{{route('login')}}">авторизоваться</a>
+                        </p>
+                    </div>
+                    @if(auth()->user())
+
+                    @endif
+                @endguest
             </div>
+
+
 
             </div>
         </div>
