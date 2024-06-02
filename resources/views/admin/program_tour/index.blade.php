@@ -47,19 +47,24 @@
                                     </tr>
                                     </thead>
                                     <tbody class="">
-                                    @foreach($programs as $tour)
+                                    @foreach($programs as $program)
                                         <tr>
-                                            <td>{{$tour->id}}</td>
-                                            <td>{{$tour->title}}</td>
-{{--                                            <td>{{$tour->tour->id}}</td>--}}
-                                            <td><a href="{{route('admin.program_tour.show', $tour->id)}}">
+                                            <td>{{$program->id}}</td>
+                                            <td>{{$program->title}}</td>
+                                            <td>
+                                                {{$program->tour->title}}
+{{--                                                @foreach($tours as $tour)--}}
+{{--                                                    {{$tour->id}}--}}
+{{--                                                @endforeach--}}
+                                                </td>
+                                            <td><a href="{{route('admin.program_tour.show', $program->id)}}">
                                                     <i class="fa fa-eye"></i>
                                                 </a></td>
-                                            <td><a href="{{route('admin.program_tour.edit', $tour->id)}}" class="text-success">
+                                            <td><a href="{{route('admin.program_tour.edit', $program->id)}}" class="text-success">
                                                     <i class="fa fa-edit"></i>
                                                 </a></td>
                                             <td>
-                                                <form action="{{route('admin.program_tour.delete', $tour->id)}}"
+                                                <form action="{{route('admin.program_tour.delete', $program->id)}}"
                                                       method="POST"
                                                 >
                                                     @csrf

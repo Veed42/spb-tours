@@ -15,7 +15,7 @@ class TourProgram extends Model
 
     public function tour()
     {
-        return $this->hasMany(TourProgram::class);
+        return $this->belongsTo(Tour::class);
     }
 
 

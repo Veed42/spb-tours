@@ -35,7 +35,11 @@ class Tour extends Model
     }
     public function guid()
     {
-        return $this->hasMany('App\Models\Guid', 'id', 'guid_id');
+        return $this->belongsTo('App\Models\Guid', 'guid_id', 'id');
+    }
+    public function reviews()
+    {
+     return $this->hasMany('App\Models\Tour\TourReview');
     }
 
 

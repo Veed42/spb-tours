@@ -25,6 +25,7 @@ class Order extends Model
         'email',
         'country',
         'time_tour',
+        'date_tour',
         'count_grown',
         'count_children',
         'age_children',

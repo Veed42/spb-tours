@@ -23,14 +23,11 @@ class StoreRequest extends FormRequest
             'phone' => 'required',
             'email' => 'required|unique:orders',
             'country' => 'required|string',
-            'time_tour' => 'required|date',
+            'time_tour' => 'required',
+            'date_tour' => 'required|date ',
             'count_grown' => 'required|numeric',
             'count_children' => 'required|numeric',
             'age_children' => 'required|numeric',
-            'duration_tour' => 'required|string',
-            'begin_tour' => 'required',
-            'category_id' => 'required|exists:categories,id',
-            'guid_id' => 'required|exists:guides,id'
         ];
     }
 }

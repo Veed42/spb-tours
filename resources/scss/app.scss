@@ -419,8 +419,19 @@ header.fixed {
         margin-bottom: 80px;
     }
 }
+    .title-success-container{
+        .success-title{
+            text-align: center;
+            font-weight: 700;
+            font-size: $fs-xls;
+        }
+    }
+
 .order-block{
     margin-bottom: 100px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
     .btn-tour{
         display: block;
         padding: 15px 20px;
@@ -428,6 +439,17 @@ header.fixed {
         color: #fff;
         background: #F38D68;
         margin-top: 50px;
+    }
+    .non-auth-tour{
+        font-size: 18px;
+        font-weight: 500;
+        a{
+
+            margin-bottom: 50px;
+        }
+        a:hover{
+            color: $accent-two;
+        }
     }
 }
 .intro-order{
@@ -447,9 +469,28 @@ header.fixed {
 
 }
 
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $accent-two;
+    margin: 1em 0;
+    padding: 0;
+}
 .container-review{
     margin-top: 150px;
     margin-bottom: 150px;
+    .container-title-reviews{
+        .title-reviews-users{
+            text-align: center;
+            font-weight: 700;
+            font-size: $fs-xls;
+            margin-bottom: 80px;
+        }
+
+
+    }
     .wrapper-review-form{
         display: flex;
         flex-direction: column;
@@ -480,12 +521,7 @@ header.fixed {
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
     }
-    .title-reviews-users{
-        text-align: center;
-        font-weight: 700;
-        font-size: $fs-xls;
-        margin-bottom: 80px;
-    }
+
 
     /* стили для label */
 

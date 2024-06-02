@@ -1,16 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\User\Guid;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Guid;
 use App\Models\Tour\Tour;
-use App\Models\Tour\TourProgram;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Support\Str;
 
-class ShowControllerTour extends Controller
+class ShowControllerGuid extends Controller
 {
     /**
      * Create a new controller instance.
@@ -27,20 +25,14 @@ class ShowControllerTour extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Tour $tour,Guid $guides,   Category $category)
+    public function __invoke(Tour $tour,Guid $guid,   Category $category)
     {
 
-        $guides = $tour->guid;
-        $tours = Tour::all();
-        $tour_program = Tour::with('program')->find('tour_id');
-        $programs = TourProgram::all();
-//        $programs = $program->tour;
-//        dd($programs);
         //Url id instead title
         //заменяет айди в юрл на название тура
 //        foreach ($tours as $tour){
 //            $tour->slug = Str::slug($tour->title);
 //        }
-        return view('user.show-tour', compact('tour',  'tour_program','guides', 'tours', 'programs'));
+        return view('user.show-guid', compact('tour', 'guid'));
     }
 }
