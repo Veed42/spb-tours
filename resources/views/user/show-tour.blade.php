@@ -103,13 +103,16 @@ $tour->duration_tour
 
 
                     <div class="img_program-container">
-                        @if($tour->program->back_image)
+                        @if(!$tour->program->back_image)
                             Фото нет
                         @endif
                         <img src="{{'../storage/' . $tour->program->back_image}}">
                     </div>
 
                 <div class="container-begin_tour_banner" style="margin-top: 50px">
+                    @if(!$tour->program->begin_tour_banner)
+                        Краткого описания нет
+                    @endif
                     <p>
                         {!! $tour->program->begin_tour_banner !!}
                     </p>
@@ -132,9 +135,9 @@ $tour->duration_tour
                 </div>
             <div class="shows-reviews">
                 <h3>
-                    Отзывы тура: {{$tour->reviews->count()}}
+                    Отзывы тура: {{$tour->review->count()}}
                 </h3>
-                @foreach($tour->reviews as $review)
+                @foreach($tour->review as $review)
                     <div class="div" style="display: flex; justify-content: space-between ">
                         <div class="wrapper-content" style="display:grid; border-bottom: 2px solid #F38D68">
                             <div class="container-title-user-name" >

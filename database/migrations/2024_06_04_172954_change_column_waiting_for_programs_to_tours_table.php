@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->dropColumn('price_tours');
+        Schema::table('tours', function (Blueprint $table) {
+            $table->string('waiting_for_programs', '2000')->after('price');
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('orders', function (Blueprint $table) {
-            //
+        Schema::table('tours', function (Blueprint $table) {
+            $table->dropColumn('waiting_for_programs');
         });
     }
 };

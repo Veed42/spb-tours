@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Admin\Tour;
 use App\Http\Controllers\Controller;
 use App\Models\Guid;
 use App\Models\Tour\Tour;
-use App\Models\Tour\TourProgram;
+use App\Models\Tour\TourReview;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 
-class DeleteController extends Controller
+class DeleteControllerReview extends Controller
 {
 
 //    public function __construct()
@@ -22,11 +22,12 @@ class DeleteController extends Controller
      *
      * @return RedirectResponse
      */
-    public function __invoke(Tour $tour, Guid $guid, TourProgram $program)
+    public function __invoke(TourReview $review, Tour $tour)
     {
-        $program->delete();
-        $tour->delete();
+            $review->delete();
+            return redirect()->back();
+
+//        $tour->review->delete();
 //        dd($tour);
-        return redirect()->route('admin.tour.index');
     }
 }
