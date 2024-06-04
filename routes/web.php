@@ -57,9 +57,12 @@ Route::group([
         Route::get('/create', [Tour\CreateController::class,'__invoke'])->name('admin.tour.create');
         Route::post('/store', [Tour\StoreController::class,'__invoke'])->name('admin.tour.store');
         Route::get('/{tour}', [Tour\ShowController::class,'__invoke'])->name('admin.tour.show');
+        Route::get('/error', [Tour\IndexController404Review::class,'__invoke'])->name('admin.tour.error');
         Route::get('/{tour}/edit', [Tour\EditController::class,'__invoke'])->name('admin.tour.edit');
         Route::patch('/{tour}', [Tour\UpdateController::class,'__invoke'])->name('admin.tour.update');
         Route::delete('/{tour}', [Tour\DeleteController::class,'__invoke'])->name('admin.tour.delete');
+        Route::delete('/reviews/{review}', [Tour\DeleteControllerReview::class,'__invoke'])->name('admin.review.delete');
+
 //       Route::get('/', 'CreateController@index')->name('category.create');
     });
 

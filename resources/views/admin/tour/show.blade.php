@@ -71,7 +71,44 @@
 
                                     </div>
                                     <div class="waiting_for_programs" style="">
+                                        @if(!$tour->review->count())
+                                            not reviews
+                                        @endif
+                                        <h3>
+                                        </h3>
+                                        @foreach($tour->review as $review)
+                                            <div class="div" style="display: flex; justify-content: space-between ">
+                                                <div class="wrapper-content" style="display:grid; border-bottom: 2px solid #F38D68">
+                                                    <div class="container-title-user-name" >
+                                                        <h3 class="title-user">
+                                                            {{$review->name}}
+                                                        </h3>
 
+                                                    </div>
+
+                                                    <div class="container-content-user">
+                                                        <p>
+                                                            {{$review->content}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div style="">
+                                                    <p>
+                                                        {{$review->created_at->diffForHumans()}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <form action="{{route('admin.review.delete', $review->id)}}"
+                                                  method="POST"
+                                            >
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="border-0 bg-transparent"> <i class="fas fa-trash text-danger" role="button" ></i></button>
+                                            </form>
+
+
+                                        @endforeach
 
                                     </div>
                                 </div>
