@@ -8,7 +8,9 @@
                     Форма заполнения данных
                 </h1>
             </div>
-    <form action="{{route('store.order', $tour->id)}}">
+    <form action="{{route('user.store.order', $tour->id)}}"
+          method="POST">
+        @csrf
         <div class="container-default">
             <div class="wrapper-order" style="display: grid; align-items: center; justify-content: center">
                 <div class="form-group name-group">
