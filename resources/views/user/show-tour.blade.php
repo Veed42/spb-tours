@@ -198,7 +198,7 @@ $tour->duration_tour
             <div  class="order-block" style="">
                 @auth()
                     <div >
-                        <a  class="btn-tour" href="{{route('create.order', $tour->id)}}">Забронировать тур</a>
+                        <a  class="btn-tour" href="{{route('user.create.order', $tour->id)}}">Забронировать тур</a>
                     </div>
                 @endauth
                 @guest()

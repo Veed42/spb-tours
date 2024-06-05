@@ -7,9 +7,33 @@
                 </h1>
 
             </div>
-            <div class="success-description">
-                В течении 15 минут будут отправлены билеты на почту. На месте необходимо показать номер билета и оплатить сумму на месте
-            </div>
+{{--            <div class="success-description">--}}
+{{--                @if(!$tour->order->time_tour)--}}
+{{--                    Null--}}
+{{--                @endif--}}
+{{--                    Ждём вас {{user()->order->time_tour}}--}}
+
+{{--            </div>--}}
+        <div class="contact-block">
+            <h3 class="sub-title">
+                Наши контакты:
+
+            </h3>
+            <div class="description__contacts-success">
+                <div class="contacts__address"> <p>Российская Федерация, г. Москва, ул Лужники, дом 54Б, 2 этаж, корпус 6, туристическое агентство “TravelRussia</p></div>
+                <div class="contacts__phone"><p>+ 7(987) 345 92 61</p> <p>+ 7(987) 768 98 45</p></div>
+                <div class="contacts__social" style="text-align: center">
+                    <a href="" class="vk__icon">
+                        <img src="{{Vite::asset('resources/img/icons/icon-vk.jpeg')}}" class="img__social"  alt="">
+                    </a>
+                    <a href="" class="whatsapp__icon">
+                        <img src="{{Vite::asset('resources/img/icons/icon-whatsapp.jpeg')}}" class="img__social"  alt="">
+                    </a>
+                    <a href="" class="mail__icon">
+                        <img src="{{Vite::asset('resources/img/icons/icon-mail.jpeg')}}" class="img__social"  alt="">
+                    </a>
+                </div>
+        </div>
 
     </div>
 

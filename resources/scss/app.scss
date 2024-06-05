@@ -466,7 +466,67 @@ header.fixed {
             margin-bottom: 80px;
         }
     }
+}
 
+.container-success{
+    padding:150px 0;
+    text-align: center;
+.contact-block{
+    margin-top: 80px;
+.sub-title{
+    font: $default-font;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29.26px;
+}
+    .description__contacts-success{
+        text-align: center;
+        display: grid;
+        justify-content: center;
+        .contacts__address{
+            padding-left: 40px;
+            margin-bottom: 50px;
+            font-size: 24px;
+        }
+        .contacts__phone{
+            margin-left: 40px;
+            display: flex;
+            font-size: $fs-xl;
+            justify-content: center;
+            text-align: center;
+            p{
+                padding-left: 50px;
+                font-weight: bold;
+            }
+            p:first-child{
+                padding-left: 0;
+            }
+        }
+        .contacts__social{
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            margin-left: 40px;
+
+            .img__social{
+
+                width: 25px;
+                height: 25px;
+
+            }
+            a{
+                padding-left: 20px;
+            }
+            a:first-child{
+                padding-left: 0;
+            }
+            .img__social:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+}
 }
 
 
