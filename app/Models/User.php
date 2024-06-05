@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Tour\Tour;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -19,9 +20,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Tour::class, 'tour_favorites');
     }
 
-    public  function orders(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+
+    public function orders()
     {
-        return $this->belongsToMany(Order::class,'orders');
+        return $this->hasMany(Order::class);
+    }
+    public function order(){
+        return $this->hasOne(Order::class);
     }
 
 

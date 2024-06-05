@@ -55,6 +55,7 @@
     $tour->guid->patronymic
         }}
                                     </h3>
+
                                     <div class="div">
                                     <span>
                                         Продожительность тура: {{$tour->duration_tour}}
@@ -70,15 +71,16 @@
                                         </div>
 
                                     </div>
-                                    <div class="waiting_for_programs" style="">
+                                    <div class="waiting_for_programs" >
                                         @if(!$tour->review->count())
                                             not reviews
                                         @endif
                                         <h3>
                                         </h3>
                                         @foreach($tour->review as $review)
-                                            <div class="div" style="display: flex; justify-content: space-between ">
-                                                <div class="wrapper-content" style="display:grid; border-bottom: 2px solid #F38D68">
+                                            <div class="div" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #e0a800; border-top: 1px solid #e0a800">
+
+                                                <div class="wrapper-content" style="display:grid;">
                                                     <div class="container-title-user-name" >
                                                         <h3 class="title-user">
                                                             {{$review->name}}
@@ -93,19 +95,22 @@
                                                     </div>
                                                 </div>
 
-                                                <div style="">
+                                                <div >
                                                     <p>
                                                         {{$review->created_at->diffForHumans()}}
                                                     </p>
+                                                    <form action="{{route('admin.review.delete', $review->id)}}"
+                                                          method="POST"
+                                                    >
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="border-0 bg-transparent"> <i class="fas fa-trash text-danger" role="button" ></i></button>
+                                                    </form>
+
                                                 </div>
+
                                             </div>
-                                            <form action="{{route('admin.review.delete', $review->id)}}"
-                                                  method="POST"
-                                            >
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="border-0 bg-transparent"> <i class="fas fa-trash text-danger" role="button" ></i></button>
-                                            </form>
+
 
 
                                         @endforeach

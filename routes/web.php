@@ -79,6 +79,18 @@ Route::group([
 //       Route::get('/', 'CreateController@index')->name('category.create');
         });
 
+//        Route::group(['namespace' => 'Order', 'prefix' => 'orders'], function (){
+//
+//            Route::get('/', [ProgramTour\IndexController::class,'index'])->name('admin.program_tour.index');
+//            Route::get('/create', [ProgramTour\CreateController::class,'__invoke'])->name('admin.program_tour.create');
+//            Route::post('/store', [ProgramTour\StoreController::class,'__invoke'])->name('admin.program_tour.store');
+//            Route::get('/{program}', [ProgramTour\ShowController::class,'__invoke'])->name('admin.program_tour.show');
+//            Route::get('/{program}/edit', [ProgramTour\EditController::class,'__invoke'])->name('admin.program_tour.edit');
+//            Route::patch('/{program}', [ProgramTour\UpdateController::class,'__invoke'])->name('admin.program_tour.update');
+//            Route::delete('/{program}', [ProgramTour\DeleteController::class,'__invoke'])->name('admin.program_tour.delete');
+////       Route::get('/', 'CreateController@index')->name('category.create');
+//        });
+
 
     Route::group(['namespace' => 'Guid', 'prefix' => 'guides'], function (){
 
@@ -108,17 +120,21 @@ Route::group(['namespace'=>'User'],
         'namespace' => 'Tour',
         'prefix' => 'tour'],
         function (){
+
         Route::get('/{tour}', [ShowControllerTour::class, '__invoke'])->name('tour.show');
+
         Route::group(['namespace' => 'Order',
-            'prefix' => '{tour}/order'], function (){
-           Route::get('/',[CreateControllerOrder::class, '__invoke'])->name('create.order');
-           Route::get('/store',[StoreControllerOrder::class, '__invoke'])->name('store.order');
-            Route::get('/success' , [IndexControllerSuccess::class, 'index'])->name('success-order');
+            'prefix' => '{tour}/order'],
+            function (){
+           Route::get('/',[CreateControllerOrder::class, '__invoke'])->name('user.create.order');
+           Route::post('/store',[StoreControllerOrder::class, '__invoke'])->name('user.store.order');
+           Route::get('/success' , [IndexControllerSuccess::class, 'index'])->name('success-order');
         });
         Route::group([
                 'namespace' => 'TourReview',
-                'prefix' => '{tour}/reviews' ], function (){
-                Route::post('/', [StoreControllerTourReview::class,'__invoke'])->name('tour.review.store');
+                'prefix' => '{tour}/review' ],
+            function (){
+                Route::post('/store', [StoreControllerTourReview::class,'__invoke'])->name('tour.review.store');
             });
     });
 

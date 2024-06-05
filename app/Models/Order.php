@@ -14,9 +14,9 @@ class Order extends Model
     protected $guarded = false;
 
 
-    public function orders():HasMany
+    public function user()
     {
-        return $this->hasMany(User::class,'user_id');
+        return $this->belongsTo(User::class);
     }
 
     protected $fillable = [

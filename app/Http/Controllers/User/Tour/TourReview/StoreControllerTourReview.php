@@ -19,6 +19,6 @@ class StoreControllerTourReview extends Controller
         $data['tour_id'] = $tour->id;
 //        dd($data);
         TourReview::create($data);
-        return redirect()->route('tour.show', $tour->id);
+        return redirect()->back();
     }
 }
