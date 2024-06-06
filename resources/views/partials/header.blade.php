@@ -8,27 +8,27 @@
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__item">
-                    <a href="" class="header__link">Преимущества</a>
+                    <a href="/#features" class="header__link">Преимущества</a>
                 </li>
 
                 <li class="header__item">
-                    <a href="" class="header__link">Наши гиды</a>
+                    <a href="/#guides" class="header__link">Наши гиды</a>
                 </li>
 
                 <li class="header__item">
-                    <a href="" class="header__link">Экскурсии</a>
+                    <a href="/#excursions" class="header__link">Экскурсии</a>
                 </li>
 
                 <li class="header__item">
-                    <a href="" class="header__link">Контакты</a>
+                    <a href="/#contacts" class="header__link">Контакты</a>
                 </li>
 
                 <li class="header__item">
-                    <a href="" class="header__link">Отзывы</a>
+                    <a href="/#reviews" class="header__link">Отзывы</a>
                 </li>
                 @if(Auth::user())
                     <li class="header__item">
-                        <a href="" class="header__link">Избранное</a>
+                        <a href="" class="header__link">Мои заказы</a>
                     </li>
                 @endif
             </ul>

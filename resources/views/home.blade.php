@@ -23,7 +23,7 @@
         <div class="company">
             <div class="container-default">
 
-                <div class="inner__company">
+                <div class="inner__company" id="features">
                     <h1 class="title__company uppercase">
                         Преимущества
                     </h1>
@@ -93,7 +93,7 @@
     <div class="guides">
         <div class="container-default">
 
-            <div class="inner__guides">
+            <div class="inner__guides " id="guides">
                 <h1 class="title__guides uppercase">
                     Гиды
                 </h1>
@@ -142,7 +142,7 @@
 {{--excursions block--}}
             <div class="excursions">
                     <div class="container-default">
-                        <div class="inner__excursions">
+                        <div class="inner__excursions" id="excursions">
                             <h1 class="title__excursions uppercase">
                                 Экскурсии
                             </h1>
@@ -211,7 +211,7 @@
 
     <div class="contacts">
                 <div class="container-default">
-                    <div class="inner__contacts">
+                    <div class="inner__contacts" id="contacts">
                         <h1 class="title__contacts uppercase">Контакты</h1>
                         <div class="content__contacts">
                             <div class="description__contacts">
@@ -238,10 +238,10 @@
                 </div>
             </div>
 
-    <div class="reviews">
-        <div class="container-default">
+    <div class="reviews" id="reviews">
+        <div class="container-default" >
             <h1 class="title__reviews uppercase">Отзывы</h1>
-            <div class="inner__reviews">
+            <div class="inner__reviews" >
 
                 <div class="cols-reviews swiper">
                     <div class="swiper-wrapper">
