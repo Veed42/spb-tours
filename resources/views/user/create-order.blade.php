@@ -16,8 +16,8 @@
                 <div class="form-group name-group">
 
                     <div class="input-group">
-                        <div class="custom-file">
-                            <label for="name"><label for="surname">{{__('Имя*')}}</label></label>
+                        <div class="">
+                            <label for="name">{{__('Имя*')}}</label>
                             <input type="text"
                                    class="@error('name') is-invalid @enderror"
                                    name="name"
@@ -32,10 +32,8 @@
                 </div>
                 <div class="form-group w-25">
                     <label for="surname">{{__('Телефон*')}}</label>
-                    <input id="phone" type="tel" class="form-control @error('tel') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
-                           placeholder="Номер телефона"
-                           required autocomplete="phone" autofocus>
-
+                    <input id="phone" max="10" type="tel" class="phone form-control @error('tel') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
+                           required autocomplete="phone" autofocus >
                     @error('phone')
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -144,45 +142,21 @@
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                 </div>
 
-
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary">
+                    <input id="btn-order" type="submit" class="btn-order btn-primary">
                 </div>
             </div>
-            </div>
 
-{{--            <div class="form-group">--}}
-{{--                <label for="country"><label for="surname">{{__('Город*')}}</label></label>--}}
-{{--                <input name="year_work"--}}
-{{--                       max="20"--}}
-{{--                       min="0"--}}
-{{--                       type="number"--}}
-{{--                       step="any"--}}
-{{--                       class="form-control @error('year_work') is-invalid @enderror" placeholder="Опыт работы(лет)" >--}}
-{{--                @error('year_work')--}}
-{{--                <span class="invalid-feedback" role="alert">--}}
-{{--                                        <strong>{{ $message }}</strong>--}}
-{{--                                    </span>--}}
-{{--                @enderror--}}
-{{--            </div>--}}
-
-{{--            <div class="form-group" >--}}
-{{--                <span class="font-weight-bolder">Качества гида</span>--}}
-{{--                <textarea id="summernote" name="guides_quality" ></textarea>--}}
-{{--            </div>--}}
-
-{{--            <div class="form-group" >--}}
-{{--                <span class="font-weight-bolder">Описание гида</span>--}}
-{{--                <textarea class="summernote" name="description" placeholder="Описание гида"></textarea>--}}
-{{--            </div>--}}
-
-
-
+        </div>
 
     </form>
 
 </div>
 </div>
 @endsection
-<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<script>
+    $(document).ready(function(){
+        $('.phone').inputmask('(+799)-999-9999');
+    });
+</script>
+

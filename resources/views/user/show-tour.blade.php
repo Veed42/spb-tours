@@ -3,11 +3,11 @@
 
 
 @section('content')
-    <div class="container">
 
 
 <div class="intro-tour" >
-    <div class="image-tour" style="display:grid;">
+    <div class="image-tour" style="
+    display:grid;">
 
     <img src="{{ '../storage/' . $tour->main_image }}">
         <div class="content-image" style="position: absolute; display: grid">
@@ -176,9 +176,7 @@ $tour->duration_tour
                     <div class="form-group">
                         <label>
 
-                            <textarea name="content" placeholder="Enter your message..." >
-
-                            </textarea>
+                            <textarea name="content" placeholder="Напишите свой отзыв"></textarea>
                         </label>
                         <input type="hidden"
                                name="tour_id"
@@ -189,7 +187,10 @@ $tour->duration_tour
 
 
                     <div class="form-group">
-                        <input type="submit" value="Отправить">
+                        <input
+                            class="btn-review-submit"
+                            type="submit"
+                            value="Отправить">
                     </div>
                 </div>
 
@@ -212,11 +213,7 @@ $tour->duration_tour
                     @endif
                 @endguest
             </div>
-
-
-
             </div>
-        </div>
 
 
 
