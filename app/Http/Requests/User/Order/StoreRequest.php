@@ -19,15 +19,16 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|unique:orders',
-            'phone' => 'required',
+            'name' => 'required|string',
+            'phone' => 'required:unique:orders',
             'email' => 'required|unique:orders',
             'country' => 'required|string',
             'time_tour' => 'required',
-            'date_tour' => 'required|date ',
+            'date_tour' => 'required|date',
             'count_grown' => 'required|numeric',
             'count_children' => 'required|numeric',
             'age_children' => 'required|numeric',
+            'user_id' => 'unique:orders'
         ];
     }
 }

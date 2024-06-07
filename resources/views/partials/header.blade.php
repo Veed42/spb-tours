@@ -28,7 +28,7 @@
                 </li>
                 @if(Auth::user())
                     <li class="header__item">
-                        <a href="" class="header__link">Мои заказы</a>
+                        <a href="{{route('index.order')}}" class="header__link">Мои заказы</a>
                     </li>
                 @endif
             </ul>

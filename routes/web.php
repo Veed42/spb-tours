@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\Guid;
 use App\Http\Controllers\Admin\Main\AdminController;
 use App\Http\Controllers\Admin\ProgramTour;
 use App\Http\Controllers\Admin\Tour;
+use App\Http\Controllers\Admin\Order;
+use App\Http\Controllers\User\OrderIndex;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\User\Guid\ShowControllerGuid;
 use App\Http\Controllers\User\Main\HomeController;
@@ -79,17 +81,16 @@ Route::group([
 //       Route::get('/', 'CreateController@index')->name('category.create');
         });
 
-//        Route::group(['namespace' => 'Order', 'prefix' => 'orders'], function (){
-//
-//            Route::get('/', [ProgramTour\IndexController::class,'index'])->name('admin.program_tour.index');
-//            Route::get('/create', [ProgramTour\CreateController::class,'__invoke'])->name('admin.program_tour.create');
-//            Route::post('/store', [ProgramTour\StoreController::class,'__invoke'])->name('admin.program_tour.store');
-//            Route::get('/{program}', [ProgramTour\ShowController::class,'__invoke'])->name('admin.program_tour.show');
-//            Route::get('/{program}/edit', [ProgramTour\EditController::class,'__invoke'])->name('admin.program_tour.edit');
-//            Route::patch('/{program}', [ProgramTour\UpdateController::class,'__invoke'])->name('admin.program_tour.update');
-//            Route::delete('/{program}', [ProgramTour\DeleteController::class,'__invoke'])->name('admin.program_tour.delete');
-////       Route::get('/', 'CreateController@index')->name('category.create');
-//        });
+        Route::group(['namespace' => 'Order',
+            'prefix' => 'orders'], function (){
+
+            Route::get('/', [Order\IndexController::class,'index'])->name('admin.orders.index');
+            Route::get('/{order}', [Order\ShowController::class,'__invoke'])->name('admin.order.show');
+            Route::get('/{order}/edit', [Order\EditController::class,'__invoke'])->name('admin.order.edit');
+            Route::patch('/{order}', [Order\UpdateController::class,'__invoke'])->name('admin.order.update');
+            Route::delete('/{order}', [Order\DeleteController::class,'__invoke'])->name('admin.order.delete');
+//       Route::get('/', 'CreateController@index')->name('category.create');
+        });
 
 
     Route::group(['namespace' => 'Guid', 'prefix' => 'guides'], function (){
@@ -136,6 +137,9 @@ Route::group(['namespace'=>'User'],
             function (){
                 Route::post('/store', [StoreControllerTourReview::class,'__invoke'])->name('tour.review.store');
             });
+    });
+    Route::group(['namespace' => 'Order'], function (){
+        Route::get('/orders', [OrderIndex\IndexController::class,'index'])->name('index.order');
     });
 
     Route::group([

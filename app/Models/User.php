@@ -21,13 +21,11 @@ class User extends Authenticatable
     }
 
 
-    public function orders()
-    {
-        return $this->hasMany(Order::class);
-    }
+
     public function order(){
-        return $this->hasOne(Order::class);
+        return $this->hasOne(Order::class, 'user_id');
     }
+
 
 
     /**

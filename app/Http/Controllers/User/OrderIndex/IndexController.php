@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\User\Main;
+namespace App\Http\Controllers\User\OrderIndex;
 
 use App\Http\Controllers\Controller;
-use App\Models\Guid;
-use App\Models\Tour\Tour;
+use App\Models\Order;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class IndexController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,10 +24,9 @@ class HomeController extends Controller
      *
      * @return Renderable
      */
-    public function index(Tour $title)
+    public function index()
     {
-        $tours = Tour::all();
-        $guides = Guid::all();
-        return view('home', compact('tours', 'guides'));
+        $orders = Order::where('user_id', auth()->user()->id)->get();
+        return view('user.index-order', compact('orders'));
     }
 }

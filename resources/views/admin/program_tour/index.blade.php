@@ -33,14 +33,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                             <div class=" table-responsive p-0 mt-5">
                                 <table  class="table table-hover text-center text-nowrap shadow">
                                     <thead class="">
                                     <tr >
                                         <th scope="col">#</th>
                                         <th scope="col">Название Программы</th>
-{{--                                        <th scope="col">Название тура</th>--}}
+                                        <th scope="col">Название тура</th>
                                         <th scope="col">Посмотреть</th>
                                         <th scope="col">Отредактировать</th>
                                         <th scope="col">Удалить</th>

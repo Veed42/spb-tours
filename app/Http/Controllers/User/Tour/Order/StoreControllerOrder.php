@@ -19,7 +19,7 @@ class StoreControllerOrder extends Controller
         $data['tour_id'] = $tour->id;
         $data['user_id'] = Auth::id();
         //        dd($request);
-        Order::create($data);
+        Order::firstOrCreate($data);
         return redirect()->route('success-order', $tour->id);
     }
 }

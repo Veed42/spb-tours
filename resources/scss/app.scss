@@ -450,7 +450,7 @@ header.fixed {
     }
 }
 .intro-order{
-    height: 105vh;
+    height: 110vh;
     padding: 100px 0 0 0;
     background-size: cover;
     background-repeat: no-repeat;
@@ -482,31 +482,59 @@ header.fixed {
         }
             input {
                 display: block;
-                height: calc(2.3rem + 2px);
                 padding: 0.375rem 0.75rem;
                 font-family: $default-font;
-                font-size: 1.5rem;
-                font-weight: 500;
-                line-height: 1.5;
+                font-size: 1.3rem;
+                font-weight: 400;
                 background-clip: padding-box;
                 border: 1px solid #bdbdbd;
                 border-radius: 0.25rem;
                 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                color: black;
         }
-        .form-group:last-child{
-            input{
-                margin: 0;
-            }
+        input[type=email]{
+            width: 400px;
         }
+        input[name=country]{
+            width: 400px;
+        }
+        input[name=time_tour]{
+            width: 150px;
+        }
+
+
 
 
     }
 
 }
 
+.container-orders{
+    font-weight: 500;
+    th {
+        font-weight: normal;
+        color: #111;
+        border-bottom: 1px solid #6678b1;
+        padding: 10px 8px;
+    }
+    td {
+        color: #111;
+        padding: 9px 8px;
+        transition: .3s linear;
+    }
+}
+
 .container-success{
     padding:150px 0;
     text-align: center;
+
+    .success-description{
+        font: $default-font;
+        font-size: 32px;
+        font-weight: 300;
+        color: black;
+        margin-top: 108px;
+    }
 .contact-block{
     margin-top: 80px;
 .sub-title{
@@ -515,6 +543,7 @@ header.fixed {
     font-weight: 600;
     line-height: 29.26px;
 }
+
     .description__contacts-success{
         text-align: center;
         display: grid;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Order;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Tour\Tour;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -25,7 +26,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $orders = Tour::all();
-        return view('admin.orders.index', compact('orders', ));
+        $orders = Order::all();
+        return view('admin.orders.index', compact('orders'));
     }
 }

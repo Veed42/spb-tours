@@ -33,31 +33,33 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                             <div class=" table-responsive p-0 mt-5">
                                 <table  class="table table-hover text-center text-nowrap shadow">
                                     <thead class="">
                                     <tr >
-                                        <th scope="col">#</th>
-                                        <th scope="col">Название тура</th>
+                                        <th scope="col">User_id</th>
+                                        <th scope="col">Имя бронирующего</th>
+                                        <th scope="col">Тур</th>
                                         <th scope="col">Посмотреть</th>
                                         <th scope="col">Отредактировать</th>
                                         <th scope="col">Удалить</th>
                                     </tr>
                                     </thead>
                                     <tbody class="">
-                                    @foreach($tours as $tour)
+                                    @foreach($orders as $order)
                                         <tr>
-                                            <td>{{$tour->id}}</td>
-                                            <td>{{$tour->title}}</td>
-                                            <td><a href="{{route('admin.tour.show', $tour->id)}}">
+                                            <td>{{$order->user_id}}</td>
+                                            <td>{{$order->name}}</td>
+                                            <td>{{$order->tour->title}}</td>
+                                            <td><a href="{{route('admin.order.show', $order->id)}}">
                                                     <i class="fa fa-eye"></i>
                                                 </a></td>
-                                            <td><a href="{{route('admin.tour.edit', $tour->id)}}" class="text-success">
+                                            <td><a href="{{route('admin.order.edit', $order->id)}}" class="text-success">
                                                     <i class="fa fa-edit"></i>
                                                 </a></td>
                                             <td>
-                                                <form action="{{route('admin.tour.delete', $tour->id)}}"
+                                                <form action="{{route('admin.order.delete', $order->id)}}"
                                                       method="POST"
                                                 >
                                                     @csrf
