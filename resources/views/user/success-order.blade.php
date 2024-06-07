@@ -7,13 +7,17 @@
                 </h1>
 
             </div>
-{{--            <div class="success-description">--}}
-{{--                @if(!$tour->order->time_tour)--}}
-{{--                    Null--}}
-{{--                @endif--}}
-{{--                    Ждём вас {{user()->order->time_tour}}--}}
+            <div class="success-description">
+                <p class="start-date-order">
+                    Ждем вас {{Auth::user()->order->date_tour->format('d.m.Y')}} в {{Auth::user()->order->time_tour->format('h:i')}}
+                </p>
 
-{{--            </div>--}}
+
+{{--                @if(!$order->time_tour)--}}
+{{--                    null--}}
+{{--                @endif--}}
+
+            </div>
         <div class="contact-block">
             <h3 class="sub-title">
                 Наши контакты:

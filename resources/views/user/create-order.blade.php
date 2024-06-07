@@ -140,10 +140,16 @@
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    @error('user_id')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <input id="btn-order" type="submit" class="btn-order btn-primary">
+
                 </div>
             </div>
 

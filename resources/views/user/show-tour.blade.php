@@ -139,7 +139,7 @@ $tour->duration_tour
                 </h3>
                 @foreach($tour->review as $review)
                     <div class="div" style="display: flex; justify-content: space-between ">
-                        <div class="wrapper-content" style="display:grid; border-bottom: 2px solid #F38D68">
+                        <div class="wrapper-content" id="wrapper-content" style="display:grid; border-bottom: 2px solid #F38D68">
                             <div class="container-title-user-name" >
                                 <h3 class="title-user">
                                     {{$review->name}}
@@ -166,7 +166,9 @@ $tour->duration_tour
             </div>
                 <hr>
 
-            <form action="{{route('tour.review.store', $tour->id)}}" method="post">
+            <form action="{{route('tour.review.store', $tour->id)}}"
+                  id="reviewForm"
+                  method="post">
 
                 @csrf
                 <div class="wrapper-review-form">
@@ -184,7 +186,6 @@ $tour->duration_tour
 
                         >
                     </div>
-
 
                     <div class="form-group">
                         <input
@@ -208,19 +209,13 @@ $tour->duration_tour
                             Чтобы забронировать тур необходимо <a href="{{route('register')}}">Зарегестрироваться</a> или <a href="{{route('login')}}">авторизоваться</a>
                         </p>
                     </div>
-                    @if(auth()->user())
-
-                    @endif
                 @endguest
             </div>
             </div>
 
 
-
-
-
-
 @endsection
+
 
 
 

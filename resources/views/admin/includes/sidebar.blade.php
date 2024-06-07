@@ -45,7 +45,7 @@
 
 
             <li class="nav-item">
-                <a href="pages/gallery.html" class="nav-link text-center">
+                <a href="{{route('admin.orders.index')}}" class="nav-link text-center">
                     <h1 class="text-center">O</h1>
                     <p class="">
                         Заказы

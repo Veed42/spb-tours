@@ -25,10 +25,10 @@ class IndexControllerSuccess extends Controller
      *
      * @return Renderable
      */
-    public function index(Tour $tour,  Order $orders, User $user)
+    public function index(Tour $tour,  Order $order, User $user)
 
     {
-        $orders = Order::all();
-        return view('user.success-order', compact('tour','orders', 'user'));
+
+        return view('user.success-order', compact('tour','order', 'user'));
     }
 }
