@@ -15,7 +15,7 @@ class Order extends Model
     protected $guarded = false;
 
     protected $casts = [
-      'date_tour' => 'datetime',
+      'date_tour' => 'date:y-m-d',
         'time_tour' => 'datetime',
     ];
 
@@ -42,6 +42,12 @@ class Order extends Model
         'status',
         'user_id',
         'tour_id'
+    ];
+
+    public const STATUSES = [
+        0 => 'В обработке',
+        1 => 'Подтверждено',
+        2 => 'Отклонено'
     ];
 
 }

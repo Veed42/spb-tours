@@ -84,7 +84,7 @@ Route::group([
         Route::group(['namespace' => 'Order',
             'prefix' => 'orders'], function (){
 
-            Route::get('/', [Order\IndexController::class,'index'])->name('admin.orders.index');
+            Route::get('/', [Order\IndexController::class,'index'])->name('admin.order.index');
             Route::get('/{order}', [Order\ShowController::class,'__invoke'])->name('admin.order.show');
             Route::get('/{order}/edit', [Order\EditController::class,'__invoke'])->name('admin.order.edit');
             Route::patch('/{order}', [Order\UpdateController::class,'__invoke'])->name('admin.order.update');
@@ -140,6 +140,8 @@ Route::group(['namespace'=>'User'],
     });
     Route::group(['namespace' => 'Order'], function (){
         Route::get('/orders', [OrderIndex\IndexController::class,'index'])->name('index.order');
+        Route::get('/{order}', [OrderIndex\ShowControllerOrder::class, '__invoke'])->name('show.order');
+
     });
 
     Route::group([
