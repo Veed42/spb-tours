@@ -13,18 +13,28 @@
                 <thead class="" style="border-collapse: collapse;border:  1px solid black;padding: 10px 20px">
                 <tr >
                     <th scope="col">Название тура</th>
-                    <th scope="col">Время</th>
-                    <th scope="col">Дата</th>
-                    <th scope="col">Посмотреть</th>
+                    <th scope="col">Статус</th>
+
                 </tr>
                 </thead>
             <tbody>
             @foreach($orders as $order)
             <tr>
                 <td>{{$order->tour->title}}</td>
-                <td>{{$order->time_tour->format('h:i')}}</td>
-                <td>{{$order->date_tour->format('d.m.Y')}}</td>
+                <td >
+                    @if ($order->status == 0)
+                        <span style="color: #f44cce" class="text-danger">{{ $statuses[$order->status] }}</span>
+                    @elseif (in_array($order->status, [1,2]))
+                        <span style="color: #3ab0c3" class="text-success">{{ $statuses[$order->status] }}</span>
+                    @else
+                        {{ $statuses[$order->status] }}
+                    @endif
+                </td>
+            <td>
+                <a href="{{route('show.order', $order->id)}}">Посмотреть </a>
+            </td>
             </tr>
+
 
 
 {{--                @dump($order->name)--}}

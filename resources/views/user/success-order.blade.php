@@ -40,6 +40,11 @@
         </div>
 
     </div>
+        <div class="div-link-container">
+            <a href="{{route('/')}}" style="border-bottom: 3px solid #F38D68; padding: 10px; ">На главную</a>
+            <a href="{{route('index.order')}}" style="border-bottom: 3px solid #F38D68; padding: 10px; margin-left: 30px">Мои заказы</a>
+        </div>
+    </div>
 
 
 @endsection

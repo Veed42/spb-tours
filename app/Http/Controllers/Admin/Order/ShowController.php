@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Order;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Guid;
+use App\Models\Order;
 use App\Models\Tour\Tour;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -25,11 +26,12 @@ class ShowController extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Tour $tour, Category $category, Guid $guid)
+    public function __invoke(Order $order, Category $category, Guid $guid)
     {
         $categories = Category::all();
+
 //        $tour->guid();
 //        dd($tour);
-        return view('admin.tour.show', compact('tour','categories', 'guid'));
+        return view('admin.orders.show', compact('order','categories', 'guid'));
     }
 }

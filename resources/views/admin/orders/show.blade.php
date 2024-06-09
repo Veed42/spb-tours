@@ -7,11 +7,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-md-center ">
-                        <h1 class="m-0 mr-4">{{$tour->title}}</h1>
-                        <a href="{{route('admin.tour.edit', $tour->id)}}" class="text-success">
+                        <h1 class="m-0 mr-4">Информация о заказе
+                        </h1>
+
+                        <a href="{{route('admin.order.edit', $order->id)}}" class="text-success">
                             <i class="fa fa-edit "></i>
                         </a>
-                        <form action="{{route('admin.tour.delete', $tour->id)}}"
+                        <form action="{{route('admin.order.delete', $order->id)}}"
                               method="POST"
                         >
                             @csrf
@@ -22,7 +24,6 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin')}}">Home</a></li>
-                            <li class="breadcrumb-item active">Категории</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -35,25 +36,85 @@
             <div class="container-fluid">
 
                 <div class="row">
-                    <div class="col-6">
-                            <div class=" table-responsive p-0 mt-5">
-                                <table  class="table table-hover text-center text-nowrap shadow">
-                                    <tbody class="">
-                                        <tr>
-                                            <td>ID</td>
-                                            <td>{{$tour->id}}</td>
+                    <div class="col-6 ">
+                        <div class="card " >
+                            <div class="card-body container">
+                                <div class="align-items-md-center " style="display: flex">
+                                    <h5 style="margin-right: 20px">Имя:</h5>
+                                    <h5 class="card-title">{{$order->name}}</h5>
+                                </div>
+<div class="" style="display: flex">
+            <h5 style="margin-right: 20px">
+                Телефон
+            </h5>
 
-                                        </tr>
-                                    <tr>
-                                        <td>Название</td>
-                                        <td>{{$tour->title}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+    <p class="card-text">{{$order->phone}}</p>
+</div>
+
+
+                                <div class="" style="display: flex">
+                                    <h5 style="margin-right: 20px">
+                                        email:
+                                    </h5>
+
+                                    <p class="card-text">{{$order->email}}</p>
+                                </div>
+                                <div class="" style="display: flex">
+                                    <h5 style="margin-right: 20px">
+                                        время тура:
+                                    </h5>
+
+                                    <p class="card-text">{{$order->time_tour->format('h:i')}}</p>
+                                </div>
+                                <div class="" style="display: flex">
+                                    <h5 style="margin-right: 20px">
+                                        Город:
+                                    </h5>
+
+                                    <p class="card-text">{{$order->country}}</p>
+                                </div>
+                                <div class="" style="display: flex">
+                                    <h5 style="margin-right: 20px">
+                                        Дата:
+                                    </h5>
+
+                                    <p class="card-text">{{$order->date_tour->format('d.y.m')}}</p>
+                                </div>
+                                <div class="" style="display: flex">
+                                    <h5 style="margin-right: 20px">
+                                        Количество взрослых:
+                                    </h5>
+
+                                    <p class="card-text">{{$order->count_grown}}</p>
+                                </div>
+                                <div class="" style="display: flex">
+                                    <h5 style="margin-right: 20px">
+                                        Количество детей:
+                                    </h5>
+
+                                    <p class="card-text">{{$order->count_children}}</p>
+                                </div>
+                                <div class="" style="display: flex">
+                                    <h5 style="margin-right: 20px">
+                                        Гид:
+                                    </h5>
+
+                                    <p class="card-text">{{$order->tour->guid->name}} {{$order->tour->guid->surname}} {{$order->tour->guid->patronymic}}</p>
+                                </div>
+                                <div class="" style="display: flex">
+                                    <h5 style="margin-right: 20px">
+                                        Тур:
+                                    </h5>
+
+                                    <p class="card-text">{{$order->tour->title}}</p>
+                                </div>
+
+
                             </div>
-                         </div>
-                     </div>
-                 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 @endsection

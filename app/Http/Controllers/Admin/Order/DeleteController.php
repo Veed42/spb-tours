@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Order;
 
 use App\Http\Controllers\Controller;
 use App\Models\Guid;
-use App\Models\Tour\Tour;
+use App\Models\Order;
 use App\Models\Tour\TourProgram;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
@@ -22,11 +22,10 @@ class DeleteController extends Controller
      *
      * @return RedirectResponse
      */
-    public function __invoke(Tour $tour, Guid $guid, TourProgram $program)
+    public function __invoke(Order $order, Guid $guid, TourProgram $program)
     {
-        $program->delete();
-        $tour->delete();
+        $order->delete();
 //        dd($tour);
-        return redirect()->route('admin.tour.index');
+        return redirect()->route('admin.order.index');
     }
 }

@@ -25,8 +25,10 @@ class IndexController extends Controller
      * @return Renderable
      */
     public function index()
+
     {
+        $statuses = Order::STATUSES;
         $orders = Order::where('user_id', auth()->user()->id)->get();
-        return view('user.index-order', compact('orders'));
+        return view('user.index-order', compact('orders', 'statuses'));
     }
 }

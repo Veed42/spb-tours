@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Order;
+namespace App\Http\Controllers\User\OrderIndex;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -9,7 +9,7 @@ use App\Models\Order;
 use App\Models\Tour\Tour;
 use Illuminate\Contracts\Support\Renderable;
 
-class EditController extends Controller
+class ShowControllerOrder extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,12 +26,15 @@ class EditController extends Controller
      *
      * @return Renderable
      */
-    public function __invoke(Order $order)
+    public function __invoke(Tour $tour,Order $order,   Category $category)
     {
-        $categories = Category::all();
-        $guides = Guid::all();
-        $tours = Tour::all();
+
+        //Url id instead title
+        //заменяет айди в юрл на название тура
+//        foreach ($tours as $tour){
+//            $tour->slug = Str::slug($tour->title);
+//        }
         $statuses = Order::STATUSES;
-        return view('admin.orders.edit', compact( 'categories','tours','statuses',  'guides', 'order'));
+        return view('user.show-order', compact('tour', 'order', 'statuses'));
     }
 }
