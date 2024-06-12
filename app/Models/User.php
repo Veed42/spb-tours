@@ -22,8 +22,8 @@ class User extends Authenticatable
 
 
 
-    public function order(){
-        return $this->hasOne(Order::class, 'user_id');
+    public function orders(){
+        return $this->hasMany('App\Models\Order', 'user_id', 'id');
     }
 
 

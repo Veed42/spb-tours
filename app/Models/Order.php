@@ -22,7 +22,7 @@ class Order extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo('App\Models\Order', 'user_id', 'id');
     }
     public function tour()
     {
@@ -34,11 +34,7 @@ class Order extends Model
         'phone',
         'email',
         'country',
-        'time_tour',
         'date_tour',
-        'count_grown',
-        'count_children',
-        'age_children',
         'status',
         'user_id',
         'tour_id'

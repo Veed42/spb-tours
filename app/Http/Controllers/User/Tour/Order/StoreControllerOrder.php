@@ -15,10 +15,10 @@ class StoreControllerOrder extends Controller
 
     public function __invoke(StoreRequest $request, Tour $tour)
     {
+//        dd($request);
         $data = $request->validated();
-        $data['tour_id'] = $tour->id;
-        $data['user_id'] = Auth::id();
-        //        dd($request);
+
+
         Order::firstOrCreate($data);
         return redirect()->route('success-order', $tour->id);
     }

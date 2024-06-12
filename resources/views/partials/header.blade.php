@@ -31,6 +31,7 @@
                         <a href="{{route('index.order')}}" class="header__link">Мои заказы</a>
                     </li>
                 @endif
+
             </ul>
 
         </nav>

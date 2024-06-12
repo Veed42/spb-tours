@@ -59,13 +59,13 @@
 
                                     <p class="card-text">{{$order->email}}</p>
                                 </div>
-                                <div class="" style="display: flex">
-                                    <h5 style="margin-right: 20px">
-                                        время тура:
-                                    </h5>
+{{--                                <div class="" style="display: flex">--}}
+{{--                                    <h5 style="margin-right: 20px">--}}
+{{--                                        время тура:--}}
+{{--                                    </h5>--}}
 
-                                    <p class="card-text">{{$order->time_tour->format('h:i')}}</p>
-                                </div>
+{{--                                    <p class="card-text">{{$order->time_tour->format('h:i')}}</p>--}}
+{{--                                </div>--}}
                                 <div class="" style="display: flex">
                                     <h5 style="margin-right: 20px">
                                         Город:

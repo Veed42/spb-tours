@@ -8,10 +8,10 @@
             <div class="front-intro"></div>
                 <div class="description-intro">
                     <p class="description__into">
-                        Окунись в мир архитектуры и истории города в
+                        Окунись в мир архитектуры и истории города
                     </p>
                     <h1 class="title__intro">
-                        Путешествие по <br> Санкт- Петербургу
+                        Экскурсионная деятельность <br>в Санкт петербурге
 
                     </h1>
 

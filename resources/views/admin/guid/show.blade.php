@@ -47,11 +47,11 @@
                             </h1>
                             <div class="card-body">
                                 <div class="align-items-md-center">
-                                    <h5>Имя:</h5>
-                                    <h5 class="card-title">{{$guid->name}}</h5>
+                                    <h5>ФИО</h5>
+                                    <h5 class="card-title">{{$guid->name}} {{$guid->surname}} {{$guid->patronymic}}</h5>
                                 </div>
 
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Описание {!!$guid->description!!}</p>
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>

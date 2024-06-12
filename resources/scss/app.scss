@@ -415,6 +415,15 @@ header.fixed {
         font-size: $fs-xls;
         margin-bottom: 80px;
     }
+    .inner-program{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .img_program-container{
+          margin: 0 auto;
+            width: 50%;
+        }
+    }
 }
     .title-success-container{
         .success-title{
@@ -449,6 +458,9 @@ header.fixed {
         }
     }
 }
+
+
+
 .intro-order{
     height: 110vh;
     padding: 100px 0 0 0;
@@ -492,15 +504,20 @@ header.fixed {
                 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
                 color: black;
         }
+        input[name=name]{
+            width: 500px;
+        }
+        input[name=phone]{
+            width: 400px;
+        }
+
         input[type=email]{
             width: 400px;
         }
         input[name=country]{
             width: 400px;
         }
-        input[name=time_tour]{
-            width: 150px;
-        }
+
 
 
 

@@ -13,13 +13,13 @@
         <div class="title-guid">
             <h3 class="title-guid-inner">
                 Название тура
-                {{Auth::user()->order->tour->title}}
+                {{$order->tour->title}}
 
             </h3>
 
             <h3>
                 Ваш гид
-                {{Auth::user()->order->tour->guid->name}} {{Auth::user()->order->tour->guid->surname}} {{Auth::user()->order->tour->guid->patronymic}}
+                {{$order->tour->guid->name}} {{$order->tour->guid->surname}} {{$order->tour->guid->patronymic}}
             </h3>
 
 
@@ -27,9 +27,8 @@
         </div>
             <div class="description-container " style=" font-size: 20px">
                 <p>
-                   Ваша  дата {{Auth::user()->order->date_tour->format('d.m.Y')}}
+                   Ваша  дата {{$order->date_tour->format('d.m.Y')}}
                     <br>
-                    ваше время {{Auth::user()->order->time_tour->format('h:i')}}
                 </p>
             </div>
 <div class="div" style=" font-size: 20px">
@@ -58,37 +57,13 @@
 
 
 
-
+<div class="qr-code">
+        {!! $qrCode !!}
+{{--    <img src="{{route('show.order', $order,['qrCode' => $order->name])}}" alt="">--}}
+</div>
 
         </div>
     </div>
-{{--    <div class="image-tour" style="display:grid;">--}}
-
-{{--    <img src="{{ '../storage/' . $guid->image_guid }}">--}}
-{{--        <div class="content-image" style="position: absolute; display: grid">--}}
-
-
-
-{{--            <div class="div-title-tour">--}}
-{{--                <h5 style="font-weight: bold" class="card-title">--}}
-{{--                    {{$guid->name}}{{$guid->surname}}{{$guid->patronymic}}--}}
-{{--                </h5>--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
-
-
-{{--    </div>--}}
-
-{{--    <p>--}}
-{{--        Опыт работы: {{$guid->year_work}}--}}
-{{--    </p>--}}
-{{--    <p>--}}
-{{--        Опыт работы: {{$guid->guides_quality}}--}}
-{{--    </p>--}}
-
-
-{{--    </div>--}}
 
 
 

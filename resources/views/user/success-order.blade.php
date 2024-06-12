@@ -8,10 +8,9 @@
 
             </div>
             <div class="success-description">
-                <p class="start-date-order">
-                    Ждем вас {{Auth::user()->order->date_tour->format('d.m.Y')}} в {{Auth::user()->order->time_tour->format('h:i')}}
-                </p>
-
+<p>
+    Наберём вас в течении 15 минут!
+</p>
 
 {{--                @if(!$order->time_tour)--}}
 {{--                    null--}}
@@ -21,7 +20,6 @@
         <div class="contact-block">
             <h3 class="sub-title">
                 Наши контакты:
-
             </h3>
             <div class="description__contacts-success">
                 <div class="contacts__address"> <p>Российская Федерация, г. Москва, ул Лужники, дом 54Б, 2 этаж, корпус 6, туристическое агентство “TravelRussia</p></div>
