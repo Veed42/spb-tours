@@ -17,7 +17,7 @@
 
                     <div class="input-group">
                         <div class="">
-                            <label for="name">{{__('Имя*')}}</label>
+                            <label for="name">{{__('ФИО*')}}</label>
                             <input type="text"
                                    class="@error('name') is-invalid @enderror"
                                    name="name"
@@ -31,9 +31,9 @@
                     </div>
                 </div>
                 <div class="form-group w-25">
-                    <label for="surname">{{__('Телефон*')}}</label>
+                    <label for="phone">{{__('Телефон*')}}</label>
                     <input id="phone" max="10" type="tel" class="phone form-control @error('tel') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
-                           required autocomplete="phone" autofocus >
+                            autocomplete="phone" autofocus >
                     @error('phone')
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -49,7 +49,7 @@
                             @error('email') is-invalid @enderror"
                         name="email"
                         value="{{ old('email') }}"
-                        required placeholder="Email" autocomplete="email">
+                         placeholder="Email" autocomplete="email">
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -69,18 +69,18 @@
                                     </span>
                     @enderror
                 </div>
-                <div class="form-group w-25">
-                    <label for="time_tour">{{__('Время*')}}</label>
-                    <input type="time"
-                           class="@error('time_tour') is-invalid @enderror"
-                           name="time_tour"
-                    >
-                    @error('time_tour')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
-                </div>
+{{--                <div class="form-group w-25">--}}
+{{--                    <label for="time_tour">{{__('Время*')}}</label>--}}
+{{--                    <input type="time"--}}
+{{--                           class="@error('time_tour') is-invalid @enderror"--}}
+{{--                           name="time_tour"--}}
+{{--                    >--}}
+{{--                    @error('time_tour')--}}
+{{--                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                    @enderror--}}
+{{--                </div>--}}
                 <div class="form-group w-25">
                     <label for="date_tour">{{__('Дата*')}}</label>
                     <input type="date"
@@ -93,59 +93,26 @@
                                     </span>
                     @enderror
                 </div>
-                <div class="form-group w-25">
-                    <label for="count_grown">{{__('Число взрослых*')}}</label>
-                    <input type="number"
-                           max="4"
-                           min="0"
-                           class="@error('count_grown') is-invalid @enderror"
-                           name="count_grown"
-                    >
-                    @error('count_grown')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
-                </div>
-                <div class="form-group w-25">
-                    <label for="count_children">{{__('Число детей*')}}</label>
-                    <input type="number"
-                           max="5"
-                           min="0"
-                           class="@error('count_children') is-invalid @enderror"
-                           name="count_children"
-                    >
-                    @error('count_grown')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
-                </div>
-                <div class="form-group w-25">
-                    <label for="age_children">{{__('Возраст детей*')}}</label>
-                    <input type="number"
-                           max="14"
-                           min="6"
-                           class="@error('age_children') is-invalid @enderror"
-                           name="age_children"
-                    >
-                    @error('count_grown')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
-                </div>
+
+
+
                 <div class="form-group">
                     <input type="hidden" name="tour_id" value="{{$tour->id}}">
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                    @error('user_id')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+
                 </div>
+
+{{--                @if (count($errors) > 0)--}}
+{{--                    <div class="alert alert-danger">--}}
+{{--                        <ul>--}}
+{{--                            @foreach ($errors->all() as $error)--}}
+{{--                                <li>{{ $error }}</li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
 
                 <div class="form-group">
                     <input id="btn-order" type="submit" class="btn-order btn-primary">

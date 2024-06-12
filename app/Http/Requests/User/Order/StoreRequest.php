@@ -20,15 +20,12 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'phone' => 'required:unique:orders',
-            'email' => 'required|unique:orders',
+            'phone' => 'required|unique:orders,phone',
+            'email' => 'required|unique:orders,email',
             'country' => 'required|string',
-            'time_tour' => 'required',
             'date_tour' => 'required|date',
-            'count_grown' => 'required|numeric',
-            'count_children' => 'required|numeric',
-            'age_children' => 'required|numeric',
-            'user_id' => 'unique:orders'
+            'user_id' => 'required|exists:orders,user_id',
+            'tour_id' => 'required|exists:orders,tour_id'
         ];
     }
 }

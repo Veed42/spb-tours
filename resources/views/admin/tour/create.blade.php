@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputFile">Главное изобаражение</label>
+                                <label for="exampleInputFile">Главное изображение</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="exampleInputFile" name="main_image">

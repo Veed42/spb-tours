@@ -25,9 +25,6 @@ class UpdateRequest extends FormRequest
             'country' => 'required|string',
             'time_tour' => 'required',
             'date_tour' => 'required|date',
-            'count_grown' => 'required|numeric',
-            'count_children' => 'required|numeric',
-            'age_children' => 'required|numeric',
             'tour_id' => 'unique:orders',
             'status' => 'required'
         ];

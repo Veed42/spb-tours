@@ -88,18 +88,6 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group w-25">
-                                <label for="time_tour">Начало тура</label>
-                                <input name="time_tour"
-                                       type="time"
-                                       value="{{$order->time_tour->format('h:i')}}"
-                                       class="form-control @error('begin_tour') is-invalid @enderror" placeholder="Начало тура" >
-                                @error('time_tour')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
                             <div class="form-group ">
                                Дата  <label for="date_tour" >{{$order->date_tour->format('d-m-y')}}</label>
                                     <input type="date"
@@ -113,52 +101,8 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group ">
-                                <label for="count_grown">{{__('Число взрослых*')}}</label>
-                                <input type="number"
-                                       max="4"
-                                       min="0"
-                                       class="form-control @error('count_grown') is-invalid @enderror"
-                                       name="count_grown"
-                                       value="{{$order->count_grown}}"
-                                >
-                                @error('count_grown')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group ">
-                                <label for="count_children">{{__('Число детей*')}}</label>
-                                <input type="number"
-                                       max="5"
-                                       min="0"
-                                       class="form-control @error('count_children') is-invalid @enderror"
-                                       name="count_children"
-                                       value="{{$order->count_children}}"
-                                >
-                                @error('count_children')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group ">
-                                <label for="age_children">{{__('Возраст детей*')}}</label>
-                                <input type="number"
-                                       max="14"
-                                       min="6"
-                                       class="form-control @error('age_children') is-invalid @enderror"
-                                       name="age_children"
-                                       value="{{$order->age_children}}"
 
-                                >
-                                @error('count_grown')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+
                             <div class="form-group mt-3">
                                 <span class="mb-3">Статус заявки</span>
                                 <div class="mt-2">
@@ -176,7 +120,7 @@
 
                             <div class="form-group">
                                 <label>Выберите тур</label>
-                                <select name="guid_id"
+                                <select name="tour_id"
                                         class="form-control">
                                     @foreach($tours as $tour)
                                         <option value="{{$order->tour->id}}"
@@ -185,7 +129,7 @@
                                         </option>
                                     @endforeach
                                 </select>
-                                @error('guid_id')
+                                @error('tour_id')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
