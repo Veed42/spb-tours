@@ -53,14 +53,14 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="pages/gallery.html" class="nav-link text-center">
                     <h1 class="text-center">U</h1>
                     <p class="">
                         Пользователи
                     </p>
                 </a>
-            </li>
+            </li> -->
 
 
 

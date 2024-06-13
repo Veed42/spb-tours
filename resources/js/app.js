@@ -12,7 +12,14 @@ import.meta.glob([
     // '../fonts/**',
 ])
 
-
+// $(document).ready(function() {
+//     $('#btn-review-submit').click(function(e) {
+//      e.preventDefault()
+//         $.ajax({
+//                  url:route('tour.review.store'),
+//      })
+//     });
+// });
 $(window).scroll(function() {
     var header = $(document).scrollTop();
     var headerHeight = $(".header").outerHeight();

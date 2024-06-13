@@ -1,14 +1,14 @@
 @extends('layout.auth-layout')
 @section('content')
 
-<div class="container-v100 vh-100">
+<div class="container-v100 ">
     <div class="row ">
         <div class="col-md-8">
 <div class="card-container">
     <div class="card-header-up">
         <div class="item-header-up container-logo">
             <a class="link-logo" href="{{route('/')}}">
-                <img src="{{Vite::asset('resources/img/logo-site.svg')}}">
+                Санкт-Петербург
             </a>
         </div>
         <div class="item-header-up">
@@ -23,7 +23,6 @@
             <div class="card-header">{{ __('Регистрация') }}</div>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
-
                 <div class="row mb-3">
 
                     <div class="col-md-6">
@@ -32,13 +31,16 @@
                                class="form-control
                                @error('name') is-invalid @enderror"
                                name="name"
-                               value="{{ old('name') }}" required autocomplete="name" placeholder="Ваше имя" autofocus>
+                               value="{{ old('name') }}"  autocomplete="name" placeholder="Ваше имя" autofocus>
 
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
+                      <div>
+                          @error('name')
+                          <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                        @enderror
+                          @enderror
+                      </div>
+
                     </div>
                 </div>
 
@@ -52,13 +54,16 @@
                             @error('email') is-invalid @enderror"
                             name="email"
                             value="{{ old('email') }}"
-                            required placeholder="Email" autocomplete="email">
+                             placeholder="Email" autocomplete="email">
 
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
+                       <div>
+                           @error('email')
+                           <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                        @enderror
+                           @enderror
+                       </div>
+
                     </div>
                 </div>
 
@@ -71,39 +76,42 @@
                                class="form-control
                                @error('phone') is-invalid @enderror"
                                name="phone"
-                               value="{{ old('tel') }}" placeholder="Номер телефона" required autocomplete="tel">
-
-                        @error('phone')
-                        <span class="invalid-feedback" role="alert">
+                               value="{{ old('tel') }}" placeholder="Номер телефона"  autocomplete="tel" >
+                        <div>
+                            @error('phone')
+                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
+                                @enderror
                         </span>
-                        @enderror
+
+                        </div>
+
                     </div>
                 </div>
-
-
-                <div class="row mb-3">
-
-                    <div class="col-md-6">
+                <div class="row ">
+                    <div class="col-md-3">
                         <input
                             id="password"
                             type="password"
                             class="form-control
                             @error('password') is-invalid @enderror"
-                            name="password" placeholder="Пароль" required autocomplete="new-password">
+                            name="password" placeholder="Пароль"  autocomplete="new-password" >
 
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
+                     <div>
+                         @error('password')
+                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                        @enderror
+                         @enderror
+                     </div>
+
                     </div>
                 </div>
 
                 <div class="row mb-3">
 
                     <div class="col-md-6">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Подтверждение пароля" required autocomplete="new-password">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Подтверждение пароля"  autocomplete="new-password">
                     </div>
                 </div>
 

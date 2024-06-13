@@ -11,7 +11,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('admin')}}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('admin')}}">Домой</a></li>
                             <li class="breadcrumb-item active">Туры</li>
                         </ol>
                     </div><!-- /.col -->
@@ -19,17 +19,15 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-
                 <div class="row">
                     <div class="col-12">
                             <div class=" table-responsive p-0 mt-5">
                                 <table  class="table table-hover text-center text-nowrap shadow">
                                     <thead class="">
-                                    <tr >
+                                    <tr>
                                         <th scope="col">User_id</th>
                                         <th scope="col">Имя бронирующего</th>
                                         <th scope="col">Тур</th>

@@ -2,7 +2,7 @@
     <div class="container-default">
         <div class="header__logo">
             <a href="{{route('/')}}" class="header__logo-link">
-                <img src="{{Vite::asset('resources/img/logo-site.svg')}}" alt="logo" class="header__logo header__logo-pic">
+            Санкт-Петербург
             </a>
         </div>
         <nav class="header__nav">

@@ -1,7 +1,4 @@
 @extends('layout.layout')
-
-
-
 @section('content')
     <div class="container">
         <div class="intro">
@@ -11,11 +8,9 @@
                         Окунись в мир архитектуры и истории города
                     </p>
                     <h1 class="title__intro">
-                        Экскурсионная деятельность <br>в Санкт петербурге
+                        Экскурсионная деятельность <br>в Санкт-Петербурге
 
                     </h1>
-
-
                 </div>
         </div>
     </div>
@@ -237,15 +232,12 @@
                     </div>
                 </div>
             </div>
-
     <div class="reviews" id="reviews">
         <div class="container-default" >
             <h1 class="title__reviews uppercase">Отзывы</h1>
             <div class="inner__reviews" >
-
                 <div class="cols-reviews swiper">
                     <div class="swiper-wrapper">
-
                         <div class="swiper-slide">
                             <div class="col">
                                 <div class="info-reviews">

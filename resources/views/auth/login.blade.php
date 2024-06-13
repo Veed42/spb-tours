@@ -12,7 +12,7 @@
                 <div class="card-header-up">
                     <div class="item-header-up container-logo">
                         <a class="link-logo" href="{{route('/')}}">
-                            <img src="{{Vite::asset('resources/img/logo-site.svg')}}">
+                           Санкт-Петербург
                         </a>
                     </div>
                     <div class="item-header-up">
@@ -29,28 +29,32 @@
                             <div class="row mb-3">
 
                                 <div class="col-md-6">
-                                    <input id="phone" type="tel" class="form-control @error('tel') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
+                                    <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
                                            placeholder="Номер телефона"
-                                           required autocomplete="phone" autofocus>
-
-                                    @error('phone')
-                                    <span class="invalid-feedback" role="alert">
+                                            autocomplete="phone" autofocus>
+<div>
+    @error('phone')
+    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
+    @enderror
+</div>
+
                                 </div>
                             </div>
 
                             <div class="row mb-3">
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Пароль" required autocomplete="current-password">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Пароль"  autocomplete="current-password">
+<div>
+    @error('password')
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+    @enderror
+</div>
 
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
                                 </div>
                             </div>
 

@@ -49,7 +49,7 @@ class LoginController extends Controller
     {
         $request->validate([
             'phone' => 'required|max:11',
-            'password' => 'required|min:5|string'
+            'password' => 'required|min:8|string'
         ]);
         $credentials = $request->only(['phone', 'password']);
         if (Auth::attempt($credentials)) {

@@ -35,7 +35,7 @@ class ShowControllerOrder extends Controller
 //        foreach ($tours as $tour){
 //            $tour->slug = Str::slug($tour->title);
 //        }
-        $qrCode = QrCode::size(400)->generate($order);
+//        $qrCode = QrCode::size(400)->generate($order);
         $statuses = Order::STATUSES;
         return view('user.show-order', compact('tour', 'order', 'statuses','qrCode'));
     }
