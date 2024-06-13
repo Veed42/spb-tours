@@ -66,14 +66,17 @@ header.fixed {
      font-size: $fs-l;
      align-items: center;
  }
-    .header__logo  .header__logo-pic{
-        font-style: normal;
-        font-weight: 800;
-        margin-right: 30px;
+    .header__logo {
+        .header__logo-link{
+            font-style: normal;
+            font-weight: 600;
+            margin-right: 30px;
+            text-transform: uppercase;
+            color: $accent-two;
+        }
+
     }
-    .header__logo--letter:first-letter{
-        color: #F38D68;
-    }
+
 
     .header__list .header__item{
         padding: 15px 15px;
@@ -107,27 +110,6 @@ header.fixed {
         display:inline-flex ;
         align-items: center;
         flex-wrap: wrap;
-        //display: inline-flex;
-        //align-items: center;
-        //.header__link{
-        //    border:1px solid black;
-        //}
-        //
-        //.header__item .header__link:hover{
-        //    background-color: black;
-        //    color: white;
-        //}
-        //.btn-logout{
-        //    margin-right: 0;
-        //    border:1px solid black;
-        //    padding: 20px 15px 20px 15px;
-        //    margin-left: 30px;
-        //    cursor: pointer;
-        //}
-        //.btn-logout:hover{
-        //    background-color: black;
-        //    color: white;
-        //}
        .header__item .header__link{
            display: inline-block;
            border: 1px solid $accent;
@@ -359,8 +341,16 @@ header.fixed {
 
     .image-tour {
         display: flex;
-        height: 100%;
+        height: 100vh;
         width: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .content-image{
             padding-left: 126px;
             .div-title-tour{
@@ -690,17 +680,23 @@ hr {
 }
 .intro-guid{
     padding: 150px 150px;
-    background: #ffca2c;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #f6b39d;
     .card{
+        background: #f8845a;
+        width: 50%;
         margin-top: 100px;
-        width: 70%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        grid-column-gap: 50px;
+        padding: 30px 30px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .quality-guid{
             display: flex;
-            width: 100%;font-size: 19px;
+            width: 100%;
+            font-size: 19px;
             margin-top: 20px;
             span{
                 margin-left: 20px;
@@ -1076,6 +1072,13 @@ hr {
     padding-left: 30px;
     .footer-logo{
         margin-bottom:30px;
+        .footer__logo-link{
+            font-style: normal;
+            font-weight: 600;
+            margin-right: 30px;
+            text-transform: uppercase;
+            color: $accent-two;
+        }
     }
     }
         .footer__auth-list{
@@ -1124,7 +1127,7 @@ hr {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 45%;
+    width: 55%;
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
@@ -1166,7 +1169,7 @@ hr {
         .form-control{
             font: $default-font;
             padding-left: 30px;
-            width: 352px;
+            width: 452px;
             height: 60px;
             margin-bottom: 30px;
             font-size: 18px;
@@ -1216,6 +1219,13 @@ hr {
         flex-wrap: wrap;
         .item-header-up{
             font-size: 20px;
+            .link-logo{
+                font-style: normal;
+                font-weight: 600;
+                margin-right: 30px;
+                text-transform: uppercase;
+                color: $accent-two;
+            }
         }
     }
 

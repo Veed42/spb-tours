@@ -10,6 +10,10 @@ class StoreRequest extends FormRequest
      * Determine if the user is authorized to make this request.
      */
 
+     public function authorize() {
+        return true;
+     }
+
 
     /**
      * Get the validation rules that apply to the request.
@@ -20,12 +24,12 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'phone' => 'required|unique:orders,phone',
+            'phone' => 'required|unique:orders,phone|max:11',
             'email' => 'required|unique:orders,email',
             'country' => 'required|string',
             'date_tour' => 'required|date',
-            'user_id' => 'required|exists:orders,user_id',
-            'tour_id' => 'required|exists:orders,tour_id'
+            'user_id' => 'required|exists:users,id',
+            'tour_id' => 'required|exists:tours,id'
         ];
     }
 }

@@ -3,11 +3,11 @@
 
 
 @section('content')
+    <div class="container">
 
 
 <div class="intro-tour" >
-    <div class="image-tour" style="
-    display:grid;">
+    <div class="image-tour" style="display:grid;">
 
     <img src="{{ '../storage/' . $tour->main_image }}">
         <div class="content-image" style="position: absolute; display: grid">
@@ -31,10 +31,7 @@ $tour->duration_tour
                 <h5 style="font-weight: bold" class="card-title">{{$tour->title}}</h5>
             </div>
         </div>
-
-
     </div>
-
     </div>
         <div class="container-default">
             <div class="guides">
@@ -71,16 +68,11 @@ $tour->duration_tour
                                     <div class="description-container">
                                         {!! $tour->guid->description !!}
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-                </div>
-
-
+                   </div>
             </div>
-
-
         <div class="container-program_tour" style="margin-bottom: 150px">
             <h1 class="title_program uppercase">
                 Программа тура
@@ -139,7 +131,7 @@ $tour->duration_tour
                 </h3>
                 @foreach($tour->review as $review)
                     <div class="div" style="display: flex; justify-content: space-between ">
-                        <div class="wrapper-content" id="wrapper-content" style="display:grid; border-bottom: 2px solid #F38D68">
+                        <div class="wrapper-content" style="display:grid; border-bottom: 2px solid #F38D68">
                             <div class="container-title-user-name" >
                                 <h3 class="title-user">
                                     {{$review->name}}
@@ -160,38 +152,50 @@ $tour->duration_tour
                             </p>
                         </div>
                     </div>
-
-
                 @endforeach
             </div>
                 <hr>
 
-            <form action="{{route('tour.review.store', $tour->id)}}"
-                  id="reviewForm"
-                  method="post">
+            <form action="{{route('tour.review.store', $tour->id)}}" method="post">
 
                 @csrf
                 <div class="wrapper-review-form">
                     <div class="form-group" style="margin-bottom: 30px">
-                        <input  class="text-field__input" type="text" name="name" placeholder="Ваше имя">
+                        <input  class="text-field__input @error('name') is-invalid @enderror" type="text" name="name" placeholder="Ваше имя" >
+                        <div>
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <label>
 
-                            <textarea name="content" placeholder="Напишите свой отзыв"></textarea>
+                            <textarea class="@error('name') is-invalid @enderror" name="content" placeholder="Enter your message..." >
+
+                            </textarea>
                         </label>
+                        <div>
+                            @error('content')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+
+
+
+                    </div>
+                    <div class="form-group">
                         <input type="hidden"
                                name="tour_id"
-                               value="{{$tour->id}}"
-
-                        >
+                               value="{{$tour->id}}" />
                     </div>
-
                     <div class="form-group">
-                        <input
-                            class="btn-review-submit"
-                            type="submit"
-                            value="Отправить">
+                        <input id="btn-review-submit" type="submit" value="Отправить" class="btn-review-submit">
                     </div>
                 </div>
 
@@ -199,23 +203,32 @@ $tour->duration_tour
             </div>
             <div  class="order-block" style="">
                 @auth()
-                    <div >
+                    <div>
                         <a  class="btn-tour" href="{{route('user.create.order', $tour->id)}}">Забронировать тур</a>
                     </div>
                 @endauth
                 @guest()
                     <div class="div">
                         <p class="non-auth-tour">
-                            Чтобы забронировать тур необходимо <a href="{{route('register')}}">Зарегестрироваться</a> или <a href="{{route('login')}}">авторизоваться</a>
+                            Чтобы забронировать тур необходимо <a href="{{route('register')}}">Зарегестрироваться</a> или <a href="{{route('login')}}">Авторизоваться</a>
                         </p>
                     </div>
+                    @if(auth()->user())
+                    @endif
                 @endguest
             </div>
+
+
+
             </div>
+        </div>
+
+
+
+
 
 
 @endsection
-
 
 
 

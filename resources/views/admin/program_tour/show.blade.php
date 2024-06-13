@@ -11,7 +11,7 @@
                         <a href="{{route('admin.program_tour.edit', $program->id)}}" class="text-success">
                             <i class="fa fa-edit "></i>
                         </a>
-                        <form action="{{route('admin.program_tour.delete', $program->id)}}"
+                         <form action="{{route('admin.program_tour.delete', $program->id)}}"
                               method="POST"
                         >
                             @csrf
@@ -33,7 +33,6 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-
                 <div class="row">
                     <div class="col-6 ">
                         <div class="card " >
@@ -50,7 +49,7 @@
 
                                     <div class="div">
                                         <div class="waiting_for_programs">
-                                            <strong style="font-size: 18px">Описание</strong>
+                                            <strong style="font-size: 18px p-15">Описание</strong>
                                                     {!! $program->description !!}
 
                                         </div>

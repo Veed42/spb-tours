@@ -37,7 +37,7 @@
                     @error('phone')
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
-                                    </span>
+                    </span>
                     @enderror
                 </div>
                 <div class="form-group w-25">
@@ -93,9 +93,6 @@
                                     </span>
                     @enderror
                 </div>
-
-
-
                 <div class="form-group">
                     <input type="hidden" name="tour_id" value="{{$tour->id}}">
                 </div>
@@ -119,12 +116,9 @@
 
                 </div>
             </div>
-
         </div>
-
     </form>
-
-</div>
+    </div>
 </div>
 @endsection
 <script>

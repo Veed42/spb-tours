@@ -11,7 +11,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('admin')}}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('admin')}}">Домой</a></li>
                             <li class="breadcrumb-item active">Гиды</li>
                         </ol>
                     </div><!-- /.col -->
@@ -37,7 +37,7 @@
                             <div class=" table-responsive p-0 mt-5">
                                 <table  class="table table-hover text-center text-nowrap shadow">
                                     <thead class="">
-                                    <tr >
+                                    <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Имя Гида</th>
                                         <th scope="col">Фамилия</th>

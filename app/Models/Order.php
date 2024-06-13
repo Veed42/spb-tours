@@ -12,7 +12,7 @@ class Order extends Model
     use HasFactory;
     protected $table = 'orders';
 
-    protected $guarded = false;
+    protected $guarded = [];
 
     protected $casts = [
       'date_tour' => 'date:y-m-d',

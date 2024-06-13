@@ -1,8 +1,8 @@
 <div class="footer">
     <div class="footer__col">
         <div class="footer-logo">
-            <a href="/" class="footer__logo-link">
-                <img src="{{Vite::asset('resources/img/logo-site.svg')}}" alt="">
+            <a href="{{route('/')}}" class="footer__logo-link">
+             САНКТ-ПЕТЕРБУРГ
             </a>
         </div>
         <p class="footer__sub-title">

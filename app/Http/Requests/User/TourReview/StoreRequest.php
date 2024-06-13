@@ -10,6 +10,10 @@ class StoreRequest extends FormRequest
      * Determine if the user is authorized to make this request.
      */
 
+     public function authorize() {
+        return true;
+     }
+
 
     /**
      * Get the validation rules that apply to the request.
@@ -19,8 +23,8 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-           'name' => 'required|string',
-           'content' => 'required|string'
+           'name' => 'required|string|max:30',
+           'content' => 'required|string|max:256'
         ];
     }
 }
