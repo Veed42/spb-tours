@@ -29,7 +29,7 @@
                             <div class="row mb-3">
 
                                 <div class="col-md-6">
-                                    <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
+                                    <input id="phone" type="tel" class="form-control mask-phone @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
                                            placeholder="Номер телефона"
                                             autocomplete="phone" autofocus>
 <div>

@@ -19,6 +19,7 @@ function init(){
     map.controls.remove('searchControl');
 
     map.geoObjects.add(placemark);
+
 }
 
 

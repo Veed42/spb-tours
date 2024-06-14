@@ -28,7 +28,7 @@
         </div>
             <div class="description-container " style=" font-size: 20px">
                 <p>
-                   Ваша  дата {{$order->date_tour->format('d.m.Y')}}
+                   Ваша  дата {{$order->date_tour}}
                     <br>
                 </p>
             </div>

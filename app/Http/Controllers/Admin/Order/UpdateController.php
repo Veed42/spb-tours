@@ -28,6 +28,8 @@ class UpdateController extends Controller
      */
     public function __invoke(UpdateRequest $request, Order $order)
     {
+
+//        dd($request);
         $data = $request->validated();
         $order->updateOrFail($data);
         return view('admin.orders.show', compact('order'));

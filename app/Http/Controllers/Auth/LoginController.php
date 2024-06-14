@@ -48,8 +48,8 @@ class LoginController extends Controller
     public function index(Request $request)
     {
         $request->validate([
-            'phone' => 'required|max:11',
-            'password' => 'required|min:8|string'
+            'phone' => 'required',
+            'password' => 'required|string'
         ]);
         $credentials = $request->only(['phone', 'password']);
         if (Auth::attempt($credentials)) {

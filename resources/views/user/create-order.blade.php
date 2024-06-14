@@ -15,9 +15,8 @@
             <div class="wrapper-order" style="display: grid; align-items: center; justify-content: center">
                 <div class="form-group name-group">
 
-                    <div class="input-group">
                         <div class="">
-                            <label for="name">{{__('ФИО*')}}</label>
+                            <label for="name">{{__('Имя*')}}</label>
                             <input type="text"
                                    class="@error('name') is-invalid @enderror"
                                    name="name"
@@ -28,11 +27,27 @@
                                     </span>
                             @enderror
                         </div>
+                </div>
+                <div class="form-group name-group">
+
+                    <div class="">
+                        <label for="surname">{{__('Фамилия*')}}</label>
+                        <input type="text"
+                               class="@error('surname') is-invalid @enderror"
+                               name="surname"
+                        >
+                        @error('surname')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </div>
                 </div>
+
+
                 <div class="form-group w-25">
                     <label for="phone">{{__('Телефон*')}}</label>
-                    <input id="phone" max="10" type="tel" class="phone form-control @error('tel') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
+                    <input id="phone" type="tel" class="phone mask-phone form-control @error('tel') is-invalid @enderror" name="phone" value="{{ old('phone') }}"
                             autocomplete="phone" autofocus >
                     @error('phone')
                     <span class="invalid-feedback" role="alert">

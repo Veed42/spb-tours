@@ -111,6 +111,23 @@ $tour->duration_tour
                 </div>
                 </div>
             </div>
+            <div  class="order-block" style="">
+                @auth()
+                    <div>
+                        <a  class="btn-tour" href="{{route('user.create.order', $tour->id)}}">Забронировать тур</a>
+                    </div>
+                @endauth
+                @guest()
+                    <div class="div">
+                        <p class="non-auth-tour">
+                            Чтобы забронировать тур необходимо <a href="{{route('register')}}">Зарегестрироваться</a> или <a href="{{route('login')}}">Авторизоваться</a>
+                        </p>
+                    </div>
+                    @if(auth()->user())
+                    @endif
+                @endguest
+            </div>
+
 {{--            @dd($tour->id)--}}
             <div class="container-review">
                 <div class="container-title-reviews">
@@ -201,22 +218,7 @@ $tour->duration_tour
 
             </form>
             </div>
-            <div  class="order-block" style="">
-                @auth()
-                    <div>
-                        <a  class="btn-tour" href="{{route('user.create.order', $tour->id)}}">Забронировать тур</a>
-                    </div>
-                @endauth
-                @guest()
-                    <div class="div">
-                        <p class="non-auth-tour">
-                            Чтобы забронировать тур необходимо <a href="{{route('register')}}">Зарегестрироваться</a> или <a href="{{route('login')}}">Авторизоваться</a>
-                        </p>
-                    </div>
-                    @if(auth()->user())
-                    @endif
-                @endguest
-            </div>
+
 
 
 
