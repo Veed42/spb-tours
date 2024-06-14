@@ -496,6 +496,8 @@ header.fixed {
         }
         input[name=name]{
             width: 500px;
+        } input[name=surname]{
+            width: 500px;
         }
         input[name=phone]{
             width: 400px;
@@ -686,13 +688,14 @@ hr {
     background: #f6b39d;
     .card{
         background: #f8845a;
-        width: 50%;
+        width: 40%;
         margin-top: 100px;
         padding: 30px 30px;
         border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: grid;justify-content: center;
+        //.card-img-top{
+        //    width: 40%;
+        //}
         .quality-guid{
             display: flex;
             width: 100%;
@@ -1233,3 +1236,34 @@ hr {
 
 
 
+@media screen and (max-width:887px){
+
+    div.container-default {
+        background-color: white;
+
+    }
+    p.description__into {
+        padding-top: 60px;
+    }
+    div.container-default {
+        padding: 20px;
+
+    }
+    p.description__into {
+        padding-top: 40px;
+    }
+    div.card-tour{
+        display: block;
+    }
+    div.footer__col{
+        padding-top: 30px;
+    }
+    ul.footer__list {
+        padding-top: 30px;
+        padding-left: 20px;
+    }
+    div.info-reviews{
+        width: 100px;
+    }
+
+}

@@ -26,6 +26,13 @@
                 <div class="row mb-3">
 
                     <div class="col-md-6">
+                        <div>
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
                         <input id="name"
                                type="text"
                                class="form-control
@@ -33,13 +40,7 @@
                                name="name"
                                value="{{ old('name') }}"  autocomplete="name" placeholder="Ваше имя" autofocus>
 
-                      <div>
-                          @error('name')
-                          <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                          @enderror
-                      </div>
+
 
                     </div>
                 </div>
@@ -47,6 +48,13 @@
                 <div class="row mb-3">
 
                     <div class="col-md-6">
+                        <div>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
                         <input
                             id="email"
                             type="email"
@@ -56,40 +64,44 @@
                             value="{{ old('email') }}"
                              placeholder="Email" autocomplete="email">
 
-                       <div>
-                           @error('email')
-                           <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                           @enderror
-                       </div>
+
 
                     </div>
                 </div>
 
 
                 <div class="row mb-3">
-
-                    <div class="col-md-6">
-                        <input id="phone"
-                               type="tel"
-                               class="form-control
-                               @error('phone') is-invalid @enderror"
-                               name="phone"
-                               value="{{ old('tel') }}" placeholder="Номер телефона"  autocomplete="tel" >
-                        <div>
-                            @error('phone')
-                            <span class="invalid-feedback" role="alert">
+                    <div>
+                        @error('phone')
+                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                 @enderror
                         </span>
 
-                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="phone"
+                               type="tel"
+                               class="form-control mask-phone
+                               @error('phone') is-invalid @enderror"
+                               name="phone"
+                               placeholder="Номер телефона"  autocomplete="tel"
+                        >
+
+
+
 
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-md-3">
+                        <div>
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
                         <input
                             id="password"
                             type="password"
@@ -97,13 +109,7 @@
                             @error('password') is-invalid @enderror"
                             name="password" placeholder="Пароль"  autocomplete="new-password" >
 
-                     <div>
-                         @error('password')
-                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                         @enderror
-                     </div>
+
 
                     </div>
                 </div>

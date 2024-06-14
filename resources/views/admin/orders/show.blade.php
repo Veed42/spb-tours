@@ -42,14 +42,17 @@
                                 <div class="align-items-md-center " style="display: flex">
                                     <h5 style="margin-right: 20px">Имя:</h5>
                                     <h5 class="card-title">{{$order->name}}</h5>
+                                    <div class="align-items-md-center">
+                                        <h5 style="margin-right: 20px">Фамилия:</h5>
+                                        <h5 class="card-title">{{$order->surname}}</h5>
+                                    </div>
                                 </div>
-<div class="" style="display: flex">
-            <h5 style="margin-right: 20px">
-                Телефон
-            </h5>
 
-    <p class="card-text">{{$order->phone}}</p>
-</div>
+                                <div class="align-items-md-center " style="display: flex">
+                                    <h5 style="margin-right: 20px">Телефон:</h5>
+                                    <h5 class="card-title">{{$order->phone}}</h5>
+
+                                </div>
 
 
                                 <div class="" style="display: flex">
@@ -78,22 +81,10 @@
                                         Дата:
                                     </h5>
 
-                                    <p class="card-text">{{$order->date_tour->format('d.y.m')}}</p>
+                                    <p class="card-text">{{$order->date_tour}}</p>
                                 </div>
-                                <div class="" style="display: flex">
-                                    <h5 style="margin-right: 20px">
-                                        Количество взрослых:
-                                    </h5>
 
-                                    <p class="card-text">{{$order->count_grown}}</p>
-                                </div>
-                                <div class="" style="display: flex">
-                                    <h5 style="margin-right: 20px">
-                                        Количество детей:
-                                    </h5>
 
-                                    <p class="card-text">{{$order->count_children}}</p>
-                                </div>
                                 <div class="" style="display: flex">
                                     <h5 style="margin-right: 20px">
                                         Гид:

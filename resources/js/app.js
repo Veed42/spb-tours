@@ -1,5 +1,4 @@
 import './bootstrap.js';
-
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import {init} from "debug";
@@ -12,14 +11,11 @@ import.meta.glob([
     // '../fonts/**',
 ])
 
-// $(document).ready(function() {
-//     $('#btn-review-submit').click(function(e) {
-//      e.preventDefault()
-//         $.ajax({
-//                  url:route('tour.review.store'),
-//      })
-//     });
-// });
+//mask phone
+$(document).ready(function() {
+    $.mask.definitions['h'] = "[0|1|3|4|5|6|7|9]"
+    $(".mask-phone").mask("+7 (h99) 999-99-99");
+});
 $(window).scroll(function() {
     var header = $(document).scrollTop();
     var headerHeight = $(".header").outerHeight();
@@ -32,41 +28,6 @@ $(window).scroll(function() {
 // header script
 
 
-
-// $('.slider').slick({
-//     dots: true,
-//     speed: 500,
-//     slidesToShow: 2,
-//     arrows:true,
-//     slidesToScroll: 2,
-//     autoplay:true,
-//     slideDown:true,
-//     responsive: [
-//         {
-//             breakpoint: 1024,
-//             settings: {
-//                 slidesToShow: 3,
-//                 slidesToScroll: 3,
-//                 infinite: true,
-//                 dots: true,
-//             }
-//         },
-//         {
-//             breakpoint: 600,
-//             settings: {
-//                 slidesToShow: 2,
-//                 slidesToScroll: 2
-//             }
-//         },
-//         {
-//             breakpoint: 480,
-//             settings: {
-//                 slidesToShow: 1,
-//                 slidesToScroll: 1
-//             }
-//         },
-//
-//     ]});
 
 // import Swiper styles
 
@@ -100,7 +61,6 @@ const swiper = new Swiper('.swiper', {
     },
 
 });
-
 
 
 

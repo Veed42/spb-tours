@@ -14,10 +14,9 @@ class Order extends Model
 
     protected $guarded = [];
 
-    protected $casts = [
-      'date_tour' => 'date:y-m-d',
-        'time_tour' => 'datetime',
-    ];
+//protected $casts = [
+//    'date_tour' => 'date:y-m-d'
+//];
 
 
     public function user()
@@ -31,6 +30,7 @@ class Order extends Model
 
     protected $fillable = [
         'name',
+        'surname',
         'phone',
         'email',
         'country',

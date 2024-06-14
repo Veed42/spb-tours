@@ -19,14 +19,15 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
+
             'name' => 'required|string',
-            'phone' => 'required:unique:orders',
-            'email' => 'required',
+            'phone' => 'string|required',
+            'email' => 'email:rfc,dns|string|required',
             'country' => 'required|string',
-            'time_tour' => 'required',
-            'date_tour' => 'required|date',
-            'tour_id' => 'unique:orders',
-            'status' => 'required'
+            'date_tour' => 'date',
+            'status' => 'required',
+            'tour_id' => 'required',
+
         ];
     }
 }

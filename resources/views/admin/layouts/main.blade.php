@@ -56,6 +56,8 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
@@ -105,6 +107,11 @@
             $(this).parent().parent().remove();
         });
 
+    });
+
+    $(document).ready(function() {
+        $.mask.definitions['h'] = "[0|1|3|4|5|6|7|9]"
+        $(".mask-phone").mask("+7 (h99) 999-99-99");
     });
 </script>
 

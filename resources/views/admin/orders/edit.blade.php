@@ -24,10 +24,8 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-
                 <div class="row">
                     <div class="col-12">
-
                         <form action="{{route('admin.order.update', $order->id)}}"
                               method="POST"
                               class="w-25">
@@ -47,11 +45,24 @@
                                     </span>
                                         @enderror
                                     </div>
+                                <div class="form-group">
+                                    <label for="surname">{{__('Фамилия*')}}</label>
+                                    <input type="text"
+                                           class="form-control @error('surname') is-invalid @enderror"
+                                           value="{{$order->name}}"
+                                           name="surname"
+                                    >
+                                    @error('surname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="form-group ">
-                                <label for="surname">{{__('Телефон*')}}</label>
-                                <input id="phone" max="10" type="tel" class="phone form-control @error('tel') is-invalid @enderror" name="phone" value="{{ $order->phone }}"
-                                       required autocomplete="phone" autofocus>
+                                <label for="phone">{{__('Телефон*')}}</label>
+                                <input id="phone"  type="tel" class=" mask-phone phone form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $order->phone }}"
+                                        autocomplete="phone" autofocus>
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -59,7 +70,7 @@
                                 @enderror
                             </div>
                             <div class="form-group ">
-                                <label for="surname">{{__('Эл. почта*')}}</label>
+                                <label for="email">{{__('Эл. почта*')}}</label>
                                 <input
                                     id="email"
                                     type="email"
@@ -67,7 +78,7 @@
                             @error('email') is-invalid @enderror"
                                     name="email"
                                     value="{{ $order->email }}"
-                                    required placeholder="Email" autocomplete="email">
+                                     placeholder="Email" autocomplete="email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -89,12 +100,13 @@
                                 @enderror
                             </div>
                             <div class="form-group ">
-                               Дата  <label for="date_tour" >{{$order->date_tour->format('d-m-y')}}</label>
+                               Дата
                                     <input type="date"
                                            class="form-control @error('date_tour') is-invalid @enderror"
                                            name="date_tour"
-                                           value="{{$order->date_tour->format('"Y-m-d')}}"
+                                           value="{{$order->date_tour}}"
                                     >
+{{--                                @dump($order->date_tour)--}}
                                 @error('date_tour')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -106,7 +118,7 @@
                             <div class="form-group mt-3">
                                 <span class="mb-3">Статус заявки</span>
                                 <div class="mt-2">
-                                    @php $status = old('status') ?? $statement->status ?? 0 @endphp
+                                    @php $status = old('status') ?? $order->status ?? 0 @endphp
                                     <select name="status" class="form-control" title="Статус заказа">
                                         @foreach ($statuses as $key => $value)
                                             <option  value="{{ $key }}" @if ($key == $status) selected @endif>
@@ -133,14 +145,6 @@
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                                @error('user_id')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                </span>
                                 @enderror
                             </div>
 
