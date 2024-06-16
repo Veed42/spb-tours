@@ -5,6 +5,9 @@
             Санкт-Петербург
             </a>
         </div>
+
+
+
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__item">
@@ -66,6 +69,10 @@
                 </form>
             @endif
         </ol>
+        <div class="header__burger">
+            <span></span>
+        </div>
+
     </div>
 
 

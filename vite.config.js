@@ -14,6 +14,7 @@ plugins:[
                 'resources/js/app.js',
                 'resources/js/map.js',
                 'resources/scss/app.scss',
+                'resources/scss/media.scss',
 
         ],
 

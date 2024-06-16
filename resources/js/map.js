@@ -1,8 +1,8 @@
-let  center = [55.71714139306261,37.55644189482881]
+let  center = [59.96507621651757,30.291105157567927]
 function init(){
     let map = new ymaps.Map('map',{
         center:center,
-        zoom:16
+        zoom:20
     });
     let placemark = new ymaps.Placemark(center,{}, {
         iconLayout:'default#image',

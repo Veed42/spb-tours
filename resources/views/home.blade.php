@@ -210,7 +210,7 @@
                         <h1 class="title__contacts uppercase">Контакты</h1>
                         <div class="content__contacts">
                             <div class="description__contacts">
-                                <div class="contacts__address"> <p>Российская Федерация, г. Москва, ул Лужники, дом 54Б, 2 этаж, корпус 6, туристическое агентство “TravelRussia</p></div>
+                                <div class="contacts__address"> <p>Российская Федерация, г. Санкт-Петербург, Лодейнопольская, д. 9 туристическое агентство “TravelRussia”</p></div>
                                 <div class="contacts__phone"><p>+ 7(987) 345 92 61</p> <p>+ 7(987) 768 98 45</p></div>
                                 <div class="contacts__social">
                                     <a href="" class="vk__icon">
@@ -325,15 +325,16 @@
                                 </div>
                             </div>
                         </div>
+
                         <div  class="swiper-slide">
                             <div class="col">
                                 <div class="info-reviews">
                                     <div class="up-reviews">
                                         <div class="left-reviews">
-                                            <div class="user__reviews__img"><img class="round" crossorigin="" src="{{Vite::asset('resources/img/reviews-img/img-reviews.png')}}" alt="" ></div>
+                                            <div class="user__reviews__img"><img class="round" crossorigin="" src="{{Vite::asset('resources/img/reviews-img/slide-women-2.png')}}" alt="" ></div>
                                             <div class="info-user__reviews">
                                                 <div class="date-user__reviews"><span>20 СЕНТЯБРЯ 2023</span></div>
-                                                <div class="sub-title__reviews">Алена Трофимова</div>
+                                                <div class="sub-title__reviews">Надежда Новикова</div>
                                             </div>
 
                                         </div>
@@ -362,7 +363,7 @@
                                     </div>
                                     <div class="down-reviews">
                                         <div class="description-reviews">
-                                            Санкт-Петербург - король исскуства и культуры, собранное в одном городе. Но при этом, ночью тут тоже не соскучиться ) Здесь есть все и для молодежи, и для семьи с детьми. Была тут с семьей - мамой, папой и сестрой.
+                                            Посещение Пушкина - прекрасная заетя для тех, кто любит изучать историю России, в частности Санкт-Петербурга.
                                         </div>
                                     </div>
                                 </div>
@@ -371,10 +372,10 @@
                                 <div class="info-reviews">
                                     <div class="up-reviews">
                                         <div class="left-reviews">
-                                            <div class="user__reviews__img"><img src="{{Vite::asset('resources/img/reviews-img/img-reviews-2.png')}}" alt=""></div>
+                                            <div class="user__reviews__img"><img src="{{Vite::asset('resources/img/reviews-img/slide-man-2.png')}}" alt=""></div>
                                             <div>
                                                 <div class="date-user__reviews"><span>1 НОЯБРЯ 2023</span></div>
-                                                <div class="sub-title__reviews">Алексей Филин</div>
+                                                <div class="sub-title__reviews">Андрей Печорин</div>
                                             </div>
 
                                         </div>
