@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -44,13 +46,9 @@ class LoginController extends Controller
     {
         return 'phone';
     }
-
-    public function index(Request $request)
+    public function index(LoginRequest $request)
     {
-        $request->validate([
-            'phone' => 'required',
-            'password' => 'required|string'
-        ]);
+
         $credentials = $request->only(['phone', 'password']);
         if (Auth::attempt($credentials)) {
             $user = auth()->user();
@@ -61,7 +59,8 @@ class LoginController extends Controller
             }
 
         }
-        return redirect()->back()->with('error', 'Пользователя не существует');
+
+        return redirect()->back()->withInput($request->only('phone'))->withErrors(['password' => ' Неверный пароль или номер телефона']);
     }
 }
 

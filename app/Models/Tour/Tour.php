@@ -3,6 +3,7 @@
 namespace App\Models\Tour;
 
 use App\Models\Category;
+use App\Models\Order;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -24,6 +25,9 @@ class Tour extends Model
         return $this->hasOne(TourProgram::class);
     }
 
+    public function order(){
+        return $this->belongsTo(Order::class);
+    }
 
 
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo

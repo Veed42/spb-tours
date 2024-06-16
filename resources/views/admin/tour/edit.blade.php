@@ -1,6 +1,4 @@
 @extends('admin.layouts.main')
-
-
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -78,8 +76,6 @@
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="exampleInputFile" name="preview_image">
                                         <label class="custom-file-label" for="exampleInputFile">Выбрать изображение</label>
-
-
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">Загрузка</span>
@@ -87,7 +83,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputFile">Главное изобаражение</label>
+                                <label for="exampleInputFile">Главное изображение</label>
                                 <div class="w-25 mb-3">
                                     <img src="{{asset( 'storage/' . $tour->main_image)}}" class="card-img-top" alt="">
                                 </div>
@@ -95,9 +91,6 @@
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="exampleInputFile" name="main_image">
                                         <label class="custom-file-label" for="exampleInputFile">Выбрать изображение</label>
-
-
-
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">Загрузка</span>
@@ -171,7 +164,5 @@
         </section>
     </div>
     <!-- /.content -->
-
-
 @endsection
 

@@ -12,26 +12,25 @@
     <div class="footer__col footer-col__2">
         <ul class="footer__list">
             <li class="footer__item">
-                <a href="" class="footer__link">Преимущества</a>
+                <a href="/#features" class="footer__link">Преимущества</a>
             </li>
             <li class="header__item">
-                <a href="" class="header__link">Наши гиды</a>
+                <a href="/#guides" class="header__link">Наши гиды</a>
             </li>
-
             <li class="footer__item">
-                <a href="" class="footer__link">Экскурсии</a>
+                <a href="/#excursions" class="footer__link">Экскурсии</a>
             </li>
-
             <li class="footer__item">
-                <a href="" class="footer__link">Контакты</a>
+                <a href="/#contacts" class="footer__link">Контакты</a>
             </li>
                 <li class="footer__item">
-                    <a href="" class="footer__link">Отзывы</a>
+                    <a href="/#reviews" class="footer__link">Отзывы</a>
                 </li>
-
-                <li class="footer__item">
-                    <a href="" class="footer__link">Избранное</a>
+            @if(Auth::user())
+                <li class="header__item">
+                    <a href="{{route('index.order')}}" class="header__link">Мои заказы</a>
                 </li>
+            @endif
 
 
         </ul>

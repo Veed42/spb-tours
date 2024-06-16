@@ -28,7 +28,7 @@
                     <div class="col-4 mb-3" >
                         <a href="{{route('admin.program_tour.create')}}"
                             class="btn btn-block btn-primary">
-                            Добавить тур
+                            Добавить программу тура
                         </a>
                     </div>
                 </div>
