@@ -22,7 +22,7 @@
                 Наши контакты:
             </h3>
             <div class="description__contacts-success">
-                <div class="contacts__address"> <p>Российская Федерация, г. Москва, ул Лужники, дом 54Б, 2 этаж, корпус 6, туристическое агентство “TravelRussia</p></div>
+                <div class="contacts__address"> <p>Российская Федерация, г. Санкт-Петербург, Лодейнопольская, д. 9 туристическое агентство “TravelRussia”</p></div>
                 <div class="contacts__phone"><p>+ 7(987) 345 92 61</p> <p>+ 7(987) 768 98 45</p></div>
                 <div class="contacts__social" style="text-align: center">
                     <a href="" class="vk__icon">

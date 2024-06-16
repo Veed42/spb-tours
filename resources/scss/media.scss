@@ -1,24 +1,170 @@
+@media only screen and (min-width:320px ){
+    html, body {min-width:100%; overflow-x:hidden;
+
+    }
+}
+
 @media only screen and  (min-width: 320px ) and (max-width: 479px){
+
+
+    html, body {width:100%; overflow-x:hidden;font-size: 30px;
+
+    }
+    .company{
+        .inner__company{
+            min-width: 320px;
+            .cols__company--info .col{
+                display: grid;
+                column-gap: 30px;
+                grid-template-columns: 0.3fr 0.4fr;
+
+            }
+            .title__company{
+                font-size: 40px;
+            }
+            .cols__company--info{
+                padding: 0 20px;
+                .info__company{
+                    .subtitle__company--info{
+                        font-size: 20px;
+                    }
+                    .description__company{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    .guides{
+        .inner__guides{
+            .title__guides{
+                font-size: 40px;
+            }
+            .cols__guides{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                .col-guids{
+
+                    display: block;
+
+                }
+            }
+        }
+
+    }
+    .excursions{
+        .inner__excursions{
+            .title__excursions{
+                font-size: 40px;
+            }
+            .tours-container{
+                display: grid;
+                grid-column-gap: 0;
+                grid-row-gap: 0;
+            }
+        }
+
+    }
+    .container-default{
+        padding: 0 20px;
+    }
+    .container{
+        padding: 0 20px;
+    }
+
+    .contacts .inner__contacts .title__contacts {
+        text-align: center;
+        font-weight: 700;
+        font-size: 42px;
+        margin-bottom: 80px;
+    }
+
+    footer{
+
+    }
     .w-50{
         width: 100%;
+    }
+    .intro{
+        .description-intro{
+            .title__intro{
+                font-size: 50px;
+                text-transform: uppercase;
+                font-weight: 500;
+                margin-bottom: 76px;
+            }
+        }
     }
 }
 @media only screen and  (min-width: 480px ) and (max-width: 767px){
-
+    .intro{
+        .description-intro{
+            .title__intro{
+                font-size: 50px;
+                text-transform: uppercase;
+                font-weight: 500;
+                margin-bottom: 76px;
+            }
+        }
+    }
 }
 @media only screen and  (min-width: 768px ) and (max-width: 991px){
 
+    .intro{
+        .description-intro{
+            .title__intro{
+                font-size: 50px;
+                text-transform: uppercase;
+                font-weight: 500;
+                margin-bottom: 76px;
+            }
+        }
+    }
 }
-@media only screen and  (min-width: 992px) and (max-width: 1024px){
-    .w-50{
+@media only screen and  (min-width: 992px) and (max-width: 1024px) {
+
+    .intro{
+        .description-intro{
+            .title__intro{
+                font-size: 50px;
+                text-transform: uppercase;
+                font-weight: 500;
+                margin-bottom: 76px;
+            }
+        }
+    }
+
+
+    .w-50 {
         width: 100%;
     }
-        .card-header{
+    .container-ath {
+        .card-container {
+            justify-content: center;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            text-align: center;
+            width: 55%;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 0.25rem;
+            padding: 0;
+
+        }
+
+        .card-header {
             font-size: 40px;
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 20px;
+            text-align: center;
         }
     }
+}
 
 
