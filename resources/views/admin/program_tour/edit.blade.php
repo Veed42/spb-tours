@@ -64,7 +64,7 @@
 
 
                             <div class="form-group">
-                                <label for="exampleInputFile">Добавить превью</label>
+                                <label for="exampleInputFile">Добавить картинку</label>
                                 <div class="w-25 mb-3">
                                     <img src="{{asset( 'storage/' . $program->back_image)}}" class="card-img-top" alt="">
                                 </div>

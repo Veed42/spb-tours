@@ -118,14 +118,6 @@
 
                             </div>
 
-
-
-
-
-                            <div class="col-md-2" style="margin-left: 5px;">
-                                <span class="btn btn-secondary btn-xs add-select py-0">Add More</span>
-                            </div>
-
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary">
                             </div>
