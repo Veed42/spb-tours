@@ -59,18 +59,6 @@ const swiper = new Swiper('.swiper', {
         dragSize: 180,   // длина ползунка проката
         draggable: true,  // Rolling Bar можно перетаскивать и нажать, чтобы нажать
     },
-    breakpoints:{
-        600:{
-            slidesPerView:1
-        },
-        900:{
-            effect:"creative",
-            slidesPerView:2
-        },
-        320:{
-            slidesPerView:1
-        }
-    }
 
 });
 
