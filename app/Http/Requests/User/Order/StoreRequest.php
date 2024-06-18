@@ -25,10 +25,10 @@ class StoreRequest extends FormRequest
         return [
             'name' => 'required|string',
             'surname' => 'required|string',
-            'phone' => 'required|unique:orders,phone',
-            'email' => 'required|unique:orders,email',
+            'phone' => 'required',
+            'email' => 'required|email:rfc,strict',
             'country' => 'required|string',
-            'date_tour' => 'required|date',
+            'date_tour' => 'required|date|unique:orders,date_tour',
             'user_id' => 'required|exists:users,id',
             'tour_id' => 'required|exists:tours,id'
         ];

@@ -21,7 +21,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('admin')}}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('admin')}}">Домой</a></li>
                             <li class="breadcrumb-item active">Туры</li>
                         </ol>
                     </div><!-- /.col -->
@@ -62,7 +62,7 @@
                                     </span>
                                         <div class="d-flex">
                                             <p>Начало:</p> <p>
-                                                {{date('H:m', strtotime($tour->begin_tour))}}
+                                                {{date('H:i', strtotime($tour->begin_tour))}}
                                             </p>
                                         </div>
                                         <div class="waiting_for_programs">

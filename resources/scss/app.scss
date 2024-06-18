@@ -5,8 +5,6 @@
 html, body {
     font: 100% $default-font;
     color: $dark;
-    max-width: 100%;
-    width: 1920px;
     scroll-behavior: smooth;
     h1{
         color: $accent;
@@ -63,11 +61,12 @@ header.fixed {
     padding: 20px 0;
     position: fixed;
     width: 100%;
-    z-index: 9;
+    z-index: 19;
  .container-default{
      display: flex;
      font-size: $fs-l;
      align-items: center;
+     justify-content: stretch;
  }
     .header__logo {
         .header__logo-link{

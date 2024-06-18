@@ -50,9 +50,7 @@
                                     <h5>ФИО</h5>
                                     <h5 class="card-title">{{$guid->name}} {{$guid->surname}} {{$guid->patronymic}}</h5>
                                 </div>
-
                                 <p class="card-text">Описание {!!$guid->description!!}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
                  </div>
