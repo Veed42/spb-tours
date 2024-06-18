@@ -19,10 +19,8 @@
         </div>
         <section class="content">
             <div class="container-fluid">
-
                 <div class="row">
                     <div class="col-12">
-
                         <form action="{{route('admin.category.update', $category->id)}}"
                               method="POST"
                               class="w-25">

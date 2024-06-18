@@ -16,7 +16,7 @@ class Tour extends Model
     protected $guarded = false;
 
     protected $casts = [
-      'price' => 'decimal:0'
+      'price' => 'decimal:0',
 
     ];
 

@@ -6,7 +6,10 @@
 <div class="front-intro"></div>
 
 <div class="container-ath">
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
+
 </div>
 <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>

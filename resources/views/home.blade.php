@@ -1,24 +1,24 @@
 @extends('layout.layout')
 @section('content')
-    <div class="container">
         <div class="intro">
-            <div class="front-intro"></div>
-                <div class="description-intro">
-                    <p class="description__into">
-                        Окунись в мир архитектуры и истории города
-                    </p>
-                    <h1 class="title__intro">
-                        Экскурсионная деятельность <br>в Санкт-Петербурге
+               <div class="front-intro"></div>
+               <div class="description-intro">
+                   <p class="description__into">
+                       Окунись в мир архитектуры и истории города
+                   </p>
+                   <h1 class="title__intro">
+                       Экскурсионная деятельность <br>в Санкт-Петербурге
 
-                    </h1>
-                </div>
+                   </h1>
+               </div>
+
         </div>
-    </div>
 
         <div class="company">
             <div class="container-default">
 
                 <div class="inner__company" id="features">
+
                     <h1 class="title__company uppercase">
                         Преимущества
                     </h1>
@@ -158,7 +158,7 @@
                                                     <div class="div-group_time">
                                                         <div class="div-begin_tour">
                                                             <p>Начало:</p> <p>
-                                                                {{date('H:m', strtotime($tour->begin_tour))}}
+                                                                {{$tour->begin_tour}}
                                                             </p>
                                                         </div>
                                                         <div class="div-duration_tour">
@@ -209,6 +209,7 @@
                     <div class="inner__contacts" id="contacts">
                         <h1 class="title__contacts uppercase">Контакты</h1>
                         <div class="content__contacts">
+
                             <div class="description__contacts">
                                 <div class="contacts__address"> <p>Российская Федерация, г. Санкт-Петербург, Лодейнопольская, д. 9 туристическое агентство “TravelRussia”</p></div>
                                 <div class="contacts__phone"><p>+ 7(987) 345 92 61</p> <p>+ 7(987) 768 98 45</p></div>
